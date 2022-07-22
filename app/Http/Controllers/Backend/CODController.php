@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Cart;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\InfoOrderMail;
 
 class CODController extends Controller
 {
@@ -27,13 +28,13 @@ class CODController extends Controller
         // Order Service Area
         $order_id = Order::insertGetId([
             'user_id' => Auth::id(),
-            'division_id' => $request->input('division_id'),
-            'district_id' => $request->input('district_id'),
-            'state_id' => $request->input('state_id'),
+            //'division_id' => $request->input('division_id'),
+            //'district_id' => $request->input('district_id'),
+            //'state_id' => $request->input('state_id'),
             'name' => $request->input('shipping_name'),
             'email' => $request->input('shipping_email'),
             'phone' => $request->input('shipping_phone'),
-            'post_code' => $request->input('shipping_postCode'),
+            'phone2' => $request->input('shipping_phone2'),
             'notes' => $request->input('shipping_notes'),
             'address' => $request->input('shipping_address'),
             'payment_type' => 'Cash On Delivery',
@@ -42,7 +43,7 @@ class CODController extends Controller
             'currency' => 'usd',
             'amount' => $total_amount,
             'order_number' => '',
-            'address' => $request->input('shipping_address'),
+            //'address' => $request->input('shipping_address'),
             'address' => $request->input('shipping_address'),
             'invoice_number' => 'AAF'.mt_rand(10000000,99999999),
             'order_date' => Carbon::now()->format('d F Y'),
@@ -62,6 +63,7 @@ class CODController extends Controller
             ];
 
             Mail::to($invoice->email)->send(new OrderMail($data));
+            Mail::to('rodriguendoufou95@gmail.com')->send(new InfoOrderMail($data));
 
             // End Send Email
 

@@ -25,7 +25,7 @@ class SubCategoryStoreRequest extends FormRequest
     {
         return [
             'subcategory_name_en' => 'required',
-            'subcategory_name_bn' => 'required',
+            'subcategory_name_bn' => 'nullable',
             'category_id' => 'required|numeric',
         ];
     }

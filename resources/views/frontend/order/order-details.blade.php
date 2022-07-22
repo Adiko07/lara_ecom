@@ -165,7 +165,7 @@
                                             height="50px;" width="50px;"> </label>
                                 </td>
                                 <td class="col-md-3">
-                                    <label for=""> {{ $item->product->product_name_en }}</label>
+                                    <label for=""> {{ $item->product->product_name }}</label>
                                 </td>
                                 <td class="col-md-3">
                                     <label for=""> {{ $item->product->product_code }}</label>

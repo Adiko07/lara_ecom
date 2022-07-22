@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - Checkout Page
+    SODIB-CI || Checkout Page
 @endsection
 
 @section('frontend_content')
@@ -55,12 +55,12 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="info-title" for="shippingPostCode">Shipping Post
-                                                    Code<span>*</span></label>
-                                                <input type="text" class="form-control unicase-form-control text-input"
-                                                    id="shippingPostCode" placeholder="Enter your name here"
-                                                    name="shipping_postCode">
-                                                    @error('shipping_postCode')
+                                                <label class="info-title" for="shippingPhone2">Phone 2
+                                                    <span>*</span></label>
+                                                <input type="tel" class="form-control unicase-form-control text-input"
+                                                    id="shippingPhone2" placeholder="Enter your name here"
+                                                    name="shipping_phone2">
+                                                    @error('shipping_phone2')
                                                         <span class="alert text-danger">{{ $message }}</span>
                                                     @enderror
                                             </div>
@@ -99,21 +99,20 @@
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                        <div class="form-group">
+                                        {{--<div class="form-group">
                                             <h5>State Select <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <select class="custom-select form-control unicase-form-control" aria-label="State Select" name="state_id">
+                                                <input type="phone" class="form-control unicase-form-control text-input"
+                                                    id="shippingPhone" placeholder="Enter your address"
+                                                    name="state_id">
+                                                {{--<select class="custom-select form-control unicase-form-control" aria-label="State Select" name="state_id">
                                                     <option selected="" disabled="">Select state Name</option>
-                                                    @foreach ($states as $item)
-                                                    <option value="{{ $item->state_id }}">
-                                                        {{ $item->state_name  }}</option>
-                                                    @endforeach
-                                                </select>
+                                                </select>--}
                                             </div>
                                             @error('state_id')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
-                                        </div>
+                                        </div>--}}
 
                                         <label class="info-title" for="shippingAddrees">Shipping
                                             Addres<span>*</span></label>

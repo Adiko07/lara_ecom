@@ -118,7 +118,7 @@
         {{-- <td align="center">
             <img src="{{ asset($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
         </td> --}}
-        <td align="center">{{ $item->product->product_name_en }}</td>
+        <td align="center">{{ $item->product->product_name }}</td>
         <td align="center">{{ $item->size }}</td>
         <td align="center">{{ $item->color }}</td>
         <td align="center">{{ $item->product->product_code }}</td>

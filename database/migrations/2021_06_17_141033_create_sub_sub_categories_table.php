@@ -18,9 +18,9 @@ class CreateSubSubCategoriesTable extends Migration
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('subcategory_id')->nullable();
             $table->string('subsubcategory_name_en');
-            $table->string('subsubcategory_name_bn');
+            $table->string('subsubcategory_name_bn')->nullable()->default('sodibci');
             $table->string('subsubcategory_slug_en');
-            $table->string('subsubcategory_slug_bn');
+            $table->string('subsubcategory_slug_bn')->nullable()->default('sodibci');
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')

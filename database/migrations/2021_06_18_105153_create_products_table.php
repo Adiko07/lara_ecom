@@ -15,22 +15,22 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('brand_id')->nullable();
+            $table->unsignedBigInteger('brand_id')->nullable()->default(1);
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('subcategory_id')->nullable();
             $table->unsignedBigInteger('sub_subcategory_id')->nullable();
             $table->string('product_name_en');
-            $table->string('product_name_bn');
+            $table->string('product_name_bn')->nullable()->default('sodibci');
             $table->string('product_slug_en');
-            $table->string('product_slug_bn');
+            $table->string('product_slug_bn')->nullable()->default('sodibci');
             $table->string('product_code')->nullable();
             $table->string('product_qty');
             $table->string('product_tags_en')->nullable();
-            $table->string('product_tags_bn')->nullable();
+            $table->string('product_tags_bn')->nullable()->default('sodibci');
             $table->string('product_size_en')->nullable();
-            $table->string('product_size_bn')->nullable();
+            $table->string('product_size_bn')->nullable()->default('sodibci');
             $table->string('product_color_en')->nullable();
-            $table->string('product_color_bn')->nullable();
+            $table->string('product_color_bn')->nullable()->default('sodibci');
             $table->unsignedInteger('purchase_price')->nullable();
             $table->unsignedInteger('selling_price');
             $table->unsignedInteger('discount_price')->nullable();

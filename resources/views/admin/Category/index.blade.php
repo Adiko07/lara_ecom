@@ -11,8 +11,8 @@
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Brands Data Table</h3>
-                        <a href="{{ route('categories.create') }}" class="btn btn-primary">Create New Category</a>
+                        <h3 class="box-title">Toutes les catégories</h3>
+                        <a href="{{ route('categories.create') }}" class="btn btn-primary">Créér une nouvelle catégorie</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -25,10 +25,10 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Category ICON</th>
-                                                    <th>Category Name EN</th>
-                                                    <th>Category Name BN</th>
-                                                    <th>Category Image</th>
+                                                    <th>Icone Catégorie</th>
+                                                    <th>Catégorie</th>
+                                                    {{--<th>Category Name BN</th>--}}
+                                                    <th>Image Catégorie</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -38,7 +38,7 @@
                                                     <td>{{ $loop->index+1 }}</td>
                                                     <td>{{ $item->category_icon }}</td>
                                                     <td class="sorting_1">{{ $item->category_name_en }}</td>
-                                                    <td>{{ $item->category_name_bn }}</td>
+                                                    {{--<td>{{ $item->category_name_bn }}</td>--}}
                                                     <td>
                                                         <img src="{{ asset($item->category_image) }}" alt="" style="width: 70px; height:40px;">
                                                     </td>

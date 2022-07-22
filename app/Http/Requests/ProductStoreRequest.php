@@ -24,12 +24,12 @@ class ProductStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'brand_id' => 'required|numeric',
+            'brand_id' => 'nullable|numeric',
             'category_id' => 'required|numeric',
-            'subcategory_id' => 'required|numeric',
-            'sub_subcategory_id' => 'required|numeric',
+            'subcategory_id' => 'nullable|numeric',
+            'sub_subcategory_id' => 'nullable|numeric',
             'product_name_en' => 'required',
-            'product_name_bn' => 'required',
+            'product_name_bn' => 'nullable',
             'product_code' => 'nullable',
             'product_qty' => 'required|numeric',
             'product_tags_en' => 'nullable',

@@ -11,7 +11,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All SubCategory Data Table</h3>
+                        <h3 class="box-title">Toutes les sous-catégories</h3>
                         <a href="{{ route('subcategories.create') }}" class="btn btn-primary">Create New SubCategory</a>
                     </div>
                     <!-- /.box-header -->
@@ -25,9 +25,9 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>SubCategory Name EN</th>
-                                                    <th>SubCategory Name BN</th>
-                                                    <th>Category Name</th>
+                                                    <th>Sous catégorie</th>
+                                                    {{--<th>SubCategory Name BN</th>--}}
+                                                    <th>Catégorie parente</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -36,7 +36,7 @@
                                                 <tr role="row" class="odd">
                                                     <td>{{ $loop->index+1 }}</td>
                                                     <td class="sorting_1">{{ $item->subcategory_name_en }}</td>
-                                                    <td>{{ $item->subcategory_name_bn }}</td>
+                                                    {{--<td>{{ $item->subcategory_name_bn }}</td>--}}
                                                     <td>{{ $item->category->category_name_en }}</td>
                                                     <td>
                                                         <div class="input-group">

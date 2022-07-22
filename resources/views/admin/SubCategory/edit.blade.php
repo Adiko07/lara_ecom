@@ -12,7 +12,7 @@
             <div class="col-md-8 col-lg-8 offset-2">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Update Sub Category</h3>
+                        <h3 class="box-title">Modifier une sous-catégories</h3>
                         <a href="{{ route('subcategories.index') }}" class="btn btn-primary">Back List Sub Category</a>
                     </div>
                     <!-- /.box-header -->
@@ -21,7 +21,7 @@
                             @method('put')
                             @csrf
                             <div class="form-group">
-                                <h5>Sub Category Name EN <span class="text-danger">*</span></h5>
+                                <h5>Sous catégorie <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" value="{{ old('subcategory_name_en', $subcategory->subcategory_name_en) }}" name="subcategory_name_en" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
                                 </div>
@@ -29,7 +29,7 @@
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            {{--<div class="form-group">
                                 <h5>Sub Category Name BN <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" value="{{ old('subcategory_name_bn', $subcategory->subcategory_name_en) }}" name="subcategory_name_bn" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
@@ -37,9 +37,9 @@
                                 @error('subcategory_name_bn')
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div>--}}
                             <div class="form-group">
-                                <h5>Category Name <span class="text-danger">*</span></h5>
+                                <h5>Attribuer une catégorie <span class="text-danger">*</span></h5>
                                 {{-- <div class="controls">
                                     <input type="file" name="category_image" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
                                 </div> --}}
@@ -54,7 +54,7 @@
                                 @enderror
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                <button type="submit" class="btn btn-rounded btn-info">Modifier</button>
                             </div>
                         </form>
                     </div>

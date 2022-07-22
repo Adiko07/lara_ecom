@@ -96,10 +96,10 @@ class CheckoutController extends Controller
         $data['shipping_name'] = $request->shipping_name;
         $data['shipping_email'] = $request->shipping_email;
         $data['shipping_phone'] = $request->shipping_phone;
-        $data['shipping_postCode'] = $request->shipping_postCode;
+        $data['shipping_phone2'] = $request->shipping_phone2;
         $data['division_id'] = $request->division_id;
         $data['district_id'] = $request->district_id;
-        $data['state_id'] = $request->state_id;
+        //$data['state_id'] = $request->state_id;
         $data['shipping_address'] = $request->shipping_address;
         $data['shipping_notes'] = $request->shipping_notes;
 
@@ -145,13 +145,12 @@ class CheckoutController extends Controller
                 $cart_total = Cart::total();
 
                 $divisions = ShipDivision::with(['districts', 'states'])->latest()->get();
-                $states = ShipState::with(['division','district'])->latest()->get();
                 //return $divisions;
                 return view('frontend.checkout_page.checkout_page', compact(
                     'carts',
                     'cart_qty',
                     'cart_total',
-                    'divisions','states'
+                    'divisions'
                 ));
             }else{
                 $notification = [

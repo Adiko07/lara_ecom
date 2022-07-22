@@ -16,13 +16,13 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('division_id');
-            $table->foreignId('district_id');
-            $table->foreignId('state_id');
+            //$table->foreignId('division_id');
+            //$table->foreignId('district_id');
+            //$table->foreignId('state_id')->nullable();
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->unsignedInteger('post_code')->nullable();
+            $table->string('phone2')->nullable();
             $table->text('notes')->nullable();
             $table->text('address');
             $table->string('payment_type');

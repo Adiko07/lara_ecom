@@ -12,8 +12,8 @@
             <div class="col-md-8 col-lg-8 offset-2">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Update Category</h3>
-                        <a href="{{ route('categories.index') }}" class="btn btn-primary">Back List Category</a>
+                        <h3 class="box-title">Modifier Catégorie</h3>
+                        <a href="{{ route('categories.index') }}" class="btn btn-primary">Liste des catégories</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -21,25 +21,25 @@
                             @method('put')
                             @csrf
                             <div class="form-group">
-                                <h5>Category Name EN <span class="text-danger">*</span></h5>
+                                <h5>Catégorie <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" value="{{ old('category_name_en', $category->category_name_en) }}" name="category_name_en" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" value="{{ old('category_name_en', $category->category_name_en) }}" name="category_name_en" class="form-control" required="" data-validation-required-message="Ce champs est requis"> <div class="help-block"></div>
                                 </div>
                                 @error('category_name_en')
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            {{--<div class="form-group">
                                 <h5>Category Name BN <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" value="{{ old('category_name_bn', $category->category_name_bn) }}" name="category_name_bn" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" value="{{ old('category_name_bn', $category->category_name_bn) }}" name="category_name_bn" class="form-control" data-validation-required-message="Ce champs est requis"> <div class="help-block"></div>
                                 </div>
                                 @error('category_name_bn')
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
-                            </div>
+                            </div>--}}
                             <div class="form-group">
-                                <h5>Category Icon <span class="text-danger"></span></h5>
+                                <h5>Icone de la catégorie <span class="text-danger"></span></h5>
                                 <div class="controls">
                                     <input type="text" name="category_icon" class="form-control" value="{{ old('category_icon', $category->category_icon) }}"> <div class="help-block"></div>
                                 </div>
@@ -48,7 +48,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Category Image <span class="text-danger">*</span></h5>
+                                <h5>Image de la catégorie <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="file" name="category_image" class="form-control"> <div class="help-block"></div>
                                 </div>
@@ -57,7 +57,7 @@
                                 @enderror
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                <button type="submit" class="btn btn-rounded btn-info">Modifier</button>
                             </div>
                         </form>
                     </div>

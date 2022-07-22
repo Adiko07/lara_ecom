@@ -1,4 +1,4 @@
-@php
+{{--@php
     $tags_en = App\Models\Product::groupBy('product_tags_en')->select('product_tags_en')->get();
     $tags_bn = App\Models\Product::groupBy('product_tags_bn')->select('product_tags_bn')->get();
 @endphp
@@ -21,4 +21,4 @@
     </div>
     <!-- /.sidebar-widget-body -->
 </div>
-<!-- /.sidebar-widget -->
+<!-- /.sidebar-widget -->--}}

@@ -19,6 +19,10 @@ class CreateOrderItemsTable extends Migration
             $table->foreignId('product_id')->constrained('products');
             $table->string('color')->nullable();
             $table->string('size')->nullable();
+            $table->string('longueur')->nullable();
+            $table->string('largeur')->nullable();
+            $table->string('epaisseur')->nullable();
+            $table->string('livraison')->nullable();
             $table->unsignedInteger('qty');
             $table->float('unit_price',8,2);
             $table->timestamps();

@@ -4,7 +4,7 @@
         @if (session()->get('language') == 'bangla')
         {{ $skip_brand_0->brand_name_bn }} ব্র্যান্ড পণ্য
         @else
-        {{ $skip_brand_0->brand_name_en }} Brand Products
+        PRODUITS DE MARQUE {{ $skip_brand_0->brand_name_en }}
         @endif
     </h3>
     <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
@@ -44,15 +44,16 @@
                     <div class="cart clearfix animate-effect">
                         <div class="action">
                             <ul class="list-unstyled">
-                                <li class="add-cart-button btn-group">
+                                {{--<li class="add-cart-button btn-group">
                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i
                                             class="fa fa-shopping-cart"></i> </button>
-                                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                            <input type="hidden" name="" id="product_id" value="{{ $product->id }}" min="1">
+                                    <button class="btn btn-primary cart-btn" onclick="addToCart()">Add to cart</button>
                                 </li>
                                 <li class="lnk wishlist"> <a class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}" title="Wishlist"> <i
                                             class="icon fa fa-heart"></i> </a> </li>
                                 <li class="lnk"> <a class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}" title="Compare"> <i
-                                            class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                            class="fa fa-signal" aria-hidden="true"></i> </a> </li>--}}
                             </ul>
                         </div>
                         <!-- /.action -->

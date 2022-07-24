@@ -1,5 +1,5 @@
 <section class="section featured-product wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-    <h3 class="section-title">Related products</h3>
+    <h3 class="section-title">PRODUIT ASSOCIE</h3>
     <div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs"
         style="opacity: 1; display: block;">
 
@@ -41,10 +41,10 @@
 
                                     <div class="product-price">
                                         @if ($product->discount_price == NULL)
-                                        <span class="price">${{ $product->selling_price }}</span>
+                                        <span class="price">{{ $product->selling_price }} FCFA</span>
                                         @else
-                                        <span class="price">${{ $product->discount_price }}</span>
-                                        <span class="price-before-discount">${{ $product->selling_price }}</span>
+                                        <span class="price">{{ $product->discount_price }} FCFA</span>
+                                        <span class="price-before-discount">{{ $product->selling_price }} FCFA</span>
                                         @endif
                                     </div><!-- /.product-price -->
 

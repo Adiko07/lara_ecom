@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Invoice</title>
+<title>Facture</title>
 
 <style type="text/css">
     * {
@@ -54,7 +54,7 @@
             <pre class="font" >
                {{ env('APP_NAME') }}
                Email:{{ env('MAIL_FROM_ADDRESS') }}
-               Mob: {{ env('MOBILE_NUMBER') }}
+               Téléphone: {{ env('MOBILE_NUMBER') }}
                {{ env('BUSINESS_ADDRESS') }}
 
             </pre>
@@ -70,44 +70,44 @@
     <tr>
         <td>
           <p class="font" style="margin-left: 20px;">
-           <strong>Name:</strong> {{ $order->name }} <br>
+           <strong>Nom & prénoms:</strong> {{ $order->name }} <br>
            <strong>Email:</strong> {{ $order->email }} <br>
-           <strong>Phone:</strong> {{ $order->phone }} <br>
+           <strong>Téléphone:</strong> {{ $order->phone }} <br>
 
-           <strong>Address:</strong> {{ $order->address }} <br>
-           <strong>Location:</strong>
+           <strong>Adresse:</strong> {{ $order->address }} <br>
+           <strong>Géolocalisation:</strong>
            {{ $order->state->state_name }},
            {{ $order->district->district_name }},
            {{ $order->division->division_name }} <br>
-           <strong>Post Code:</strong> {{ $order->post_code }}
+           <strong>Code Postal:</strong> {{ $order->post_code }}
          </p>
         </td>
         <td>
           <p class="font">
             <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_number }}</h3>
-            Order Date: {{ $order->created_at }} <br>
-            Delivery Date: {{ $order->delivered_date }} <br>
-            Payment Type : {{ $order->payment_type }} <br>
-            Payment Method: {{ $order->payment_method }}
+            Date de commande: {{ $order->created_at }} <br>
+            Date de livraison: {{ $order->delivered_date }} <br>
+            Type de paiement : {{ $order->payment_type }} <br>
+            Mode de paiement: {{ $order->payment_method }}
         </span>
          </p>
         </td>
     </tr>
   </table>
   <br/>
-<h3>Products</h3>
+<h3>Des produits</h3>
 
 
   <table width="100%">
     <thead style="background-color: green; color:#FFFFFF;">
         <tr class="font">
         {{-- <th>Image</th> --}}
-        <th>Product Name</th>
-        <th>Size</th>
-        <th>Color</th>
+        <th>Nom du produit</th>
+        <th>Taille</th>
+        <th>Couleur</th>
         <th>Code</th>
-        <th>Quantity</th>
-        <th>Unit Price </th>
+        <th>Quantité</th>
+        <th>Prix ​​unitaire</th>
         <th>Total </th>
       </tr>
     </thead>
@@ -133,18 +133,18 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span>$ {{ $order->amount }}</h2>
-            <h2><span style="color: green;">Total:</span> $ {{ $order->amount }}</h2>
+            <h2><span style="color: green;">Sous-total:</span>{{ $order->amount }} FCFA</h2>
+            <h2><span style="color: green;">Total:</span> $ {{ $order->amount }} FCFA</h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>
   </table>
   <div class="thanks mt-3">
-    <p>Thanks For Buying Products..!!</p>
+    <p>Merci d'avoir acheté nos produits..!!</p>
   </div>
   <div class="authority float-right mt-5">
       <p>-----------------------------------</p>
-      <h5>Authority Signature:</h5>
+      <h5>Signature de l'autorité :</h5>
     </div>
 </body>
 </html>

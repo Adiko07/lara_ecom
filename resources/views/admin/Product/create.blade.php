@@ -25,20 +25,6 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Nom de marque <span class="text-danger"></span></h5>
-                                        <select class="custom-select" aria-label="Default select example" name="brand_id">
-                                            <option>Choisissez une marque</option>
-                                            @foreach ($brands as $brand)
-                                                <option value="{{ $brand->id }}">{{ $brand->brand_name_en }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('brand_id')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
                                         <h5>Nom de la catégorie <span class="text-danger">*</span></h5>
                                         <select class="custom-select" aria-label="Default select example" name="category_id">
                                             <option selected>Choisissez une catégorie</option>
@@ -69,6 +55,20 @@
                                             <option value="" selected="" disabled="">Choisissez une sous sous-catégorie</option>
                                         </select>
                                         @error('sub_subcategory_id')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <h5>Nom de marque <span class="text-danger"></span></h5>
+                                        <select class="custom-select" aria-label="Default select example" name="brand_id">
+                                            <option>Choisissez une marque</option>
+                                            @foreach ($brands as $brand)
+                                                <option value="{{ $brand->id }}">{{ $brand->brand_name_en }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('brand_id')
                                             <span class="alert text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -129,7 +129,7 @@
                             <hr>
                             {{-- Third row start --}}
                             <div class="row">
-                                <div class="col-md-4">
+                                {{--<div class="col-md-4">
                                     <div class="form-group">
                                         <h5>Étiquette de produit  <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -140,7 +140,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                {{--<div class="col-md-2">
+                                <div class="col-md-2">
                                     <div class="form-group">
                                         <h5>Product Tag BN <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -197,6 +197,39 @@
                                         @enderror
                                     </div>
                                 </div>--}}
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h5>Longueur <span class="text-danger"></span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="longueur" class="form-control" value="1m,2m,3m" data-role="tagsinput"> <div class="help-block"></div>
+                                        </div>
+                                        @error('longueur')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h5>Largeur <span class="text-danger"></span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="largeur" class="form-control" value="25cm,20cm" data-role="tagsinput"> <div class="help-block"></div>
+                                        </div>
+                                        @error('largeur')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h5>Epaisseur <span class="text-danger"></span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="epaisseur" class="form-control" value="2cm,5mm" data-role="tagsinput"> <div class="help-block"></div>
+                                        </div>
+                                        @error('epaisseur')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
                             </div>
                             {{-- Third row end --}}
                             <h5 class="text-warning mt-4">Zone d'information sur les prix des produits</h5>

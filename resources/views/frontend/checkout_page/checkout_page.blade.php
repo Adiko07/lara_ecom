@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    SODIB-CI || Checkout Page
+    SODIB-CI || Page de paiement
 @endsection
 
 @section('frontend_content')
@@ -19,13 +19,12 @@
 
                                     <!-- guest-login -->
                                     <div class="col-md-6 col-sm-6 already-registered-login">
-                                        <h4 class="checkout-subtitle"><b>Shipping Address</b></h4>
+                                        <h4 class="checkout-subtitle"><b>Adresse de livraison</b></h4>
 
                                         <form class="shipping-form" method="POST" action="{{ route('checkout.store') }}">
                                             @csrf
                                             <div class="form-group">
-                                                <label class="info-title" for="shippingName">Shipping
-                                                    Name<span>*</span></label>
+                                                <label class="info-title" for="shippingName">Nom pour la livraison<span>*</span></label>
                                                 <input type="text" class="form-control unicase-form-control text-input"
                                                     id="shippingName" placeholder="Enter your name here"
                                                     name="shipping_name" value="{{ Auth::user()->name }}">
@@ -34,7 +33,7 @@
                                                     @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label class="info-title" for="shippingEmail">Shipping email
+                                                <label class="info-title" for="shippingEmail">Email d'expédition
                                                     <span>*</span></label>
                                                 <input type="email" class="form-control unicase-form-control text-input"
                                                     id="shippingEmail" placeholder="Enter your email here"
@@ -44,8 +43,7 @@
                                                     @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label class="info-title" for="shippingPhone">Shipping
-                                                    Phone<span>*</span></label>
+                                                <label class="info-title" for="shippingPhone">Téléphone :<span>*</span></label>
                                                 <input type="phone" class="form-control unicase-form-control text-input"
                                                     id="shippingPhone" placeholder="Enter your phone number"
                                                     name="shipping_phone" value="{{ Auth::user()->phone_number }}">
@@ -55,7 +53,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="info-title" for="shippingPhone2">Phone 2
+                                                <label class="info-title" for="shippingPhone2">Téléphone 2
                                                     <span>*</span></label>
                                                 <input type="tel" class="form-control unicase-form-control text-input"
                                                     id="shippingPhone2" placeholder="Enter your name here"
@@ -69,9 +67,9 @@
 
                                     <!-- already-registered-login -->
                                     <div class="col-md-6 col-sm-6 already-registered-login">
-                                        <h4 class="checkout-subtitle"><b>Address Bar</b></h4>
+                                        <h4 class="checkout-subtitle"><b>Barre d'adresse</b></h4>
 
-                                        <div class="form-group">
+                                        {{--<div class="form-group">
                                             <h5>Division Select <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <select class="custom-select form-control unicase-form-control" aria-label="Division Select" name="division_id">
@@ -85,9 +83,9 @@
                                             @error('division_id')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
-                                        </div>
+                                        </div>--}}
 
-                                        <div class="form-group">
+                                        {{--<div class="form-group">
                                             <h5>District Select <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <select class="custom-select form-control unicase-form-control" aria-label="District Select" name="district_id">
@@ -98,7 +96,7 @@
                                             @error('district_id')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
-                                        </div>
+                                        </div>--}}
                                         {{--<div class="form-group">
                                             <h5>State Select <span class="text-danger">*</span></h5>
                                             <div class="controls">
@@ -114,16 +112,15 @@
                                             @enderror
                                         </div>--}}
 
-                                        <label class="info-title" for="shippingAddrees">Shipping
-                                            Addres<span>*</span></label>
-                                        <textarea name="shipping_address" id="" cols="30" rows="10"
+                                        <label class="info-title" for="shippingAddrees">Adresse de livraison<span>*</span></label>
+                                        <textarea name="shipping_address" id="" cols="30" rows="1"
                                             class="form-control unicase-form-control text-input" id="shippingAddrees"
                                             placeholder="Example: H#05,R#02, Uttara Sector: 11, Uttara"></textarea>
                                             @error('shipping_address')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
                                             <div class="form-group">
-                                                <label class="info-title" for="shippingNotes">Shipping Notes<span></span></label>
+                                                <label class="info-title" for="shippingNotes">Notes d'expédition<span></span></label>
                                                 <textarea name="shipping_notes" id="" cols="30" rows="10" class="form-control unicase-form-control text-input" id="shippingNotes" placeholder="any Shipping notes"></textarea>
                                             </div>
                                     </div>
@@ -145,7 +142,7 @@
                     <div class="panel-group">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="unicase-checkout-title">Your Checkout Progress</h4>
+                                <h4 class="unicase-checkout-title">Progression de votre Paiement</h4>
                             </div>
                             <div class="___class_+?71___">
                                 <ul class="nav nav-checkout-progress list-unstyled">
@@ -156,31 +153,37 @@
                                                 style="height: 50px; width: 50px;" alt="">
                                         </li>
                                         <li>
-                                            <strong>Qty:</strong>
+                                            <strong>Qté:</strong>
                                             {{ $item->qty }}
-                                            <strong>Color:</strong>
+                                            <strong>Couleur:</strong>
                                             {{ $item->options->color }}
-                                            <strong>Size:</strong>
-                                            {{ $item->options->size }}
+                                            <strong>Taille:</strong>
+                                            {{ $item->options->size }} <br>
+                                            <strong>Longueur:</strong>
+                                            {{ $item->options->longueur }}
+                                            <strong>Largeur:</strong>
+                                            {{ $item->options->largeur }}
+                                            <strong>Epaisseur:</strong>
+                                            {{ $item->options->epaisseur }}
                                         </li>
                                     @endforeach
                                     <hr>
                                     <li>
                                         @if (Session::has('coupon'))
-                                            <strong>SubTotal: </strong> ${{ $cart_total }}
+                                            <strong>Sous-Total: </strong> ${{ $cart_total }}
                                             <hr>
-                                            <strong>Coupon Name: </strong> {{ session()->get('coupon')['coupon_name'] }}
+                                            <strong>Coupon : </strong> {{ session()->get('coupon')['coupon_name'] }}
                                             ( {{ session()->get('coupon')['coupon_discount'] }} %)
                                             <hr>
-                                            <strong>Coupon Discount:
-                                            </strong>(-)${{ session()->get('coupon')['discount_amount'] }}
+                                            <strong>Bon de réduction:
+                                            </strong>(-){{ session()->get('coupon')['discount_amount'] }} FCFA
                                             <hr>
-                                            <strong>Grand Total: </strong>${{ session()->get('coupon')['total_amount'] }}
+                                            <strong>Total: </strong>${{ session()->get('coupon')['total_amount'] }}
                                             <hr>
                                         @else
-                                            <strong>SubTotal: </strong> ${{ $cart_total }}
+                                            <strong>Sous-Total: </strong>{{ $cart_total }} FCFA
                                             <hr>
-                                            <strong>Grand Total: </strong> ${{ $cart_total }}
+                                            <strong>Total: </strong> {{ $cart_total }} FCFA
                                             <hr>
                                         @endif
 
@@ -197,27 +200,28 @@
                     <div class="panel-group">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="unicase-checkout-title">Select Payment Method</h4>
+                                <h4 class="unicase-checkout-title">Sélectionnez le mode de paiement</h4>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="">Stripe</label>
-                                    <input type="radio" name="payment_method" id="" value="stripe">
-                                    <img src="{{ asset('frontend/assets/images/payments/4.png') }}" alt="">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="">Card</label>
-                                    <input type="radio" name="payment_method" id="" value="card">
-                                    <img src="{{ asset('frontend/assets/images/payments/1.png') }}" alt="">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="">COD</label>
+                                    <label for="">Cash à la livraison</label>
                                     <input type="radio" name="payment_method" id="" value="cod">
                                     <img src="{{ asset('frontend/assets/images/payments/6.png') }}" alt="">
                                 </div>
                                 @error('payment_method')
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
+                                <div class="col-md-4">
+                                    {{--<label for="">Stripe</label>
+                                    <input type="radio" name="payment_method" id="" value="stripe">
+                                    <img src="{{ asset('frontend/assets/images/payments/4.png') }}" alt="">--}}
+                                    D'autres mode de paiement seront bientot disponible
+                                </div>
+                                {{--<div class="col-md-4">
+                                    <label for="">Card</label>
+                                    <input type="radio" name="payment_method" id="" value="card">
+                                    <img src="{{ asset('frontend/assets/images/payments/1.png') }}" alt="">
+                                </div>--}}
                             </div>
                         </div>
                     </div>

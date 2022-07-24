@@ -12,10 +12,10 @@
                 <tr>
                     <th>#</th>
                     <th>Date</th>
-                    <th>Invoice No</th>
+                    <th>Facture No</th>
                     <th>Total</th>
-                    <th>Payment</th>
-                    <th>Status</th>
+                    <th>Paiement</th>
+                    <th>Statut</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -48,12 +48,12 @@
                         <a href="{{ route('order-deatils', $order->id) }}" class="btn btn-sm btn-primary">
                             <i class="fa fa-eye"></i>View
                         </a>
-                        <a href="{{ route('invoice-download', $order->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-download"></i>Invoice</a>
+                        <a href="{{ route('invoice-download', $order->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-download"></i>Facture</a>
                     </td>
                 </tr>
                 @empty
                 <tr>
-                    <td>No order placed yet!</td>
+                    <td>Pas encore de commande passée !</td>
                 </tr>
                 @endforelse
             </tbody>

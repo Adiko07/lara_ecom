@@ -139,11 +139,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-8">
+                                            {{--<div class="col-sm-8">
                                                 <div class="reviews">
                                                     <a href="#" class="lnk">(13 Reviews)</a>
                                                 </div>
-                                            </div>
+                                            </div>--}}
                                         </div><!-- /.row -->
                                     </div><!-- /.rating-reviews -->
 
@@ -151,15 +151,15 @@
                                         <div class="row">
                                             <div class="col-sm-2">
                                                 <div class="stock-box">
-                                                    <span class="label">Availability :</span>
+                                                    <span class="label">Disponibilité :</span>
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="stock-box">
                                                     @if ($product->product_qty<1)
-                                                    <span class="value">Out of Stock</span>
+                                                    <span class="value">Stock épuisé</span>
                                                     @else
-                                                    <span class="value">In Stock</span>
+                                                    <span class="value">En Stock</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -179,10 +179,10 @@
                                             <div class="col-sm-6">
                                                 <div class="price-box">
                                                     @if ($product->discount_price == NULL)
-                                                        <span class="price">${{ $product->selling_price }}</span>
+                                                        <span class="price">{{ $product->selling_price }} FCFA</span>
                                                     @else
-                                                    <span class="price">${{ $product->discount_price }}</span>
-                                                    <span class="price-strike">${{ $product->selling_price }}</span>
+                                                    <span class="price">{{ $product->discount_price }} FCFA</span>
+                                                    <span class="price-strike">{{ $product->selling_price }} FCFA</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -256,19 +256,19 @@
                                     <div class="quantity-container info-container">
                                         <div class="row">
                                             <div class="col-sm-2">
-                                                <span class="label">Qty :</span>
+                                                <span class="label">Quantité:</span>
                                             </div>
 
                                             <div class="col-sm-2">
                                                 <div class="cart-quantity">
                                                     <div class="quant-input">
-                                                        <div class="arrows">
+                                                        {{--<div class="arrows">
                                                             <div class="arrow plus gradient"><span class="ir"><i
                                                                         class="icon fa fa-sort-asc"></i></span></div>
                                                             <div class="arrow minus gradient"><span class="ir"><i
                                                                         class="icon fa fa-sort-desc"></i></span></div>
-                                                        </div>
-                                                        <input type="number" id="qty" value="1" min="1">
+                                                        </div>--}}
+                                                        <input type="number" name="quantity" id="product_qty" value="1" min="1">
                                                     </div>
                                                 </div>
                                             </div>
@@ -292,8 +292,8 @@
                             <div class="col-sm-3">
                                 <ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
                                     <li class="active"><a data-toggle="tab" href="#description">DESCRIPTION</a></li>
-                                    <li><a data-toggle="tab" href="#review">REVIEW</a></li>
-                                    <li><a data-toggle="tab" href="#tags">TAGS</a></li>
+                                    <li><a data-toggle="tab" href="#review">CARACTERISTIQUE</a></li>
+                                    {{--<li><a data-toggle="tab" href="#tags">TAGS</a></li>--}}
                                 </ul><!-- /.nav-tabs #product-tabs -->
                             </div>
                             <div class="col-sm-9">
@@ -316,7 +316,7 @@
                                         <div class="product-tab">
 
                                             <div class="product-reviews">
-                                                <h4 class="title">Customer Reviews</h4>
+                                                <h4 class="title">Caracteristique du produit</h4>
 
                                                 <div class="reviews">
                                                     <div class="review">
@@ -393,7 +393,7 @@
                                                     </div><!-- /.table-responsive -->
                                                 </div><!-- /.review-table -->
 
-                                                <div class="review-form">
+                                                {{--<div class="review-form">
                                                     <div class="form-container">
                                                         <form role="form" class="cnt-form">
 
@@ -431,7 +431,7 @@
 
                                                         </form><!-- /.cnt-form -->
                                                     </div><!-- /.form-container -->
-                                                </div><!-- /.review-form -->
+                                                </div><!-- /.review-form -->--}}
 
                                             </div><!-- /.product-add-review -->
 
@@ -486,6 +486,52 @@
             <!--  BRANDS CAROUSEL : END  -->
         </div>
         <!-- /.container -->
+        <script>
+            // Add to Cart Product
+    function addToCart(){
+        var product_name = $('#pname').text();
+        var id = $('#product_id').val();
+        var color = $('#color option:selected').text();
+        var size = $('#size option:selected').text();
+        var qty = $('#product_qty').val();
 
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            data:{
+                color: color,
+                size:size,
+                qty: qty,
+                product_name: product_name,
+            },
+            url: '/cart/data/store/'+id,
+            success: function(data){
+                miniCart()
+                $('#closeModal').click();
+                // console.log(data)
+
+                const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 3000
+                })
+                if($.isEmptyObject(data.error)){
+                    Toast.fire({
+                        type:'success',
+                        title: data.success,
+                    })
+                }else{
+                    Toast.fire({
+                        type: 'error',
+                        title:data.error,
+                    })
+                }
+            }
+        })
+    }
+    // End to Cart Product
+        </script>
     </div>
 @endsection

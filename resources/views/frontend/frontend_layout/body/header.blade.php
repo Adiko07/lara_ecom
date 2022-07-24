@@ -6,22 +6,22 @@
                 <div class="cnt-account">
                     <ul class="list-unstyled">
                         @if (session()->get('language') == 'bangla')
-                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>আমার অ্যাকাউন্ট</a>
-                            </li>
+                            {{--<li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>আমার অ্যাকাউন্ট</a>
+                            </li>--}}
                         @else
-                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>My Account</a></li>
+                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>Mon Compte</a></li>
                         @endif
-                        <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>Wishlist</a></li>
-                        <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
+                        <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>Liste de souhait</a></li>
+                        <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>Mon panier</a></li>
                         @auth
-                            <li><a href="{{ route('checkout-page') }}"><i class="icon fa fa-check"></i>Checkout</a></li>
+                            <li><a href="{{ route('checkout-page') }}"><i class="icon fa fa-check"></i>Mes commandes</a></li>
                         @endauth
 
                         <li>
                             @auth
-                                <a href="{{ route('user.logout') }}"><i class="icon fa fa-user"></i>User Logout</a>
+                                <a href="{{ route('user.logout') }}"><i class="icon fa fa-user"></i>deconnexion</a>
                             @else
-                                <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>Login/Register</a>
+                                <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>connexion/inscription</a>
                             @endauth
                         </li>
                     </ul>
@@ -29,7 +29,7 @@
                 <!-- /.cnt-account -->
 
                 <div class="cnt-block">
-                    <ul class="list-unstyled list-inline">
+                    {{--<ul class="list-unstyled list-inline">
                         <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown"
                                 data-toggle="dropdown"><span class="value">USD </span><b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -54,7 +54,7 @@
                                 @endif
                             </ul>
                         </li>
-                    </ul>
+                    </ul>--}}
                     <!-- /.list-unstyled -->
                 </div>
                 <!-- /.cnt-cart -->
@@ -118,10 +118,10 @@
                             <div class="items-cart-inner">
                                 <div class="basket"> <i class="glyphicon glyphicon-shopping-cart"></i> </div>
                                 <div class="basket-item-count"><span class="count" id="cartQty"></span></div>
-                                <div class="total-price-basket"> <span class="lbl">cart -</span>
+                                <div class="total-price-basket"> <span class="lbl">Panier -</span>
                                     <span class="total-price">
-                                        <span class="sign">$</span>
                                         <span class="value" id="cartSubTotal"></span>
+                                        <span class="sign">FCFA</span>
                                     </span>
                                 </div>
                             </div>
@@ -137,11 +137,11 @@
                                 {{-- mini cart start with AJAX END --}}
 
                                 <div class="clearfix cart-total">
-                                    <div class="pull-right"> <span class="text">Sub Total :</span class="sign">$<span
+                                    <div class="pull-right"> <span class="text">Sous Total :</span class="sign">FCFA<span
                                             class='price' id="cartSubTotal"></span> </div>
                                     <div class="clearfix"></div>
 
-                                    <a href="{{ route('checkout-page') }}" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
+                                    <a href="{{ route('checkout-page') }}" class="btn btn-upper btn-primary btn-block m-t-20">Vérifier</a>
 
                                 </div>
                                 <!-- /.cart-total-->

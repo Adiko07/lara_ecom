@@ -52,8 +52,8 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-group">
-                        <li class="list-group-item">Price: <strong class="text-danger">BDT
-                        <span id="price"></span>
+                        <li class="list-group-item">Price: <strong class="text-danger">
+                        <span id="price"></span> FCFA
                         </strong>
                         <del id="oldprice"></del>
                     </li>

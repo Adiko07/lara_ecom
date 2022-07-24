@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - Cart Page
+    SODIB-CI || MON PANIER
 @endsection
 
 @section('frontend_content')
@@ -15,12 +15,12 @@
                                 <thead>
                                     <tr>
                                         <th>Image</th>
-                                        <th>Name</th>
-                                        <th>Color</th>
-                                        <th>Size</th>
-                                        <th>Qty</th>
-                                        <th>Subtotal</th>
-                                        <th>Remove</th>
+                                        <th>Nom</th>
+                                        <th>Couleur</th>
+                                        <th>Taille</th>
+                                        <th>Quantité</th>
+                                        <th>Sous-total</th>
+                                        <th>Supprimer</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -28,11 +28,10 @@
                                         <td colspan="7">
                                             <div class="shopping-cart-btn">
                                                 <span class="">
-                                                    <a href="#" class="btn btn-upper btn-primary outer-left-xs">Continue
-                                                        Shopping</a>
-                                                    <a href="#"
+                                                    <a href="{{ route('home')}}" class="btn btn-upper btn-primary outer-left-xs">Continuer mes achats</a>
+                                                    {{--<a href="#"
                                                         class="btn btn-upper btn-primary pull-right outer-right-xs">Update
-                                                        shopping cart</a>
+                                                        shopping cart</a>--}}
                                                 </span>
                                             </div><!-- /.shopping-cart-btn -->
                                         </td>
@@ -43,7 +42,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12 estimate-ship-tax">
+                    {{--<div class="col-md-4 col-sm-12 estimate-ship-tax">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -84,7 +83,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div>--}}
                     <div class="col-md-4 col-sm-12 estimate-ship-tax">
                         @if (Session::has('coupon'))
 
@@ -93,8 +92,8 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        <span class="estimate-title">Discount Code</span>
-                                        <p>Enter your coupon code if you have one..</p>
+                                        <span class="estimate-title">Code de réduction</span>
+                                        <p>Entrez votre code promo si vous en avez un..</p>
                                     </th>
                                 </tr>
                             </thead>
@@ -107,7 +106,7 @@
                                         </div>
                                         <div class="clearfix pull-right">
                                             <button type="submit" class="btn-upper btn btn-primary"
-                                            onclick="applyCoupon()">APPLY COUPON</button>
+                                            onclick="applyCoupon()">APPLIQUER COUPON</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -124,8 +123,7 @@
                                 <tr>
                                     <td>
                                         <div class="cart-checkout-btn pull-right">
-                                            <a href="{{ route('checkout-page') }}" type="submit" class="btn btn-primary checkout-btn">PROCCED TO
-                                                CHEKOUT</a>
+                                            <a href="{{ route('checkout-page') }}" type="submit" class="btn btn-primary checkout-btn">PASSER À LA CAISSE</a>
                                             {{-- <span class="">Checkout with multiples address!</span> --}}
                                         </div>
                                     </td>
@@ -166,11 +164,11 @@
                                 :
                                 `<button type="submit" class="btn btn-danger btn-sm" disabled>-</button>`
                                 }
-                                <input type="text" value="${value.qty}" min="1" max="100" disabled="" style="width:25px;">
+                                <input type="text" value="${value.qty}" min="1" max="500"  style="width:30px;">
                                 <button type="submit" class="btn btn-success btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)">+</button>
                                 </td>
 
-                                <td class="col-md-2"><strong>$${value.subtotal}</strong></td>
+                                <td class="col-md-2"><strong>${value.subtotal} FCFA</strong></td>
 
                                 <td class="col-md-1 close-btn">
                                     <button type="submit" class="" id="${value.rowId}" onclick="cartRemove(this.id)"><i class="fa fa-times"></i></button>
@@ -349,10 +347,10 @@
                             `<tr>
                                     <th>
                                         <div class="cart-sub-total">
-                                            Subtotal<span class="inner-left-md">$${data.total}</span>
+                                            Subtotal<span class="inner-left-md">${data.total} FCFA</span>
                                         </div>
                                         <div class="cart-grand-total">
-                                            Grand Total<span class="inner-left-md">$${data.total}</span>
+                                            Grand Total<span class="inner-left-md">${data.total} FCFA</span>
                                         </div>
                                     </th>
                             </tr>`
@@ -366,10 +364,10 @@
                                         <div class="cart-sub-total">Coupon Name<span class="inner-left-md">${data.coupon_name}</span>
                                             <button type="submit" onclick="couponRemove()"><i class="fa fa-times"></i></button>
                                         </div>
-                                        <div class="cart-sub-total">Discount Amount<span class="inner-left-md">$ ${data.discount_amount}</span>
+                                        <div class="cart-sub-total">Discount Amount<span class="inner-left-md">${data.discount_amount} FCFA</span>
                                         </div>
                                         <div class="cart-grand-total">
-                                            Grand Total Amount<span class="inner-left-md">$ ${data.total_amount}</span>
+                                            Grand Total Amount<span class="inner-left-md">${data.total_amount} FCFA</span>
                                         </div>
                                     </th>
                             </tr>`

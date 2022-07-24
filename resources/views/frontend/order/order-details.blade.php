@@ -9,28 +9,33 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h4>Shipping Details</h4>
+                    <h4>Les détails d'expédition</h4>
                 </div>
                 <hr>
                 <div class="card-body" style="background: #E9EBEC;">
                     <table class="table">
                         <tr>
-                            <th> Shipping Name : </th>
+                            <th> Nom pour la livraison : </th>
                             <th> {{ $order->name }} </th>
                         </tr>
 
                         <tr>
-                            <th> Shipping Phone : </th>
+                            <th> Téléphone d'expédition : </th>
                             <th> {{ $order->phone }} </th>
                         </tr>
 
                         <tr>
-                            <th> Shipping Email : </th>
+                            <th> Téléphone d'expédition 2: </th>
+                            <th> {{ $order->phone2 }} </th>
+                        </tr>
+
+                        <tr>
+                            <th> E-mail d'expédition : </th>
                             <th> {{ $order->email }} </th>
                         </tr>
 
                         <tr>
-                            <th> Division : </th>
+                            <th> département: </th>
                             <th> {{ $order->division->division_name }} </th>
                         </tr>
 
@@ -40,17 +45,17 @@
                         </tr>
 
                         <tr>
-                            <th> State : </th>
+                            <th> État :</th>
                             <th>{{ $order->state->state_name }} </th>
                         </tr>
 
                         <tr>
-                            <th> Post Code : </th>
+                            <th> Code Postal : </th>
                             <th> {{ $order->post_code }} </th>
                         </tr>
 
                         <tr>
-                            <th> Order Date : </th>
+                            <th> Date de commande : </th>
                             <th> {{ $order->order_date }} </th>
                         </tr>
 
@@ -63,20 +68,20 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h4>Order Details
-                        <span class="text-danger"> Invoice : {{ $order->invoice_number }}</span>
+                    <h4>Détails de la commande
+                        <span class="text-danger"> Facture d'achat : {{ $order->invoice_number }}</span>
                     </h4>
                     @if ($order->status == 'pending')
 
                     @else
                     <ul>
-                        <li> Confirmed Date: {{ $order->confirmed_date }}</li>
-                        <li> Processing Date: {{ $order->processing_date }}</li>
-                        <li> Picked Date: {{ $order->picked_date }}</li>
-                        <li> Shipped Date: {{ $order->shipped_date }}</li>
-                        <li> Delivered Date: {{ $order->delivered_date }}</li>
-                        <li> Cancel Date: {{ $order->cancel_date }}</li>
-                        <li> Return Date: {{ $order->return_date }}</li>
+                        <li> Date confirmée : {{ $order->confirmed_date }}</li>
+                        <li> Date de traitement: {{ $order->processing_date }}</li>
+                        <li> Date Ramassage: {{ $order->picked_date }}</li>
+                        <li> Date d'envoi: {{ $order->shipped_date }}</li>
+                        <li> Date de livraison : {{ $order->delivered_date }}</li>
+                        <li> Date d'annulation : {{ $order->cancel_date }}</li>
+                        <li> Date de retour: {{ $order->return_date }}</li>
                     </ul>
                     @endif
                 </div>
@@ -84,37 +89,37 @@
                 <div class="card-body" style="background: #E9EBEC;">
                     <table class="table">
                         <tr>
-                            <th> Name : </th>
+                            <th> Nom & Prénoms: </th>
                             <th> {{ $order->user->name }} </th>
                         </tr>
 
                         <tr>
-                            <th> Phone : </th>
+                            <th> Téléphone : </th>
                             <th> {{ $order->user->phone }} </th>
                         </tr>
 
                         <tr>
-                            <th> Payment Type : </th>
+                            <th> Type de paiement : </th>
                             <th> {{ $order->payment_method }} </th>
                         </tr>
 
                         <tr>
-                            <th> Tranx ID : </th>
+                            <th> ID Transaction : </th>
                             <th> {{ $order->transaction_id }} </th>
                         </tr>
 
                         <tr>
-                            <th> Invoice : </th>
+                            <th> Facture : </th>
                             <th class="text-danger"> {{ $order->invoice_number }} </th>
                         </tr>
 
                         <tr>
-                            <th> Order Total :$ </th>
-                            <th>{{ $order->amount }} </th>
+                            <th> Total de la commande: </th>
+                            <th>{{ $order->amount }} FCFA</th>
                         </tr>
 
                         <tr>
-                            <th> Order : </th>
+                            <th> Statut de la commande : </th>
                             <th>
                                 <span class="badge badge-pill badge-warning"
                                     style="background: #418DB9;">{{ $order->status }} </span>
@@ -137,22 +142,22 @@
                                 <label for=""> Image</label>
                             </td>
                             <td class="col-md-3">
-                                <label for=""> Product Name </label>
+                                <label for=""> Nom du produit </label>
                             </td>
                             <td class="col-md-3">
-                                <label for=""> Product Code</label>
+                                <label for=""> Code produit</label>
                             </td>
                             <td class="col-md-2">
-                                <label for=""> Color </label>
+                                <label for=""> Couleur </label>
                             </td>
                             <td class="col-md-2">
-                                <label for=""> Size </label>
+                                <label for=""> Taille </label>
                             </td>
                             <td class="col-md-1">
-                                <label for=""> Quantity </label>
+                                <label for=""> Quantité </label>
                             </td>
                             <td class="col-md-1">
-                                <label for=""> Price </label>
+                                <label for=""> Prix </label>
                             </td>
                             <td class="col-md-1">
                                 <label for=""> Action </label>
@@ -197,7 +202,7 @@
                                     @elseif($order->status != 'pending')
 
                                         <a target="_blank" class="btn btn-danger" href="{{ asset('upload/pdf/' . $file->digital_file) }}">
-                                            <i class="fa fa-download"></i>Inovice
+                                            <i class="fa fa-download"></i>Facture
                                         </a>
                                     @endif
                                 </td>
@@ -220,13 +225,13 @@
             <form action="{{ route('return.order', $order->id) }}" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="label"> Order Return Reason:</label>
+                    <label for="label"> Raison du retour de la commande:</label>
                     <textarea name="return_reason" id="" class="form-control" cols="30" rows="05">Return Reason</textarea>
                 </div>
-                <button type="submit" class="btn btn-danger">Order Return</button>
+                <button type="submit" class="btn btn-danger">Retour de commande</button>
             </form>
         @else
-            <span class="badge badge-pill badge-warning" style="background: red">You Have send return request for this product</span>
+            <span class="badge badge-pill badge-warning" style="background: red">Vous avez envoyé une demande de retour pour ce produit</span>
         @endif
     @endif
     <br><br>

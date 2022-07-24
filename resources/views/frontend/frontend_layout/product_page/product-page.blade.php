@@ -212,19 +212,13 @@
                                             <div class="form-group">
                                                 @if ($product->product_color_en == NULL)
                                                 @else
-                                                <label class="info-title control-label">Choose Color <span>*</span></label>
+                                                <label class="info-title control-label">Couleur <span>*</span></label>
                                                 <select class="form-control unicase-form-control selectpicker" style="display: none;"
                                                 id="color">
-                                                    <option selected="" disabled="">--Select color--</option>
-                                                    @if (session()->get('langiage') == 'bangla')
-                                                    @foreach ($colors_bn as $item)
-                                                        <option value="{{ $item }}">{{ ucwords($item) }}</option>
-                                                    @endforeach
-                                                    @else
+                                                <option selected="" disabled="">--Choisissez la couleur--</option>
                                                     @foreach ($colors_en as $item)
                                                         <option value="{{ $item }}">{{ ucwords($item)}}</option>
                                                     @endforeach
-                                                    @endif
                                                 </select>
                                                 @endif
                                             </div>
@@ -233,19 +227,58 @@
                                             <div class="form-group">
                                                 @if ($product->product_size_en == NULL)
                                                 @else
-                                                <label class="info-title control-label">Choose Size <span>*</span></label>
+                                                <label class="info-title control-label">Taille <span>*</span></label>
                                                 <select class="form-control unicase-form-control selectpicker" style="display: none;"
                                                 id="size">
-                                                    <option selected="" disabled="">--Select size--</option>
-                                                    @if (session()->get('langiage') == 'bangla')
-                                                    @foreach ($size_bn as $item)
-                                                        <option value="{{ $item }}">{{ ucwords($item) }}</option>
-                                                    @endforeach
-                                                    @else
+                                                    <option selected="" disabled="">--Choisissez la taille--</option>
                                                     @foreach ($size_en as $item)
                                                         <option value="{{ $item }}"> {{ ucwords($item) }}</option>
                                                     @endforeach
-                                                    @endif
+                                                </select>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                @if ($product->longueur == NULL)
+                                                @else
+                                                <label class="info-title control-label">Longueur <span>*</span></label>
+                                                <select class="form-control unicase-form-control selectpicker" style="display: none;"
+                                                id="longueur">
+                                                    <option selected="" disabled="">--choisissez la longueur--</option>
+                                                    @foreach ($longueur as $item)
+                                                        <option value="{{ $item }}"> {{ ucwords($item) }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                @if ($product->largeur == NULL)
+                                                @else
+                                                <label class="info-title control-label">Largeur <span>*</span></label>
+                                                <select class="form-control unicase-form-control selectpicker" style="display: none;"
+                                                id="largeur">
+                                                    <option selected="" disabled="">--Choisissez la largeur--</option>
+                                                    @foreach ($largeur as $item)
+                                                        <option value="{{ $item }}"> {{ ucwords($item) }}</option>
+                                                    @endforeach
+                                                </select>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                @if ($product->epaisseur == NULL)
+                                                @else
+                                                <label class="info-title control-label">Epaisseur <span>*</span></label>
+                                                <select class="form-control unicase-form-control selectpicker" style="display: none;"
+                                                id="epaisseur">
+                                                    <option selected="" disabled="">--Choisissez une épaisseur--</option>
+                                                    @foreach ($epaisseur as $item)
+                                                        <option value="{{ $item }}"> {{ ucwords($item) }}</option>
+                                                    @endforeach
                                                 </select>
                                                 @endif
                                             </div>

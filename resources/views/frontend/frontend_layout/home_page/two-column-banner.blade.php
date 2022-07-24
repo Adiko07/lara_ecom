@@ -1,4 +1,4 @@
-<div class="wide-banners wow fadeInUp outer-bottom-xs">
+{{--<div class="wide-banners wow fadeInUp outer-bottom-xs">
     <div class="row">
         <div class="col-md-7 col-sm-7">
             <div class="wide-banner cnt-strip">
@@ -17,4 +17,4 @@
     </div>
 <!-- /.row -->
 </div>
-<!-- /.wide-banners -->
+<!-- /.wide-banners -->--}}

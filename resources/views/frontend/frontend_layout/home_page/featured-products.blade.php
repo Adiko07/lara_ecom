@@ -3,7 +3,7 @@
         @if (session()->get('language') == 'bangla')
             বৈশিষ্ট্যযুক্ত পণ্য
         @else
-            Featured products
+        Produits populaires
         @endif
     </h3>
     <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
@@ -39,12 +39,12 @@
                             <div class="rating rateit-small"></div>
                             <div class="description"></div>
                             @if ($product->discount_price == null)
-                                <div class="product-price"><span class="price">${{ $product->selling_price }}</span>
+                                <div class="product-price"><span class="price">{{ $product->selling_price }} FCFA</span>
                                 </div>
                             @else
                                 <div class="product-price"> <span class="price">
-                                        ${{ $product->discount_price }}</span> <span
-                                        class="price-before-discount">${{ $product->selling_price }} </span> </div>
+                                        {{ $product->discount_price }} FCFA</span> <span
+                                        class="price-before-discount">{{ $product->selling_price }} FCFA </span> </div>
                             @endif
                             <!-- /.product-price -->
 

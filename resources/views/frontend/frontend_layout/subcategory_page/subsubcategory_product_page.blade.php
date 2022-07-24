@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - SubCategory Product
+    SODIB-CI || Produit de sous-catégorie
 @endsection
 
 @section('frontend_content')
@@ -152,7 +152,7 @@
                                                             @endif
                                                         </a>
                                                         </h3>
-                                                        <div class="rating rateit-small rateit"><button id="rateit-reset-2"
+                                                        {{--<div class="rating rateit-small rateit"><button id="rateit-reset-2"
                                                                 data-role="none" class="rateit-reset"
                                                                 aria-label="reset rating" aria-controls="rateit-range-2"
                                                                 style="display: none;"></button>
@@ -164,14 +164,14 @@
                                                                     style="height: 14px; width: 56px;"></div>
                                                                 <div class="rateit-hover" style="height:14px"></div>
                                                             </div>
-                                                        </div>
+                                                        </div>--}}
                                                         <div class="description"></div>
                                                         <div class="product-price">
                                                             @if ($product->discount_price == NULL)
-                                                            <span class="price">${{ $product->selling_price }}</span>
+                                                            <span class="price">{{ $product->selling_price }} FCFA</span>
                                                             @else
-                                                            <span class="price">${{ $product->discount_price }}</span>
-                                                            <span class="price-before-discount">${{ $product->selling_price }}</span>
+                                                            <span class="price">{{ $product->discount_price }} FCFA</span>
+                                                            <span class="price-before-discount">{{ $product->selling_price }} FCFA</span>
                                                             @endif
                                                         </div>
                                                         <!-- /.product-price -->
@@ -180,7 +180,7 @@
                                                     <!-- /.product-info -->
                                                     <div class="cart clearfix animate-effect">
                                                         <div class="action">
-                                                            <ul class="list-unstyled">
+                                                            {{--<ul class="list-unstyled">
                                                                 <li class="add-cart-button btn-group">
                                                                     <button class="btn btn-primary icon"
                                                                         data-toggle="dropdown" type="button"> <i
@@ -194,7 +194,7 @@
                                                                 <li class="lnk"> <a class="add-to-cart" href="detail.html"
                                                                         title="Compare"> <i class="fa fa-signal"></i> </a>
                                                                 </li>
-                                                            </ul>
+                                                            </ul>--}}
                                                         </div>
                                                         <!-- /.action -->
                                                     </div>
@@ -243,7 +243,7 @@
                                                                 @endif
                                                             </a>
                                                             </h3>
-                                                            <div class="rating rateit-small rateit"><button
+                                                            {{--<div class="rating rateit-small rateit"><button
                                                                     id="rateit-reset-14" data-role="none"
                                                                     class="rateit-reset" aria-label="reset rating"
                                                                     aria-controls="rateit-range-14"
@@ -257,13 +257,13 @@
                                                                         style="height: 14px; width: 56px;"></div>
                                                                     <div class="rateit-hover" style="height:14px"></div>
                                                                 </div>
-                                                            </div>
+                                                            </div>--}}
                                                             <div class="product-price">
                                                                 @if ($product->discount_price == NULL)
-                                                                    <span class="price">${{ $product->selling_price }}</span>
+                                                                    <span class="price">{{ $product->selling_price }} FCFA</span>
                                                                 @else
-                                                                    <span class="price">${{ $product->discount_price }}</span>
-                                                                    <span class="price-before-discount">${{ $product->selling_price }}</span>
+                                                                    <span class="price">{{ $product->discount_price }} FCFA</span>
+                                                                    <span class="price-before-discount">{{ $product->selling_price }} FCFA</span>
                                                                 @endif
                                                             </div>
                                                             <!-- /.product-price -->
@@ -276,7 +276,7 @@
                                                             </div>
                                                             <div class="cart clearfix animate-effect">
                                                                 <div class="action">
-                                                                    <ul class="list-unstyled">
+                                                                    {{--<ul class="list-unstyled">
                                                                         <li class="add-cart-button btn-group">
                                                                             <button class="btn btn-primary icon"
                                                                                 data-toggle="dropdown" type="button"> <i
@@ -291,7 +291,7 @@
                                                                         <li class="lnk"> <a class="add-to-cart"
                                                                                 href="detail.html" title="Compare"> <i
                                                                                     class="fa fa-signal"></i> </a> </li>
-                                                                    </ul>
+                                                                    </ul>--}}
                                                                 </div>
                                                                 <!-- /.action -->
                                                             </div>

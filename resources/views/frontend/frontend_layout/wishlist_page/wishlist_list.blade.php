@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    Al Araf Fashion - Wishlist Page
+    SODIB-CI || Liste de souhaits
 @endsection
 
 @section('frontend_content')
@@ -14,7 +14,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th colspan="4" class="heading-title">My Wishlist</th>
+                                <th colspan="4" class="heading-title">Ma liste d'envies</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,10 +31,10 @@
                                         @endif
                                     </a></div>
                                         @if ($product->discount_price == NULL)
-                                        <div class="price">${{ $product->selling_price }}</div>
+                                        <div class="price">{{ $product->selling_price }} FCFA</div>
                                         @else
-                                        <div class="price">${{ $product->discount_price }}
-                                        <span class="price-before-discount">${{ $product->selling_price }}</span>
+                                        <div class="price">{{ $product->discount_price }} FCFA
+                                        <span class="price-before-discount">{{ $product->selling_price }} FCFA</span>
                                         </div>
                                         @endif
                                 </td>

@@ -3,7 +3,7 @@
         @if (session()->get('language') == 'bangla')
         উষ্ণ চুক্তি
         @else
-        Hot deals
+        Bonnes affaires
         @endif
     </h3>
     <div class="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-ss">
@@ -47,17 +47,17 @@
                         @endif</a></h3>
                     <div class="rating rateit-small"></div>
                     @if ($product->discount_price == NULL)
-                            <div class="product-price"><span class="price">${{ $product->selling_price }}</span>
+                            <div class="product-price"><span class="price">{{ $product->selling_price }} FCFA</span>
                             </div>
                         @else
-                            <div class="product-price"> <span class="price"> ${{ $product->discount_price }}</span> <span class="price-before-discount">${{ $product->selling_price }} </span> </div>
+                            <div class="product-price"> <span class="price"> {{ $product->discount_price }} FCFA</span> <span class="price-before-discount">{{ $product->selling_price }} FCFA </span> </div>
                         @endif
                     <!-- /.product-price -->
 
                 </div>
                 <!-- /.product-info -->
 
-                <div class="cart clearfix animate-effect">
+                {{--<div class="cart clearfix animate-effect">
                     <div class="action">
                         <div class="add-cart-button btn-group">
                             <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <!-- /.action -->
-                </div>
+                </div>--}}
                 <!-- /.cart -->
             </div>
         </div>

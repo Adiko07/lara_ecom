@@ -3,7 +3,7 @@
         @if (session()->get('language') == 'bangla')
         বিশেষ প্রস্তাব
         @else
-        Special Offer
+        Offre spéciale
         @endif
     </h3>
     <div class="sidebar-widget-body outer-top-xs">
@@ -38,10 +38,10 @@
                                         <div class="rating rateit-small"></div>
                                         <div class="product-price">
                                             @if ($product->discount_price == NULL)
-                                            <span class="price"> ${{ $product->selling_price }} </span>
+                                            <span class="price">{{ $product->selling_price }} FCFA </span>
                                             @else
-                                            <span class="price"> ${{ $product->discount_price }} </span>
-                                            <span class="price"> ${{ $product->selling_price }} </span>
+                                            <span class="price">{{ $product->discount_price }} FCFA </span>
+                                            <span class="price">{{ $product->selling_price }} FCFA </span>
                                             @endif
                                         </div>
                                         <!-- /.product-price -->

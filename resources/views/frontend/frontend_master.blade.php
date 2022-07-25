@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
 <!-- Meta -->
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 @include('frontend.frontend_layout.body.style')
 
 </head>
-<body class="cnt-home">
+<body class="cnt-home" translate="no">
 <!--  HEADER  -->
 @include('frontend.frontend_layout.body.header')
 <!--  HEADER : END  -->

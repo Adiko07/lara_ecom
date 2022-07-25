@@ -20,17 +20,17 @@ class WishlistController extends Controller
                 'product_id' => $product_id,
                 ]);
                 return response()->json([
-                    'success' => 'Product added to your wishlist',
+                    'success' => 'Produit ajouté à votre liste de souhait',
                 ]);
             }else{
                 return response()->json([
-                    'error' => 'Product alreay exits to your wishlist',
+                    'error' => 'Le produit existe déjà dans votre liste de souhaits',
                 ]);
             }
 
         }else{
             return response()->json([
-                'error' => 'At First Login Your Account!!!',
+                'error' => 'Connectez-vous d\'abord à votre compte !!!',
             ]);
         }
     }
@@ -56,7 +56,7 @@ class WishlistController extends Controller
         }
         else{
             return response()->json([
-                'error' => 'At First Login Your Account!!!',
+                'error' => 'Connectez-vous d\'abord à votre compte !!!',
             ]);
         }
     }

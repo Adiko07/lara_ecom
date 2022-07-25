@@ -56,7 +56,7 @@
                         <form action="{{ route('cod.order') }}" method="post" id="payment-form">
                             @csrf
                             <div class="form-row">
-                                <img src="{{ asset('frontend/assets/images/payments/cash.png') }}" alt="">
+                                <img src="{{ asset('frontend/assets/images/payments/cashOnDelivery.png') }}" class="img-fluid" alt="">
                               <label for="card-element">
 
                             <input type="hidden" name="shipping_name" value="{{ $data['shipping_name'] }}">

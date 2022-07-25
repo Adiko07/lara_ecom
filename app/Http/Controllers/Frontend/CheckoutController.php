@@ -154,14 +154,14 @@ class CheckoutController extends Controller
                 ));
             }else{
                 $notification = [
-                    'message' => 'Your shopping cart is empty!!',
+                    'message' => 'Votre panier est vide!!',
                     'alert-type' => 'error'
                 ];
                 return redirect()->route('home')->with($notification);
             }
         }else{
             $notification = [
-                'message' => 'You need to Login First for Checkout',
+                'message' => 'Vous avez besoin d\'être connecté(e) pour pouvoir commander',
                 'alert-type' => 'error'
             ];
             return redirect()->route('login')->with($notification);

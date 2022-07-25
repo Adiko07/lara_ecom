@@ -65,14 +65,14 @@
 	<form class="register-form outer-top-xs" role="form" action="{{ isset($guard) ? url($guard.'/login') : route('login') }}" method="POST">
         @csrf
 		<div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
+		    <label class="info-title" for="exampleInputEmail1">Email <span>*</span></label>
 		    <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
 		</div>
         {{-- @error('email')
             <span class="alert text-danger">{{ $message }}</span>
         @enderror --}}
 	  	<div class="form-group">
-		    <label class="info-title" for="exampleInputPassword1">Password <span>*</span></label>
+		    <label class="info-title" for="exampleInputPassword1">Mot de passe<span>*</span></label>
 		    <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1">
 		</div>
         {{-- @error('password')
@@ -80,10 +80,10 @@
         @enderror --}}
 		<div class="radio outer-xs">
 		  	<label>
-		    	<input type="radio" name="remember" id="optionsRadios2" value="option2">Remember me!
+		    	<input type="radio" name="remember" id="optionsRadios2" value="option2">Souviens-toi de moi!
 		  	</label>
               @if (Route::has('password.request'))
-		  	    <a href="{{ route('password.request') }}" class="forgot-password pull-right">Forgot your Password?</a>
+		  	    <a href="{{ route('password.request') }}" class="forgot-password pull-right">Mot de passe oublié ?</a>
               @endif
             </div>
 	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
@@ -93,46 +93,46 @@
 
 <!-- create a new account -->
 <div class="col-md-6 col-sm-6 create-new-account">
-	<h4 class="checkout-subtitle">Create a new account</h4>
-	<p class="text title-tag-line">Create your new account.</p>
+	<h4 class="checkout-subtitle">Créer un nouveau compte</h4>
+	<p class="text title-tag-line">Créez votre nouveau compte.</p>
 	<form class="register-form outer-top-xs" role="form" method="POST" action="{{ route('register') }}">
         @csrf
 		<div class="form-group">
-	    	<label class="info-title" for="exampleInputEmail2">Email Address <span>*</span></label>
+	    	<label class="info-title" for="exampleInputEmail2">Email <span>*</span></label>
 	    	<input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail2">
 	  	</div>
           @error('email')
             <span class="alert text-danger">{{ $message }}</span>
           @enderror
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Name <span>*</span></label>
+		    <label class="info-title" for="exampleInputEmail1">Nom & prénoms <span>*</span></label>
 		    <input type="text" name="name" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
 		</div>
         @error('name')
             <span class="alert text-danger">{{ $message }}</span>
         @enderror
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Phone Number <span>*</span></label>
+		    <label class="info-title" for="exampleInputEmail1">Numéro de téléphone <span>*</span></label>
 		    <input type="text" name="phone_number" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
 		</div>
         @error('phone_number')
             <span class="alert text-danger">{{ $message }}</span>
         @enderror
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Password <span>*</span></label>
+		    <label class="info-title" for="exampleInputEmail1">Mot de passe <span>*</span></label>
 		    <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
 		</div>
         @error('password')
             <span class="alert text-danger">{{ $message }}</span>
         @enderror
          <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Confirm Password <span>*</span></label>
+		    <label class="info-title" for="exampleInputEmail1">Confirmez le mot de passe <span>*</span></label>
 		    <input type="password" name="password_confirmation" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
 		</div>
         @error('password_confirmation')
             <span class="alert text-danger">{{ $message }}</span>
         @enderror
-	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
+	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">S'inscrire</button>
 	</form>
 
 

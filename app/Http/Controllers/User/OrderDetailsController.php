@@ -51,7 +51,7 @@ class OrderDetailsController extends Controller
         ]);
 
         $notification = array(
-            'message' => 'Return Request Send Successfully',
+            'message' => 'Demande de retour envoyée avec succès',
             'alert-type' => 'success'
         );
 

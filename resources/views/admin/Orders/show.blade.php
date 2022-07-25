@@ -153,25 +153,25 @@
                                             <label for=""> Image</label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Product Name </label>
+                                            <label for=""> Produit</label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Product Code</label>
+                                            <label for="">Code Porduit</label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Color </label>
+                                            <label for=""> Couleur </label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Size </label>
+                                            <label for=""> Taille </label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Quantity </label>
+                                            <label for=""> Quantité </label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Price </label>
+                                            <label for=""> Prix </label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Download </label>
+                                            <label for=""> Téléchargement </label>
                                         </td>
                                     </tr>
                                     @foreach ($orderItems as $item)
@@ -191,13 +191,14 @@
                                             </td>
                                             <td class="col-md-2">
                                                 <label for=""> {{ $item->size }}</label>
+                                                <label for=""> {{ $item->longueur }}</label>
                                             </td>
                                             <td class="col-md-2">
                                                 <label for=""> {{ $item->qty }}</label>
                                             </td>
 
                                             <td class="col-md-3">
-                                                <label for=""> ${{ $item->unit_price }} ( $ {{ $item->unit_price * $item->qty }} ) </label>
+                                                <label for=""> {{ $item->unit_price }} FCFA ( {{ $item->unit_price * $item->qty }} FCFA) </label>
                                             </td>
                                             @php
                                                 $file = App\Models\Product::where('id', $item->product_id)->first();

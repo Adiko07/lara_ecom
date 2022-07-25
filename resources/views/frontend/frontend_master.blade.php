@@ -161,13 +161,15 @@
             }
         })
     }
-
-    // Add to Cart Product
+    //add to cart
     function addToCart(){
         var product_name = $('#pname').text();
         var id = $('#product_id').val();
         var color = $('#color option:selected').text();
         var size = $('#size option:selected').text();
+        var longueur = $('#longueur option:selected').text();
+        var largeur = $('#largeur option:selected').text();
+        var epaisseur = $('#epaisseur option:selected').text();
         var qty = $('#product_qty').val();
 
         $.ajax({
@@ -178,6 +180,9 @@
                 size:size,
                 qty: qty,
                 product_name: product_name,
+                longueur: longueur,
+                largeur: largeur,
+                epaisseur: epaisseur,
             },
             url: '/cart/data/store/'+id,
             success: function(data){
@@ -229,7 +234,7 @@
                             </div>
                             <div class="col-xs-7">
                                 <h3 class="name"><a href="index.php?page-detail">${value.name}</a></h3>
-                                <div class="price">$${value.price}X${value.qty}</div>
+                                <div class="price">${value.price} FCFA X ${value.qty}</div>
                             </div>
                             <div class="col-xs-1 action"> <button type="submit" id="${value.rowId}" onclick="miniCartRemove(this.id)"><i class="fa fa-trash"></i></button> </div>
                         </div>

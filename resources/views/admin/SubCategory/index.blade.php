@@ -12,7 +12,7 @@
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
                         <h3 class="box-title">Toutes les sous-catégories</h3>
-                        <a href="{{ route('subcategories.create') }}" class="btn btn-primary">Create New SubCategory</a>
+                        <a href="{{ route('subcategories.create') }}" class="btn btn-primary">Créer une sous-catégorie</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

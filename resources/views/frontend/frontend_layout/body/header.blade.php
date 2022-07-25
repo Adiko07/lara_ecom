@@ -141,7 +141,7 @@
                                             class='price' id="cartSubTotal"></span> </div>
                                     <div class="clearfix"></div>
 
-                                    <a href="{{ route('checkout-page') }}" class="btn btn-upper btn-primary btn-block m-t-20">Vérifier</a>
+                                    <a href="{{ route('myCartView') }}" class="btn btn-upper btn-primary btn-block m-t-20">COMMANDER</a>
 
                                 </div>
                                 <!-- /.cart-total-->

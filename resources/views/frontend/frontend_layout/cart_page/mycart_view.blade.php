@@ -18,6 +18,9 @@
                                         <th>Nom</th>
                                         <th>Couleur</th>
                                         <th>Taille</th>
+                                        <th>Longueur</th>
+                                        <th>Largeur</th>
+                                        <th>Epaisseur</th>
                                         <th>Quantité</th>
                                         <th>Sous-total</th>
                                         <th>Supprimer</th>
@@ -152,11 +155,17 @@
                                 <td class="col-md-2"><img src="/${value.options.image} " alt="imga" style="width:60px; height:60px;"></td>
                                 <td class="col-md-2">
                                     <div class="product-name"><a href="#">${value.name}</a></div>
-                                    <div class="price">$${value.price}</div>
+                                    <div class="price">${value.price} FCFA</div>
                                 </td>
                                 <td class="col-md-2">${value.options.color == null ? `<span>...</span>`:`<strong>${value.options.color}</strong>`}</td>
 
                                 <td class="col-md-2">${value.options.size == null ? `<span>...</span>`:`<strong>${value.options.size}</strong>`}</td>
+
+                                <td class="col-md-2">${value.options.longueur == null ? `<span>...</span>`:`<strong>${value.options.longueur}</strong>`}</td>
+
+                                <td class="col-md-2">${value.options.largeur == null ? `<span>...</span>`:`<strong>${value.options.largeur}</strong>`}</td>
+
+                                <td class="col-md-2">${value.options.epaisseur == null ? `<span>...</span>`:`<strong>${value.options.epaisseur}</strong>`}</td>
 
                                 <td class="col-md-2">
                                 ${value.qty > 1
@@ -164,7 +173,7 @@
                                 :
                                 `<button type="submit" class="btn btn-danger btn-sm" disabled>-</button>`
                                 }
-                                <input type="text" value="${value.qty}" min="1" max="500"  style="width:30px;">
+                                <input type="text" value="${value.qty}" min="1" max="500"  style="width:40px;" disabled>
                                 <button type="submit" class="btn btn-success btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)">+</button>
                                 </td>
 

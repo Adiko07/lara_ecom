@@ -123,7 +123,7 @@
                                         {{ $product->product_name_en }}
                                         @endif
                                     </h1>
-                                    <div class="rating-reviews m-t-20">
+                                    {{--<div class="rating-reviews m-t-20">
                                         <div class="row">
                                             <div class="col-sm-3">
                                                 <div class="rating rateit-small rateit"><button id="rateit-reset-5"
@@ -143,9 +143,9 @@
                                                 <div class="reviews">
                                                     <a href="#" class="lnk">(13 Reviews)</a>
                                                 </div>
-                                            </div>--}}
+                                            </div>--}
                                         </div><!-- /.row -->
-                                    </div><!-- /.rating-reviews -->
+                                    </div><!-- /.rating-reviews -->--}}
 
                                     <div class="stock-container info-container m-t-10">
                                         <div class="row">
@@ -176,7 +176,7 @@
 
                                     <div class="price-container info-container m-t-20">
                                         <div class="row">
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-12">
                                                 <div class="price-box">
                                                     @if ($product->discount_price == NULL)
                                                         <span class="price">{{ $product->selling_price }} FCFA</span>
@@ -186,7 +186,7 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6">
+                                            {{--<div class="col-sm-6">
                                                 <div class="favorite-button m-t-10">
                                                     <a class="btn btn-primary" data-toggle="tooltip" data-placement="right"
                                                         title="" href="#" data-original-title="Wishlist">
@@ -201,7 +201,7 @@
                                                         <i class="fa fa-envelope"></i>
                                                     </a>
                                                 </div>
-                                            </div>
+                                            </div>--}}
                                         </div><!-- /.row -->
                                     </div><!-- /.price-container -->
 
@@ -526,6 +526,9 @@
         var id = $('#product_id').val();
         var color = $('#color option:selected').text();
         var size = $('#size option:selected').text();
+        var longueur = $('#longueur option:selected').text();
+        var largeur = $('#largeur option:selected').text();
+        var epaisseur = $('#epaisseur option:selected').text();
         var qty = $('#product_qty').val();
 
         $.ajax({
@@ -536,6 +539,9 @@
                 size:size,
                 qty: qty,
                 product_name: product_name,
+                longueur: longueur,
+                largeur: largeur,
+                epaisseur: epaisseur,
             },
             url: '/cart/data/store/'+id,
             success: function(data){

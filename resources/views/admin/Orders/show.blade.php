@@ -158,12 +158,12 @@
                                         <td class="text-dark">
                                             <label for="">Code Porduit</label>
                                         </td>
-                                        <td class="text-dark">
+                                        {{--<td class="text-dark">
                                             <label for=""> Couleur </label>
                                         </td>
                                         <td class="text-dark">
                                             <label for=""> Taille </label>
-                                        </td>
+                                        </td>--}}
                                         <td class="text-dark">
                                             <label for=""> Quantité </label>
                                         </td>
@@ -186,13 +186,13 @@
                                             <td class="col-md-3">
                                                 <label for=""> {{ $item->product->product_code }}</label>
                                             </td>
-                                            <td class="col-md-2">
+                                            {{--<td class="col-md-2">
                                                 <label for=""> {{ $item->color }}</label>
                                             </td>
                                             <td class="col-md-2">
                                                 <label for=""> {{ $item->size }}</label>
                                                 <label for=""> {{ $item->longueur }}</label>
-                                            </td>
+                                            </td>--}}
                                             <td class="col-md-2">
                                                 <label for=""> {{ $item->qty }}</label>
                                             </td>
@@ -217,6 +217,26 @@
                                                             <span class="badge badge-pill badge-success" style="background: #FF0000;">
                                                                 Download Ready</span> </strong> </a>
                                                 @endif
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color:  rgb(31, 34, 31); color: #fff;">
+                                            <td class="col-md-2">
+                                                <label for="">OPTION DU PRODUIT:</label>
+                                            </td>
+                                            <td class="col-md-2">
+                                                <label for="">Couleur : {{ $item->color }}</label>
+                                            </td>
+                                            <td class="col-md-2">
+                                                <label for="">Taille : {{ $item->size }}</label>
+                                            </td>
+                                            <td class="col-md-2">
+                                                <label for="">Longueur : {{ $item->longueur }}</label>
+                                            </td>
+                                            <td class="col-md-2">
+                                                <label for="">Largeur : {{ $item->largeur }}</label>
+                                            </td>
+                                            <td class="col-md-2">
+                                                <label for="">Epaisseur : {{ $item->epaisseur }}</label>
                                             </td>
                                         </tr>
                                     @endforeach

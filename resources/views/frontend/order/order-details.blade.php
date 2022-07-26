@@ -138,79 +138,65 @@
                 <table class="table">
                     <tbody>
                         <tr style="background: #e2e2e2;">
-                            <td class="">
+                            <td class="col-md-2">
                                 <label for=""> Image</label>
                             </td>
-                            <td class="">
+                            <td class="col-md-2">
                                 <label for=""> Nom du produit </label>
                             </td>
-                            <td class="">
+                            <td class="col-md-2">
                                 <label for=""> Code produit</label>
                             </td>
-                            <td class="">
+                            {{--<td class="col-md-2">
                                 <label for=""> Couleur </label>
                             </td>
-                            <td class="">
+                            <td class="col-md-2">
                                 <label for=""> Taille </label>
                             </td>
-                            <td class="">
+                            <td class="col-md-2">
                                 <label for=""> Longueur </label>
                             </td>
-                            <td class="">
+                            <td class="col-md-2">
                                 <label for=""> Largeur </label>
                             </td>
-                            <td class="">
+                            <td class="col-md-2">
                                 <label for=""> Epaisseur </label>
-                            </td>
-                            <td class="">
+                            </td>--}}
+                            <td class="col-md-2">
                                 <label for=""> Quantité </label>
                             </td>
-                            <td class="">
+                            <td class="col-md-2">
                                 <label for=""> Prix </label>
                             </td>
-                            <td class="">
+                            <td class="col-md-2">
                                 <label for=""> Action </label>
                             </td>
                         </tr>
                         @foreach ($orderItems as $item)
                             <tr>
-                                <td class="">
+                                <td class="col-md-2">
                                     <label for=""><img src="{{ asset( $item->product->product_thumbnail ) }}"
                                             height="50px;" width="50px;"> </label>
                                 </td>
-                                <td class="">
+                                <td class="col-md-2">
                                     <label for=""> {{ $item->product->product_name_en }}</label>
                                 </td>
-                                <td class="">
+                                <td class="col-md-2">
                                     <label for=""> {{ $item->product->product_code }}</label>
                                 </td>
-                                <td class="">
-                                    <label for=""> {{ $item->color }}</label>
-                                </td>
-                                <td class="">
-                                    <label for=""> {{ $item->size }}</label>
-                                </td>
-                                <td class="">
-                                    <label for=""> {{ $item->longueur }}</label>
-                                </td>
-                                <td class="">
-                                    <label for=""> {{ $item->largeur }}</label>
-                                </td>
-                                <td class="">
-                                    <label for=""> {{ $item->epaisseur }}</label>
-                                </td>
-                                <td class="">
+
+                                <td class="col-md-2">
                                     <label for=""> {{ $item->qty }}</label>
                                 </td>
 
-                                <td class="">
+                                <td class="col-md-2">
                                     <label for=""> {{ $item->unit_price }} FCFA (  {{ $item->unit_price * $item->qty }} FCFA) </label>
                                 </td>
                                 @php
                                     $file = App\Models\Product::where('id', $item->product_id)->first();
                                 @endphp
 
-                                <td class="">
+                                <td class="col-md-2">
                                     @if ($order->status == 'pending')
                                         <strong>
                                             <span class="badge badge-pill badge-success" style="background: #418DB9;"> Aucun fichier</span>
@@ -224,7 +210,26 @@
                                     @endif
                                 </td>
                             </tr>
-                            
+                            <tr style="background-color:  rgb(31, 34, 31); color: #fff;">
+                                <td class="col-md-2">
+                                    <label for="">OPTION DU PRODUIT:</label>
+                                </td>
+                                <td class="col-md-2">
+                                    <label for="">Couleur : {{ $item->color }}</label>
+                                </td>
+                                <td class="col-md-2">
+                                    <label for="">Taille : {{ $item->size }}</label>
+                                </td>
+                                <td class="col-md-2">
+                                    <label for="">Longueur : {{ $item->longueur }}</label>
+                                </td>
+                                <td class="col-md-2">
+                                    <label for="">Largeur : {{ $item->largeur }}</label>
+                                </td>
+                                <td class="col-md-2">
+                                    <label for="">Epaisseur : {{ $item->epaisseur }}</label>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

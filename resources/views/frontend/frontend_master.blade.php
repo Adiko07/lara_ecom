@@ -61,22 +61,40 @@
                         <li class="list-group-item">Category: <strong id="category"></strong></li>
                         <li class="list-group-item">Brand: <strong id="brand"></strong></li>
                         <li class="list-group-item">Stock:
-                        <span id="Instock" class="bdage bdage-pill badge-success" style="background: green; color: white"></span>
-                        <span id="Outofstock" class="bdage bdage-pill badge-danger" style="background: red; color: white"></span>
+                        <span id="Instock" class="bdage bdage-pill badge-success" style="background: green; longueur: white"></span>
+                        <span id="Outofstock" class="bdage bdage-pill badge-danger" style="background: red; longueur: white"></span>
                     </li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group" id="colorArea">
-                        <label for="color">Choose Color</label>
+                        <label for="color">Choose color</label>
                         <select class="form-control" id="color" name="color">
-                            <option>--Select Color--</option>
+                            <option>--Select color--</option>
                         </select>
                     </div>
                     <div class="form-group" id="sizeArea">
                         <label for="size">Choose Size</label>
                         <select class="form-control" id="size" name="size">
                             <option>--Select Size--</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="longueurArea">
+                        <label for="longueur">Choose longueur</label>
+                        <select class="form-control" id="longueur" name="longueur">
+                            <option>--Select longueur--</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="largeurArea">
+                        <label for="largeur">Choose largeur</label>
+                        <select class="form-control" id="largeur" name="largeur">
+                            <option>--Select largeur--</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="epaisseurArea">
+                        <label for="epaisseur">Choose epaisseur</label>
+                        <select class="form-control" id="epaisseur" name="epaisseur">
+                            <option>--Select epaisseur--</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -133,13 +151,13 @@
                 if(data.product.product_qty > 0)
                 {
                     $('#Outofstock').text('');
-                    $('#Instock').text('In Stock');
+                    $('#Instock').text('En Stock');
                 }else{
                     $('#Instock').text('');
-                    $('#Outofstock').text('OUT of Stock');
+                    $('#Outofstock').text('Indisponible');
                 }
 
-                // color and size
+                // items
                 $('select[name="color"]').empty();
                 $.each(data.colors_en, function(key,value){
                     $('select[name="color"]').append('<option value=" '+value+' ">'+value+'</option>')
@@ -147,6 +165,34 @@
                         $('#colorArea').hide()
                     }else{
                         $('#colorArea').show()
+                    }
+                })
+
+                $('select[name="longueur"]').empty();
+                $.each(data.longueur, function(key,value){
+                    $('select[name="longueur"]').append('<option value=" '+value+' ">'+value+'</option>')
+                    if(data.longueur == ""){
+                        $('#longueurArea').hide()
+                    }else{
+                        $('#longueurArea').show()
+                    }
+                })
+                $('select[name="largeur"]').empty();
+                $.each(data.largeur, function(key,value){
+                    $('select[name="largeur"]').append('<option value=" '+value+' ">'+value+'</option>')
+                    if(data.largeur == ""){
+                        $('#largeurArea').hide()
+                    }else{
+                        $('#largeurArea').show()
+                    }
+                })
+                $('select[name="epaisseur"]').empty();
+                $.each(data.epaisseur, function(key,value){
+                    $('select[name="epaisseur"]').append('<option value=" '+value+' ">'+value+'</option>')
+                    if(data.epaisseur == ""){
+                        $('#epaisseurArea').hide()
+                    }else{
+                        $('#epaisseurArea').show()
                     }
                 })
                 $('select[name="size"]').empty();

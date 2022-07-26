@@ -179,7 +179,7 @@
                                             height="50px;" width="50px;"> </label>
                                 </td>
                                 <td class="">
-                                    <label for=""> {{ $item->product->product_name }}</label>
+                                    <label for=""> {{ $item->product->product_name_en }}</label>
                                 </td>
                                 <td class="">
                                     <label for=""> {{ $item->product->product_code }}</label>
@@ -197,7 +197,7 @@
                                     <label for=""> {{ $item->largeur }}</label>
                                 </td>
                                 <td class="">
-                                    <label for=""> {{ $item->épaisseur }}</label>
+                                    <label for=""> {{ $item->epaisseur }}</label>
                                 </td>
                                 <td class="">
                                     <label for=""> {{ $item->qty }}</label>
@@ -224,6 +224,7 @@
                                     @endif
                                 </td>
                             </tr>
+                            
                         @endforeach
                     </tbody>
                 </table>

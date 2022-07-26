@@ -104,10 +104,16 @@ class FrontendPageController extends Controller
         $product = Product::with(['brand','category'])->findOrFail($id);
         $colors_en = explode(',', $product->product_color_en);
         $size_en = explode(',', $product->product_size_en);
+        $longueur = explode(',', $product->longueur);
+        $largeur = explode(',', $product->largeur);
+        $epaisseur = explode(',', $product->epaisseur);
         return response()->json([
             'product' => $product,
             'colors_en' => $colors_en,
             'size_en' => $size_en,
+            'longueur' => $longueur,
+            'largeur' => $largeur,
+            'epaisseur' => $epaisseur,
         ],200);
     }
 }

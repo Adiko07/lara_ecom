@@ -151,15 +151,15 @@
                                         <div class="row">
                                             <div class="col-sm-2">
                                                 <div class="stock-box">
-                                                    <span class="label">Disponibilité :</span>
+                                                    <span class="label">Disponibilité : </span>
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="stock-box">
                                                     @if ($product->product_qty<1)
-                                                    <span class="value">Stock épuisé</span>
+                                                    <span class="value"> Stock épuisé</span>
                                                     @else
-                                                    <span class="value">En Stock</span>
+                                                    <span class="value"> En Stock</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -519,7 +519,7 @@
             <!--  BRANDS CAROUSEL : END  -->
         </div>
         <!-- /.container -->
-        <script>
+        {{--<script>
             // Add to Cart Product
     function addToCart(){
         var product_name = $('#pname').text();
@@ -571,6 +571,6 @@
         })
     }
     // End to Cart Product
-        </script>
+        </script>--}}
     </div>
 @endsection

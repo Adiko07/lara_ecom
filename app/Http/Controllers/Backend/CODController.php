@@ -10,9 +10,10 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Cart;
+//use Cart;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\InfoOrderMail;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CODController extends Controller
 {
@@ -76,6 +77,9 @@ class CODController extends Controller
                 'product_id' => $cart->id,
                 'color' => $cart->options->color,
                 'size' => $cart->options->size,
+                'longueur' => $cart->options->longueur,
+                'largeur' => $cart->options->largeur,
+                'epaisseur' => $cart->options->epaisseur,
                 'qty' => $cart->qty,
                 'unit_price' => $cart->price,
             ]);

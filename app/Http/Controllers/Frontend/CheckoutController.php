@@ -9,8 +9,9 @@ use App\Models\ShipDivision;
 use App\Models\Shipping;
 use App\Models\ShipState;
 use Illuminate\Http\Request;
-use Cart;
+//use Cart;
 use Illuminate\Support\Facades\Auth;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CheckoutController extends Controller
 {

@@ -16,15 +16,10 @@ class BrandSeeder extends Seeder
     public function run()
     {
         $brand_list = [
-            'Apple',
-            'Xiaomi',
-            'DELL',
-            'Lenovo',
-            'HP',
-            'Tp-Link'
+            'SODIB-CI'
         ];
 
-        for ($i=0; $i <count($brand_list); $i++) { 
+        for ($i=0; $i <count($brand_list); $i++) {
             Brand::create([
                 'brand_name_en' => $brand_list[$i],
                 'brand_name_bn' => $brand_list[$i].' '.'bn',

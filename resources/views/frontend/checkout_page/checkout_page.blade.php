@@ -54,7 +54,7 @@
 
                                             <div class="form-group">
                                                 <label class="info-title" for="shippingPhone2">Téléphone 2
-                                                    <span>*</span></label>
+                                                    <span></span></label>
                                                 <input type="tel" class="form-control unicase-form-control text-input"
                                                     id="shippingPhone2" placeholder="Enter your name here"
                                                     name="shipping_phone2">
@@ -115,13 +115,13 @@
                                         <label class="info-title" for="shippingAddrees">Adresse de livraison<span>*</span></label>
                                         <textarea name="shipping_address" id="" cols="30" rows="1"
                                             class="form-control unicase-form-control text-input" id="shippingAddrees"
-                                            placeholder="Example: H#05,R#02, Uttara Sector: 11, Uttara"></textarea>
+                                            placeholder="Example: ABIDJAN YOPOUGON NIANGON TERMINUS 27"></textarea>
                                             @error('shipping_address')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
                                             <div class="form-group">
                                                 <label class="info-title" for="shippingNotes">Notes d'expédition<span></span></label>
-                                                <textarea name="shipping_notes" id="" cols="30" rows="10" class="form-control unicase-form-control text-input" id="shippingNotes" placeholder="any Shipping notes"></textarea>
+                                                <textarea name="shipping_notes" id="" cols="30" rows="10" class="form-control unicase-form-control text-input" id="shippingNotes" placeholder="Souhaitez vous nous laisser des instruction concernant la livraison ?"></textarea>
                                             </div>
                                     </div>
                                     <!-- already-registered-login -->

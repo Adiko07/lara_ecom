@@ -28,7 +28,7 @@
                     <td>{{ $order->amount }}</td>
                     <td>{{ $order->payment_method }}</td>
                     <td>
-                        @if ($order->status == 'pending')
+                        @if ($order->status == 'En attente')
                         <span class="badge badge-primary">{{ $order->status }}</span>
                         @elseif ($order->status == 'confirmed')
                         <span class="badge badge-secondary">{{ $order->status }}</span>

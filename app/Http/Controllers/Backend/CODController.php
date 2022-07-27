@@ -38,7 +38,7 @@ class CODController extends Controller
             'phone2' => $request->input('shipping_phone2'),
             'notes' => $request->input('shipping_notes'),
             'address' => $request->input('shipping_address'),
-            'payment_type' => 'Cash On Delivery',
+            'payment_type' => 'Cash a la LIVRAISON',
             'payment_method' => 'COD',
             'transaction_id' =>  '',
             'currency' => 'usd',
@@ -50,7 +50,7 @@ class CODController extends Controller
             'order_date' => Carbon::now()->format('d F Y'),
             'order_month' => Carbon::now()->format('F'),
             'order_year' => Carbon::now()->format('Y'),
-            'status' => 'pending',
+            'status' => 'En attente',
             'created_at' => Carbon::now(),
         ]);
 
@@ -94,7 +94,7 @@ class CODController extends Controller
         Cart::destroy();
 
         $notification = array(
-			'message' => 'Your Order Place Successfully',
+			'message' => 'Votre commande est passée avec succès',
 			'alert-type' => 'success'
 		);
 

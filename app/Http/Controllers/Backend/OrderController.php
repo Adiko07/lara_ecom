@@ -101,7 +101,7 @@ class OrderController extends Controller
 
     public function pendingOrderIndex()
     {
-        $orders = Order::where('status', 'pending')->latest('id')->get();
+        $orders = Order::where('status', 'En attente')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -211,7 +211,7 @@ class OrderController extends Controller
                 break;
         }
         $notification = [
-            'message' => 'Order '.$status,
+            'message' => 'Commande '.$status,
             'alert-type' => 'success'
         ];
 

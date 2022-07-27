@@ -24,7 +24,7 @@ class AdminFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Admin',
+            'name' => 'SODIBCI',
             'email' => 'admin@sodibci.net',
             'email_verified_at' => now(),
             'password' => Hash::make('12345678'),

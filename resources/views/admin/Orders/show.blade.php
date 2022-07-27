@@ -111,9 +111,9 @@
                                     @elseif ($order->status == 'En traitement')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'sélectionnée'
+                                        'status' => 'Sélectionnée'
                                     ]) }}" class="btn btn-block btn-success">Sélectionner la commande</a>
-                                    @elseif ($order->status == 'sélectionnée')
+                                    @elseif ($order->status == 'Sélectionnée')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
                                         'status' => 'Expédiée'
@@ -141,7 +141,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="box box-bordered border-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Order View</h3>
+                        <h3 class="box-title">Resumé de la commande</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -205,7 +205,7 @@
                                             @endphp
 
                                             <td class="col-md-1">
-                                                @if ($order->status == 'pending')
+                                                @if ($order->status == 'En attente')
                                                     <strong>
                                                         <span class="badge badge-pill badge-success" style="background: #418DB9;"> No
                                                             File</span> </strong>

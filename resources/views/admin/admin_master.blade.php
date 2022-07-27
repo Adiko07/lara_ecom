@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
     <link rel="icon" href="../images/favicon.ico">
 
     <title>Sunny Admin - Dashboard</title>
-    
+
     {{-- Style Blade START --}}
 	@include('admin.dashboard_layout.style')
     {{-- Style Blade END --}}
@@ -18,7 +18,7 @@
 </head>
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
-	
+
 <div class="wrapper">
 
 {{-- Header START --}}

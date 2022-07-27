@@ -86,7 +86,7 @@
 		  	    <a href="{{ route('password.request') }}" class="forgot-password pull-right">Mot de passe oublié ?</a>
               @endif
             </div>
-	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
+	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Se connecter</button>
 	</form>
 </div>
 <!-- Sign-in -->

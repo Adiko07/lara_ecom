@@ -71,7 +71,7 @@
                     <h4>Détails de la commande
                         <span class="text-danger"> Facture d'achat : {{ $order->invoice_number }}</span>
                     </h4>
-                    @if ($order->status == 'pending')
+                    @if ($order->status == 'En attente')
 
                     @else
                     <ul>
@@ -197,12 +197,12 @@
                                 @endphp
 
                                 <td class="col-md-2">
-                                    @if ($order->status == 'pending')
+                                    @if ($order->status == 'En attente')
                                         <strong>
                                             <span class="badge badge-pill badge-success" style="background: #418DB9;"> Aucun fichier</span>
                                         </strong>
 
-                                    @elseif($order->status != 'pending')
+                                    @elseif($order->status != 'En attente')
 
                                         <a target="_blank" class="btn btn-danger" href="{{ asset('upload/pdf/' . $file->digital_file) }}">
                                             <i class="fa fa-download"></i>Facture

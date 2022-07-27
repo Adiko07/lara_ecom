@@ -2,9 +2,9 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Slider',
+    'name' => 'Caroussel',
     'url' => "slider.index",
-    'section_name' => 'Update Slider'
+    'section_name' => 'modification de caroussel'
     ])
     <section class="content">
         <div class="row">
@@ -12,15 +12,15 @@
             <div class="col-md-8 col-lg-8 offset-2">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Update Slider</h3>
-                        <a href="{{ route('slider.index') }}" class="btn btn-primary">Back to Slider List</a>
+                        <h3 class="box-title">Modifier un caroussel</h3>
+                        <a href="{{ route('slider.index') }}" class="btn btn-primary">Liste des caroussels</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="{{ route('slider.update', $slider) }}" method="post" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
-                            <h4 class="text-warning">Slider Image Status Bar</h4>
+                            <h4 class="text-warning">Barre d'état de l'image du curseur</h4>
                             <hr ><hr>
                             <div class="form-group mb-4">
                                 <div class="form-check form-switch">
@@ -29,10 +29,10 @@
                                     <label class="form-check-label" for="status">Active Status</label>
                                 </div>
                             </div>
-                            <h4 class="text-warning">Slider Image Information</h4>
+                            <h4 class="text-warning">Informations sur l'image du curseur</h4>
                             <hr><hr>
                             <div class="form-group">
-                                <h5>Slider Name <span class="text-danger">*</span></h5>
+                                <h5>Nom du caroussel<span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="slider_name" value="{{ old('slider_name', $slider->slider_name) }}"
                                     class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
@@ -42,7 +42,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Slider Title <span class="text-danger"></span></h5>
+                                <h5>Titre du caroussel<span class="text-danger"></span></h5>
                                 <div class="controls">
                                     <input type="text" name="slider_title" value="{{ old('slider_title', $slider->slider_title) }}"
                                     class="form-control">
@@ -53,7 +53,7 @@
                                 @enderror
                             </div>
                                 <div class="form-group">
-                                    <h5>Slider Description<span class="text-danger"></span></h5>
+                                    <h5>Description du Caroussel<span class="text-danger"></span></h5>
                                     <div class="controls">
                                         <textarea name="slider_description" id="editor5" cols="30" rows="5" class="form-control">value="{{ old('slider_description', $slider->slider_description) }}</textarea>
                                         <div class="help-block"></div>
@@ -63,10 +63,10 @@
                                     @enderror
                                 </div>
 
-                            <h4 class="text-warning">Slider Single Image Upload</h4>
+                            <h4 class="text-warning">Ajout d'image à téléchargement unique</h4>
                             <hr><hr>
                             <div class="form-group">
-                                <h5>Slider Image <span class="text-danger">*</span></h5>
+                                <h5>Image du caroussel <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="file" name="slider_image" class="form-control" required="" data-validation-required-message="This field is required"
                                     onchange="sliderShow(this)"> <div class="help-block"></div>
@@ -77,7 +77,7 @@
                                 <img src="" id="sliderImage" alt="">
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                <button type="submit" class="btn btn-rounded btn-info">Envoyer</button>
                             </div>
                         </form>
                     </div>

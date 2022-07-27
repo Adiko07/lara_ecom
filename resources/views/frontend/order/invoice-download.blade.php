@@ -75,16 +75,16 @@
            <strong>Téléphone:</strong> {{ $order->phone }} <br>
 
            <strong>Adresse:</strong> {{ $order->address }} <br>
-           <strong>Géolocalisation:</strong>
+           {{--<strong>Géolocalisation:</strong>
            {{ $order->state->state_name }},
            {{ $order->district->district_name }},
            {{ $order->division->division_name }} <br>
-           <strong>Code Postal:</strong> {{ $order->post_code }}
+           <strong>Code Postal:</strong> {{ $order->post_code }}--}}
          </p>
         </td>
         <td>
           <p class="font">
-            <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_number }}</h3>
+            <h3><span style="color: green;">Facture N°:</span> #{{ $order->invoice_number }}</h3>
             Date de commande: {{ $order->created_at }} <br>
             Date de livraison: {{ $order->delivered_date }} <br>
             Type de paiement : {{ $order->payment_type }} <br>
@@ -105,9 +105,12 @@
         <th>Nom du produit</th>
         <th>Taille</th>
         <th>Couleur</th>
+        <th>Longueur</th>
+        <th>Largeur</th>
+        <th>Epaisseur</th>
         <th>Code</th>
         <th>Quantité</th>
-        <th>Prix ​​unitaire</th>
+        <th>Prix unitaire</th>
         <th>Total </th>
       </tr>
     </thead>
@@ -119,12 +122,15 @@
             <img src="{{ asset($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
         </td> --}}
         <td align="center">{{ $item->product->product_name }}</td>
+        <td align="center">{{ $item->product->product_code }}</td>
         <td align="center">{{ $item->size }}</td>
         <td align="center">{{ $item->color }}</td>
-        <td align="center">{{ $item->product->product_code }}</td>
+        <td align="center">{{ $item->longueur }}</td>
+        <td align="center">{{ $item->largeur }}</td>
+        <td align="center">{{ $item->epaisseur }}</td>
         <td align="center">{{ $item->qty }}</td>
-        <td align="center">{{ $item->unit_price }}</td>
-        <td align="center">{{ $order->amount }}</td>
+        <td align="center">{{ $item->unit_price }} FCFA</td>
+        <td align="center">{{ $order->amount }} FCFA</td>
       </tr>
       @endforeach
     </tbody>
@@ -134,7 +140,7 @@
     <tr>
         <td align="right" >
             <h2><span style="color: green;">Sous-total:</span>{{ $order->amount }} FCFA</h2>
-            <h2><span style="color: green;">Total:</span> $ {{ $order->amount }} FCFA</h2>
+            <h2><span style="color: green;">Total:</span> {{ $order->amount }} FCFA</h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>
@@ -144,7 +150,7 @@
   </div>
   <div class="authority float-right mt-5">
       <p>-----------------------------------</p>
-      <h5>Signature de l'autorité :</h5>
+      <h5>Signature de l'autorité :</h5>
     </div>
 </body>
 </html>

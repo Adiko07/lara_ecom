@@ -2,17 +2,17 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Slider',
+    'name' => 'Caroussel',
     'url' => "slider.index",
-    'section_name' => 'All Slider'
+    'section_name' => 'Tout les caroussels'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Slider Data Table</h3>
-                        <a href="{{ route('slider.create') }}" class="btn btn-primary">Create New Slider</a>
+                        <h3 class="box-title">Liste de vos Caroussels</h3>
+                        <a href="{{ route('slider.create') }}" class="btn btn-primary">Nouveau caroussel</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -25,10 +25,10 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Slider Image</th>
-                                                    <th>Slider Name</th>
-                                                    <th>Slider Title</th>
-                                                    <th>Slider Status</th>
+                                                    <th>Image</th>
+                                                    <th>Nom du caroussel</th>
+                                                    <th>Titre du caroussel</th>
+                                                    <th>Statut</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>

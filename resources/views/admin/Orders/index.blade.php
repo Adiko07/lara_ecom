@@ -2,7 +2,7 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Orders',
+    'name' => 'Commandes',
     'url' => "orders.index",
     'section_name' => 'All Orders'
     ])
@@ -13,9 +13,9 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">
                             @if (Request::is('admin/orders'))
-                                All Orders List
+                                Liste de toutes les commandes
                             @else
-                                Statuswise Order List
+                            Liste des commandes de SODIB-CI
                             @endif
                         </h3>
                     </div>
@@ -31,10 +31,10 @@
                                                 <tr role="row">
                                                     <th>#</th>
                                                     <th>Date</th>
-                                                    <th>Invoice</th>
-                                                    <th>Amount</th>
-                                                    <th>Method</th>
-                                                    <th>Status</th>
+                                                    <th>Facture d'achat</th>
+                                                    <th>Montant</th>
+                                                    <th>Méthode de paiement</th>
+                                                    <th>Statut</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -46,20 +46,20 @@
                                                     </td>
                                                     <td class="sorting_1">{{ $order->created_at->diffForHumans() }}</td>
                                                     <td class="soring_1">{{ $order->invoice_number }}</td>
-                                                    <td class="sorting_1">{{ $order->amount }}</td>
-                                                    <td class="sorting_1">{{ $order->payment_method }}</td>
-                                                    <td class="sorting_1">
-                                                        @if ($order->status == 'pending')
+                                                    <td class="sorting_1">{{ $order->amount }} FCFA</td>
+                                                    <td class="sorting_1" translate="no">{{ $order->payment_method }}</td>
+                                                    <td class="sorting_1" translate="no">
+                                                        @if ($order->status == 'En attente')
                                                         <span class="badge badge-primary">{{ $order->status }}</span>
-                                                        @elseif ($order->status == 'confirmed')
+                                                        @elseif ($order->status == 'confirmée')
                                                         <span class="badge badge-secondary">{{ $order->status }}</span>
-                                                        @elseif ($order->status == 'processing')
+                                                        @elseif ($order->status == 'En traitement')
                                                         <span class="badge badge-info">{{ $order->status }}</span>
-                                                        @elseif ($order->status == 'picked')
+                                                        @elseif ($order->status == 'sélectionnée')
                                                         <span class="badge badge-warning">{{ $order->status }}</span>
-                                                        @elseif ($order->status == 'shipped')
+                                                        @elseif ($order->status == 'Expédiée')
                                                         <span class="badge badge-light">{{ $order->status }}</span>
-                                                        @elseif ($order->status == 'delivered')
+                                                        @elseif ($order->status == 'livrée')
                                                         <span class="badge badge-success">{{ $order->status }}</span>
                                                         @else
                                                         <span class="badge badge-danger">{{ $order->status }}</span>
@@ -69,7 +69,7 @@
                                                         <div class="input-group">
                                                             <a href="{{ route('orders.show', $order) }}" class="btn btn-success" title="View"><i class="fa fa-eye"></i>
                                                             </a>
-                                                            @if ($order->status =='pending')
+                                                            @if ($order->status =='En attente')
 
                                                             @else
                                                             <a href="{{ route('admin-invoice-download', $order->id) }}" class="btn btn-danger" title="Download"><i class="fa fa-download"></i>

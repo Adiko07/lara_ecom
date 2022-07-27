@@ -109,7 +109,7 @@ class OrderController extends Controller
 
     public function confirmedOrderIndex()
     {
-        $orders = Order::where('status', 'confirmed')->latest('id')->get();
+        $orders = Order::where('status', 'confirmée')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -117,7 +117,7 @@ class OrderController extends Controller
 
     public function processingOrderIndex()
     {
-        $orders = Order::where('status', 'processing')->latest('id')->get();
+        $orders = Order::where('status', 'En traitement')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -125,7 +125,7 @@ class OrderController extends Controller
 
     public function pickedOrderIndex()
     {
-        $orders = Order::where('status', 'picked')->latest('id')->get();
+        $orders = Order::where('status', 'Sélectionnée')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -133,7 +133,7 @@ class OrderController extends Controller
 
     public function shippedOrderIndex()
     {
-        $orders = Order::where('status', 'shipped')->latest('id')->get();
+        $orders = Order::where('status', 'Expédiée')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -141,7 +141,7 @@ class OrderController extends Controller
 
     public function deliveredOrderIndex()
     {
-        $orders = Order::where('status', 'delivered')->latest('id')->get();
+        $orders = Order::where('status', 'livrée')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -149,14 +149,14 @@ class OrderController extends Controller
 
     public function cancelOrderIndex()
     {
-        $orders = Order::where('status', 'cancel')->latest('id')->get();
+        $orders = Order::where('status', 'annulée')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
     }
     public function returnOrderIndex()
     {
-        $orders = Order::where('status', 'return')->latest('id')->get();
+        $orders = Order::where('status', 'retournée')->latest('id')->get();
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -167,37 +167,37 @@ class OrderController extends Controller
         $order = Order::whereId($order_id)->first();
 
         switch ($status) {
-            case 'confirmed':
+            case 'confirmée':
                 $order->update([
                     'status' => $status,
                     'confirmed_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'processing':
+            case 'En traitement':
                 $order->update([
                     'status' => $status,
                     'processing_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'picked':
+            case 'Sélectionnée':
                 $order->update([
                     'status' => $status,
                     'picked_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'shipped':
+            case 'Expédiée':
                 $order->update([
                     'status' => $status,
                     'shipped_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'delivered':
+            case 'livrée':
                 $order->update([
                     'status' => $status,
                     'delivered_date' => Carbon::now()->format('d F Y')
                 ]);
                 break;
-            case 'return':
+            case 'retournée':
                 $order->update([
                     'status' => $status,
                     'return_date' => Carbon::now()->format('d F Y')
@@ -205,7 +205,7 @@ class OrderController extends Controller
                 break;
             default:
                 return back()->with([
-                    'message' => 'No Action perform!!',
+                    'message' => 'Aucune action effectuée !!',
                     'alert-type' => 'success'
                 ]);
                 break;

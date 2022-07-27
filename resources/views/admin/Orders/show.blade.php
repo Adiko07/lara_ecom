@@ -2,7 +2,7 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Order Details',
+    'name' => 'Détails de la commande',
     'url' => "orders.index",
     'section_name' => 'View Order'
     ])
@@ -11,24 +11,24 @@
             <div class="col-md-6 col-lg-6">
                 <div class="box box-bordered border-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Shipping Details</h3>
+                        <h3 class="box-title">Les détails d'expédition</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table">
                             <tr>
-                                <th> Shipping Name : </th>
+                                <th> Nom pour la livraison : </th>
                                 <th> {{ $order->name }} </th>
                             </tr>
                             <tr>
-                                <th> Shipping Phone : </th>
+                                <th> Téléphone d'expédition : </th>
                                 <th> {{ $order->phone }} </th>
                             </tr>
                             <tr>
-                                <th> Shipping Email : </th>
+                                <th> E-mail d'expédition : </th>
                                 <th> {{ $order->email }} </th>
                             </tr>
-                            <tr>
+                            {{--<tr>
                                 <th> Division : </th>
                                 <th> {{ $order->division->division_name }} </th>
                             </tr>
@@ -43,9 +43,9 @@
                             <tr>
                                 <th> Post Code : </th>
                                 <th> {{ $order->post_code }} </th>
-                            </tr>
+                            </tr>--}}
                             <tr>
-                                <th> Order Date : </th>
+                                <th> Date de commande : </th>
                                 <th> {{ $order->order_date }} </th>
                             </tr>
                         </table>
@@ -58,76 +58,76 @@
             <div class="col-md-6 col-lg-6">
                 <div class="box box-bordered border-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Order Details</h3>
-                        <span class="text-danger"> Invoice : {{ $order->invoice_number }}</span>
+                        <h3 class="box-title">Détails de la commande</h3>
+                        <span class="text-danger"> Facture d'achat : {{ $order->invoice_number }}</span>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <table class="table">
                             <tr>
-                                <th> Name : </th>
+                                <th> Nom & Prénoms : </th>
                                 <th> {{ $order->user->name }} </th>
                             </tr>
                             <tr>
-                                <th> Phone : </th>
+                                <th> Téléphone : </th>
                                 <th> {{ $order->user->phone }} </th>
                             </tr>
                             <tr>
-                                <th> Payment Type : </th>
-                                <th> {{ $order->payment_method }} </th>
+                                <th translate="no"> Méthode de paiement : </th>
+                                <th translate="no"> {{ $order->payment_method }} </th>
                             </tr>
                             <tr>
-                                <th> Tranx ID : </th>
+                                <th> ID de transaction: </th>
                                 <th> {{ $order->transaction_id }} </th>
                             </tr>
                             <tr>
-                                <th> Invoice : </th>
+                                <th> Facture d'achat : </th>
                                 <th class="text-danger"> {{ $order->invoice_number }} </th>
                             </tr>
                             <tr>
-                                <th> Order Total : </th>
-                                <th>$ {{ $order->amount }} </th>
+                                <th> Total de la commande : </th>
+                                <th>{{ $order->amount }} FCFA</th>
                             </tr>
                             <tr>
-                                <th> Status : </th>
-                                <th>
+                                <th> Statut : </th>
+                                <th translate="no">
                                     <span class="badge badge-success">{{ $order->status }}
                                     </span>
                                 </th>
                             </tr>
                             <tr>
-                                <th>Return Reason: <p>{{ $order->return_reason }}</p></th>
-                                <th>
-                                    @if ($order->status == 'pending')
+                                <th>Raison du retour: <p>{{ $order->return_reason }}</p></th>
+                                <th translate="no">
+                                    @if ($order->status == 'En attente')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'confirmed'
-                                    ]) }}" class="btn btn-block btn-success">Confirm Order</a>
-                                    @elseif ($order->status == 'confirmed')
+                                        'status' => 'confirmée'
+                                    ]) }}" class="btn btn-block btn-success">Confirmer commande</a>
+                                    @elseif ($order->status == 'confirmée')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'processing'
-                                    ]) }}" class="btn btn-block btn-success">Process Order</a>
-                                    @elseif ($order->status == 'processing')
+                                        'status' => 'En traitement'
+                                    ]) }}" class="btn btn-block btn-success">Traiter la commande</a>
+                                    @elseif ($order->status == 'En traitement')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'picked'
-                                    ]) }}" class="btn btn-block btn-success">Pick Order</a>
-                                    @elseif ($order->status == 'picked')
+                                        'status' => 'sélectionnée'
+                                    ]) }}" class="btn btn-block btn-success">Sélectionner la commande</a>
+                                    @elseif ($order->status == 'sélectionnée')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'shipped'
-                                    ]) }}" class="btn btn-block btn-success">Ship Order</a>
-                                    @elseif ($order->status == 'shipped')
+                                        'status' => 'Expédiée'
+                                    ]) }}" class="btn btn-block btn-success">Expédier la commande</a>
+                                    @elseif ($order->status == 'Expédiée')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'delivered'
-                                    ]) }}" class="btn btn-block btn-success">Deliverd Order</a>
+                                        'status' => 'livrée'
+                                    ]) }}" class="btn btn-block btn-success">Marquer comme Livrée</a>
                                     @elseif ($order->status == 'cancel')
                                     <a href="{{ route('order-status.update', [
                                         'order_id' => $order->id,
-                                        'status' => 'return'
-                                    ]) }}" class="btn btn-block btn-danger">Return Order</a>
+                                        'status' => 'retournée'
+                                    ]) }}" class="btn btn-block btn-danger">Retourner la commande</a>
                                     @endif
                                 </th>
                             </tr>

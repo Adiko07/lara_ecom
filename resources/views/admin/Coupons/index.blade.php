@@ -2,17 +2,17 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Coupon',
+    'name' => 'Bon de réduction',
     'url' => "coupons.index",
-    'section_name' => 'All Coupon'
+    'section_name' => 'Tout les Bons de réductions'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Coupons Data Table</h3>
-                        <a href="{{ route('coupons.create') }}" class="btn btn-primary">Create New Coupon</a>
+                        <h3 class="box-title">Liste des Bons de réductions</h3>
+                        <a href="{{ route('coupons.create') }}" class="btn btn-primary">Créer un Bon de réduction</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -25,10 +25,10 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Coupon Name</th>
-                                                    <th>Coupon Discount</th>
-                                                    <th>Coupon Validity</th>
-                                                    <th>Coupon Status</th>
+                                                    <th>Nom du Bon de réduction</th>
+                                                    <th>Bon de réduction</th>
+                                                    <th>Validité du Bon de réduction</th>
+                                                    <th>Statut</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>

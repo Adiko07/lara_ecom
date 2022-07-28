@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../images/favicon.ico">
+    <link rel="icon" href="{{ asset('frontend') }}/assets/images/logo.png">
 
-    <title>Sunny Admin - Dashboard</title>
+    <title>SODIB-CI || TABLEAU DE BORD</title>
 
     {{-- Style Blade START --}}
 	@include('admin.dashboard_layout.style')

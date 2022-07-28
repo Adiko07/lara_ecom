@@ -9,7 +9,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <meta name="author" content="">
-<meta name="keywords" content="MediaCenter, Template, eCommerce">
+<meta name="keywords" content="">
 <meta name="robots" content="all">
 <title>@yield('title')</title>
 

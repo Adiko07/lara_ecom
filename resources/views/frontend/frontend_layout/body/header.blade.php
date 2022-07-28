@@ -9,19 +9,19 @@
                             {{--<li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>আমার অ্যাকাউন্ট</a>
                             </li>--}}
                         @else
-                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>Mon Compte</a></li>
+                            <li><a href="{{ route('dashboard') }}" style="color: #000;"><i class="icon fa fa-user"></i>Mon Compte</a></li>
                         @endif
-                        <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>Liste de souhait</a></li>
-                        <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>Mon panier</a></li>
+                        <li><a href="{{ route('listWishlist') }}" style="color: #000;"><i class="icon fa fa-heart"></i>Liste de souhait</a></li>
+                        <li><a href="{{ route('myCartView') }}" style="color: #000;"><i class="icon fa fa-shopping-cart"></i>Mon panier</a></li>
                         @auth
-                            <li><a href="{{ route('checkout-page') }}"><i class="icon fa fa-check"></i>Mes commandes</a></li>
+                            <li><a href="{{ route('checkout-page') }}" style="color: #000;"><i class="icon fa fa-check"></i>Mes commandes</a></li>
                         @endauth
 
                         <li>
                             @auth
-                                <a href="{{ route('user.logout') }}"><i class="icon fa fa-user"></i>deconnexion</a>
+                                <a href="{{ route('user.logout') }}" style="color: #000;"><i class="icon fa fa-user"></i>deconnexion</a>
                             @else
-                                <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i>connexion/inscription</a>
+                                <a href="{{ route('login') }}" style="color: #000;"><i class="icon fa fa-lock"></i>connexion/inscription</a>
                             @endauth
                         </li>
                     </ul>

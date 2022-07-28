@@ -1,3 +1,4 @@
+<link rel="icon" href="{{ asset('frontend') }}/assets/images/logo.png">
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/bootstrap.min.css">
 

@@ -325,8 +325,8 @@
                             <div class="col-sm-3">
                                 <ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
                                     <li class="active"><a data-toggle="tab" href="#description">DESCRIPTION</a></li>
-                                    <li><a data-toggle="tab" href="#review">CARACTERISTIQUE</a></li>
-                                    {{--<li><a data-toggle="tab" href="#tags">TAGS</a></li>--}}
+                                    {{--<li><a data-toggle="tab" href="#review">CARACTERISTIQUE</a></li>
+                                    <li><a data-toggle="tab" href="#tags">TAGS</a></li>--}}
                                 </ul><!-- /.nav-tabs #product-tabs -->
                             </div>
                             <div class="col-sm-9">

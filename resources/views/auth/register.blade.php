@@ -113,7 +113,7 @@
         @enderror
         <div class="form-group">
 		    <label class="info-title" for="exampleInputEmail1">Numéro de téléphone <span>*</span></label>
-		    <input type="text" name="phone_number" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
+		    <input type="tel" name="phone_number" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
 		</div>
         @error('phone_number')
             <span class="alert text-danger">{{ $message }}</span>

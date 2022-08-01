@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             UserSeeder::class,
             BrandSeeder::class,
-            //CategorySeeder::class,
-            //SubCategorySeeder::class,
-            //SubSubCategorySeeder::class,
-            //ProductSeeder::class,
+            CategorySeeder::class,
+            SubCategorySeeder::class,
+            SubSubCategorySeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }

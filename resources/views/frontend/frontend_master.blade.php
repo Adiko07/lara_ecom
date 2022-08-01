@@ -123,7 +123,7 @@
         }
     })
     // start product view with Modal
-    function productView(id){
+    /*function productView(id){
         $.ajax({
             type: 'GET',
             url: '/product/view/modal/'+id,
@@ -206,7 +206,7 @@
                 })
             }
         })
-    }
+    }*/
     //add to cart
     function addToCart(){
         var product_name = $('#pname').text();
@@ -394,6 +394,27 @@
         });
     }
     // End remove from wishlist
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#name').on('keyup',function () {
+            var query = $(this).val();
+            $.ajax({
+                url:'{{ route('search') }}',
+                type:'GET',
+                data:{'name':query},
+                success:function (data) {
+                    $('#product_list').html(data);
+                }
+            })
+        });
+        $(document).on('click', 'li', function(){
+            var value = $(this).text();
+            $('#name').val(value);
+            $('#product_list').html("");
+        });
+    });
 </script>
 </body>
 </html>

@@ -22,14 +22,13 @@
 
                     <div id="category" class="category-carousel hidden-xs">
                         <div class="item">
-                            <div class="image"> <img src="{{ asset('frontend') }}/assets/images/banners/cat-banner-1.jpg"
+                            <div class="image"> <img src="{{ asset('frontend') }}/assets/images/banners/banner.jpg"
                                     alt="" class="img-responsive"> </div>
                             <div class="container-fluid">
                                 <div class="caption vertical-top text-left">
-                                    <div class="big-text"> Big Sale </div>
-                                    <div class="excerpt hidden-sm hidden-md"> Save up to 49% off </div>
-                                    <div class="excerpt-normal hidden-sm hidden-md"> Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit </div>
+                                    <div class="big-text"> SODIB-CI </div>
+                                    <div class="excerpt hidden-sm hidden-md"> Tous ce qu'il vous faut pour le Batiment </div>
+                                    <div class="excerpt-normal hidden-sm hidden-md"> Découvrez des milliers d'articles pour vos travaux de construction. </div>
                                 </div>
                                 <!-- /.caption -->
                             </div>
@@ -52,7 +51,7 @@
                                 <!-- /.filter-tabs -->
                             </div>
                             <!-- /.col -->
-                            <div class="col col-sm-12 col-md-6">
+                            {{--<div class="col col-sm-12 col-md-6">
                                 <div class="col col-sm-3 col-md-6 no-padding">
                                     <div class="lbl-cnt"> <span class="lbl">Sort by</span>
                                         <div class="fld inline">
@@ -70,9 +69,9 @@
                                         <!-- /.fld -->
                                     </div>
                                     <!-- /.lbl-cnt -->
-                                </div>
+                                </div>--}}
                                 <!-- /.col -->
-                                <div class="col col-sm-3 col-md-6 no-padding">
+                                {{--<div class="col col-sm-3 col-md-6 no-padding">
                                     <div class="lbl-cnt"> <span class="lbl">Show</span>
                                         <div class="fld inline">
                                             <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
@@ -97,7 +96,7 @@
                                     <!-- /.lbl-cnt -->
                                 </div>
                                 <!-- /.col -->
-                            </div>
+                            </div>--}}
                             <!-- /.col -->
                             <div class="col col-sm-6 col-md-4 text-right">
                                 {{-- <div class="pagination-container">

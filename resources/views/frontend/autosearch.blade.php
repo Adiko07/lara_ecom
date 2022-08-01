@@ -10,28 +10,28 @@
             <div class="row">
                 <div class="col-md-3 sidebar">
                     <!-- ================================== TOP NAVIGATION ================================== -->
-                    @include('frontend.frontend_layout.body.side-menu')
+                    {{--@include('frontend.frontend_layout.body.side-menu')
                     <!-- /.side-menu -->
                     <!-- ================================== TOP NAVIGATION : END ================================== -->
-                    @include('frontend.frontend_layout.category_page.shop-by-widget')
+                    @include('frontend.frontend_layout.category_page.shop-by-widget')--}}
                     <!-- /.sidebar-module-container -->
                 </div>
                 <!-- /.sidebar -->
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <!-- ========================================== SECTION – HERO ========================================= -->
 
                     <div id="category" class="category-carousel hidden-xs">
                         <div class="item">
                             <div class="image"> <img src="{{ asset('frontend') }}/assets/images/banners/banner.jpg"
-                                alt="" class="img-responsive"> </div>
-                        <div class="container-fluid">
-                            <div class="caption vertical-top text-left">
-                                <div class="big-text"> SODIB-CI </div>
-                                <div class="excerpt hidden-sm hidden-md"> Tous ce qu'il vous faut pour le Batiment </div>
-                                <div class="excerpt-normal hidden-sm hidden-md"> Découvrez des milliers d'articles pour vos travaux de construction. </div>
+                                    alt="" class="img-responsive"> </div>
+                            <div class="container-fluid">
+                                <div class="caption vertical-top text-left">
+                                    <div class="big-text"> SODIB-CI </div>
+                                    <div class="excerpt hidden-sm hidden-md"> Tous ce qu'il vous faut pour le Batiment </div>
+                                    <div class="excerpt-normal hidden-sm hidden-md"> Découvrez des milliers d'articles pour vos travaux de construction. </div>
+                                </div>
+                                <!-- /.caption -->
                             </div>
-                            <!-- /.caption -->
-                        </div>
                             <!-- /.container-fluid -->
                         </div>
                     </div>
@@ -69,9 +69,9 @@
                                         <!-- /.fld -->
                                     </div>
                                     <!-- /.lbl-cnt -->
-                                </div>
+                                </div>--}}
                                 <!-- /.col -->
-                                <div class="col col-sm-3 col-md-6 no-padding">
+                                {{--<div class="col col-sm-3 col-md-6 no-padding">
                                     <div class="lbl-cnt"> <span class="lbl">Show</span>
                                         <div class="fld inline">
                                             <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
@@ -121,7 +121,8 @@
                             <div class="tab-pane active" id="grid-container">
                                 <div class="category-product">
                                     <div class="row">
-                                        @foreach ($subsubcategory_products as $product)
+                                    @if($products->isNotEmpty())
+                                        @foreach ($products as $product)
                                         <div class="col-sm-6 col-md-4 wow fadeInUp animated"
                                             style="visibility: visible; animation-name: fadeInUp;">
                                             <div class="products">
@@ -206,7 +207,7 @@
                                         </div>
                                         @endforeach
                                         <!-- /.item -->
-
+                                    @endif
                                     </div>
                                     <!-- /.row -->
                                 </div>
@@ -217,7 +218,8 @@
 
                             <div class="tab-pane" id="list-container">
                                 <div class="category-product">
-                                    @foreach ($subsubcategory_products as $product)
+                                @if($products->isNotEmpty())
+                                    @foreach ($products as $product)
                                     <div class="category-product-inner wow fadeInUp animated"
                                         style="visibility: visible; animation-name: fadeInUp;">
                                         <div class="products">
@@ -225,9 +227,10 @@
                                                 <div class="row product-list-row">
                                                     <div class="col col-sm-4 col-lg-4">
                                                         <div class="product-image">
-                                                            <div class="image"> <img
-                                                                    src="{{ asset($product->product_thumbnail) }}"
-                                                                    alt=""> </div>
+                                                            <div class="image"> <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}"><img
+                                                                src="{{ asset($product->product_thumbnail) }}"
+                                                                alt=""></a>
+                                                            </div>
                                                         </div>
                                                         <!-- /.product-image -->
                                                     </div>
@@ -242,7 +245,7 @@
                                                                 @endif
                                                             </a>
                                                             </h3>
-                                                            {{--<div class="rating rateit-small rateit"><button
+                                                            <div class="rating rateit-small rateit"><button
                                                                     id="rateit-reset-14" data-role="none"
                                                                     class="rateit-reset" aria-label="reset rating"
                                                                     aria-controls="rateit-range-14"
@@ -256,7 +259,7 @@
                                                                         style="height: 14px; width: 56px;"></div>
                                                                     <div class="rateit-hover" style="height:14px"></div>
                                                                 </div>
-                                                            </div>--}}
+                                                            </div>
                                                             <div class="product-price">
                                                                 @if ($product->discount_price == NULL)
                                                                     <span class="price">{{ $product->selling_price }} FCFA</span>
@@ -275,7 +278,7 @@
                                                             </div>
                                                             <div class="cart clearfix animate-effect">
                                                                 <div class="action">
-                                                                    {{--<ul class="list-unstyled">
+                                                                    <ul class="list-unstyled">
                                                                         <li class="add-cart-button btn-group">
                                                                             <button class="btn btn-primary icon"
                                                                                 data-toggle="dropdown" type="button"> <i
@@ -290,7 +293,7 @@
                                                                         <li class="lnk"> <a class="add-to-cart"
                                                                                 href="detail.html" title="Compare"> <i
                                                                                     class="fa fa-signal"></i> </a> </li>
-                                                                    </ul>--}}
+                                                                    </ul>
                                                                 </div>
                                                                 <!-- /.action -->
                                                             </div>
@@ -317,7 +320,7 @@
                                     </div>
                                     @endforeach
                                     <!-- /.category-product-inner -->
-
+                                @endif
                                 </div>
                                 <!-- /.category-product -->
                             </div>
@@ -328,7 +331,7 @@
                             <div class="text-right">
                                 <div class="pagination-container">
                                     <ul class="list-inline list-unstyled">
-                                        {{ $subsubcategory_products->links() }}
+                                        
                                     </ul>
                                     <!-- /.list-inline -->
                                 </div>

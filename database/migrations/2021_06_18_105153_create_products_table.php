@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('subcategory_id')->nullable();
             $table->unsignedBigInteger('sub_subcategory_id')->nullable();
-            $table->string('product_name_en');
+            $table->string('product_name_en')->index();
             $table->string('product_name_bn')->nullable()->default('sodibci');
             $table->string('product_slug_en');
             $table->string('product_slug_bn')->nullable()->default('sodibci');
@@ -32,7 +32,7 @@ class CreateProductsTable extends Migration
             $table->string('product_color_en')->nullable();
             $table->string('product_color_bn')->nullable()->default('sodibci');
             $table->unsignedInteger('purchase_price')->nullable();
-            $table->unsignedInteger('selling_price');
+            $table->unsignedInteger('selling_price')->index();
             $table->unsignedInteger('discount_price')->nullable();
             $table->unsignedInteger('livraison')->nullable();
             $table->text('short_description_en')->nullable();

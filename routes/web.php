@@ -25,6 +25,7 @@ use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\User\OrderDetailsController;
 use App\Http\Controllers\User\OrderHistoryController;
 use App\Http\Controllers\User\WishlistController;
+use App\Http\Controllers\SearchProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ use App\Http\Controllers\User\WishlistController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Frontend customer/user logout, profile, change password routes
+// Frontend Product/user logout, profile, change password routes
 
 
 Route::middleware(['auth:web'])->group(function(){
@@ -57,7 +58,10 @@ Route::middleware(['auth:web'])->group(function(){
 
 // Frontend Pages routes
 Route::get('/', [FrontendPageController::class,'home'])->name('home');
+Route::get('find-my-product/', [SearchProductController::class,'search'])->name('product-search');
+Route::get('/search', [FrontendPageController::class,'autosearch'])->name('search');
 Route::get('/category', [FrontendPageController::class,'category'])->name('category');
+//Route::get('/search', \App\Http\Livewire\SearchProducts::class );
 
 Route::get('/product/detail/{id}/{slug}', [FrontendPageController::class,'productDeatil'])->name('frontend-product-details');
 Route::get('/english/language', [LanguageController::class, 'englishLoad'])->name('english.language');
@@ -203,3 +207,17 @@ Route::middleware(['auth:admin'])->group(function(){
         Route::get('/invoice-download/{order_id}', [OrderController::class, 'adminInvoiceDownload'])->name('admin-invoice-download');
     });
 });
+
+/*Route::any('/search',function(){
+	$q = (Input::get('q'));
+	if($q != ''){
+		$data =Product::where('name','like','%'.$q.'%')->orWhere('email','like','%'.$q.'%')->paginate(5)->setpath('');
+		$data->appends(array(
+           'q' => Input::get('q'),
+		));
+		if(count($data)>0){
+			return view('frontend.index')->withData($data);
+		}
+		return view('frontend.index')->withMessage("No Results Found!");
+	}
+});*/

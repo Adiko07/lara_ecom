@@ -171,7 +171,7 @@
             <!-- /.products -->
             </div>
             @empty
-                <h5 class="text-danger">No Product Found</h5>
+                <h5 class="text-danger"></h5>
             @endforelse
         <!-- /.item -->
         </div>

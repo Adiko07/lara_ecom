@@ -126,13 +126,13 @@
 
                                             style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #3d4852; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">
 
-                                            Hello!</h1>
+                                            Hello cher administrateur!</h1>
 
                                         <p
 
                                             style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">
 
-                                            Vous recevez cet e-mail de confirmation de votre commande.</p>
+                                            Vous recevez cet e-mail parce-que le système de SODIB-CI à détecter une nouvelle commande. le resumé de la commande se trouve ci-dessous</p>
 
                                         <table class="action" align="center" width="100%" cellpadding="0"
 
@@ -182,14 +182,20 @@
 
                                                                         <td> Montant : {{ $order['amount'] }} FCFA<br> <strong>Cela n'inclus pas les frais de livraison</strong></td>
 
-                                                                        <td> Nom & prénoms : {{ $order['name'] }}</td>
+                                                                        <td> Client : {{ $order['name'] }}</td>
 
-                                                                        <td> Email : {{ $order['email'] }}</td>
-
-                                                                        <td> un conseiller client vous contactera pour vous communiquer les frais de livraison correspondantes au lieu de livraison que vous avez mentionné lors de votre commande</td>
+                                                                        <td> Email du client : {{ $order['email'] }}</td>
 
 
 
+
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td> Veuillez-vous connecter à votre espace administrateur pour traiter la commande.</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <a href="https://sodibci.net/admin/se-connecter/login"> TRAITER LA COMMANDE</a>
                                                                     </tr>
 
 

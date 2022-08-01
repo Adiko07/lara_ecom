@@ -32,9 +32,9 @@ class InfoOrderMail extends Mailable
     {
         $order = $this->data;
         $companyEmail = env('MAIL_FROM_ADDRESS');
-        $emailSubject = 'INFO ADMIN Order Confirmation Email from '.env('APP_NAME');
+        $emailSubject = 'Email de detection de nouvelles commandes de '.env('APP_NAME');
         return $this->from($companyEmail)
-            ->view('mail.order_mail', compact('order'))
+            ->view('mail.Info_order_mail', compact('order'))
             ->subject($emailSubject);
     }
 }

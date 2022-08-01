@@ -43,6 +43,33 @@ class FrontendPageController extends Controller
         ));
     }
 
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function autosearch(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = Product::where('product_name_en','LIKE',$request->name.'%')->paginate(6);
+            $output = '';
+            if (count($data)>0) {
+                $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
+                foreach ($data as $row) {
+                    $output .= '<li class="list-group-item">'.$row->product_name_en.'</li>';
+                }
+                $output .= '</ul>';
+            }else {
+                $output .= '<li class="list-group-item">'.'No Data Found'.'</li>';
+            }
+            return $output;
+
+        }
+        return view('frontend.index');
+          
+    }
+
+
     public function category()
     {
         return view('frontend.frontend_layout.category_page.category-page');

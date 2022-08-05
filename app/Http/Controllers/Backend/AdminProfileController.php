@@ -87,16 +87,16 @@ class AdminProfileController extends Controller
         if($request->file('image')){
             $image_file = $request->file('image');
             if($data->profile_photo_path){
-                @unlink(public_path('upload/admin_images'.$data->profile_photo_path));
+                @unlink(public_path('storage/profile-photos/'.$data->profile_photo_path));
             }
             $filename = date('YmdHi').'.'.$image_file->getClientOriginalExtension();
-            $image_file->move(public_path('upload/admin_images'),$filename);
+            $image_file->move(public_path('storage/profile-photos'),$filename);
             $data['profile_photo_path']= $filename;
         }
         $data->save();
 
         $notification = [
-            'message' => 'Profile Updated Successfully',
+            'message' => 'Profile mis à jour avec succès !!!',
             'alert-type' => 'success'
         ];
 
@@ -123,7 +123,7 @@ class AdminProfileController extends Controller
             Auth::logout();
 
             $notification = [
-                'message' => 'Password Updated Successfully!!!',
+                'message' => 'Mot de passe mis à jour avec succès !!!',
                 'alert-type' => 'success'
             ];
             return redirect()->route('admin.logout')->with($notification);

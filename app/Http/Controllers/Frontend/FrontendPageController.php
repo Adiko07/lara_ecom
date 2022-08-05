@@ -66,7 +66,7 @@ class FrontendPageController extends Controller
 
         }
         return view('frontend.index');
-          
+
     }
 
 
@@ -87,7 +87,7 @@ class FrontendPageController extends Controller
         $largeur = explode(',', $product->largeur);
         $epaisseur = explode(',', $product->epaisseur);
         $related_products = Product::where('category_id',$product->category_id)
-        ->where('id', '!=', $id)->orderBy('id','DESC')->get();
+        ->where('id', '!=', $id)->orderBy('id','DESC')->latest()->limit(6)->get();
         //return response()->json($product);
         return view('frontend.frontend_layout.product_page.product-page', compact(
             'categories',

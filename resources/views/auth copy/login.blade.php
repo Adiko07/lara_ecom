@@ -82,7 +82,9 @@
 		  	<label>
 		    	<input type="radio" name="remember" id="optionsRadios2" value="option2">Souviens-toi de moi!
 		  	</label>
-		  	    <a href="{{ route('forgot.password.form') }}" class="forgot-password pull-right">Mot de passe oublié ?</a>
+              @if (Route::has('password.request'))
+		  	    <a href="{{ route('password.request') }}" class="forgot-password pull-right">Mot de passe oublié ?</a>
+              @endif
             </div>
 	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">Se connecter</button>
 	</form>

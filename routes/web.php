@@ -26,6 +26,7 @@ use App\Http\Controllers\User\OrderDetailsController;
 use App\Http\Controllers\User\OrderHistoryController;
 use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\SearchProductController;
+use App\Http\Controllers\NewpassworduserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +112,17 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth', 'user'], 'namespace' 
     // Cash on Delivery route
     Route::post('/cod/v1/payment', [CODController::class, 'codOrder'])->name('cod.order');
 });
+
+//reset password route
+
+Route::get('/password/forgot', [NewpassworduserController::class, 'showForgotForm'])
+->name('forgot.password.form');
+Route::post('/password/forgot', [NewpassworduserController::class, 'SendResetLink'])
+->name('forgot.password.link');
+Route::get('/password/reset/{token}', [NewpassworduserController::class, 'showResetForm'])
+->name('reset.password.form');
+Route::post('/password/reset', [NewpassworduserController::class, 'resetPassword'])
+->name('reset.password');
 
 // Cart page routes
 Route::get('/my-cart',[CartPageController::class,'myCartView'])->name('myCartView');

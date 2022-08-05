@@ -4,7 +4,7 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'Détails de la commande',
     'url' => "orders.index",
-    'section_name' => 'View Order'
+    'section_name' => 'Voir commande'
     ])
     <section class="content">
         <div class="row">
@@ -23,6 +23,10 @@
                             <tr>
                                 <th> Téléphone d'expédition : </th>
                                 <th> {{ $order->phone }} </th>
+                            </tr>
+                            <tr>
+                                <th> Téléphone d'expédition N°2 : </th>
+                                <th> {{ $order->phone2 }} </th>
                             </tr>
                             <tr>
                                 <th> E-mail d'expédition : </th>

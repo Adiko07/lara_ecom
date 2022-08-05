@@ -25,7 +25,7 @@ class AdminFactory extends Factory
     {
         return [
             'name' => 'SODIBCI',
-            'email' => 'admin@sodibci.net',
+            'email' => 'rodriguendoufou95@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('12345678'),
             'remember_token' => Str::random(10),

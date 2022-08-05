@@ -59,9 +59,7 @@
 									<!-- /.col -->
 									<div class="col-6">
 									 <div class="fog-pwd text-right">
-                                        @if (Route::has('password.request'))
-										<a href="{{ route('password.request') }}" class="text-white hover-info"><i class="ion ion-locked"></i> {{ __('Mot de passe oublié ?') }}</a><br>
-                                        @endif
+										<a href="{{ route('admin_forgot.password.form') }}" class="text-white hover-info"><i class="ion ion-locked"></i> {{ __('Mot de passe oublié ?') }}</a><br>
 									  </div>
 									</div>
 									<!-- /.col -->

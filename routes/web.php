@@ -27,6 +27,7 @@ use App\Http\Controllers\User\OrderHistoryController;
 use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\SearchProductController;
 use App\Http\Controllers\NewpassworduserController;
+use App\Http\Controllers\NewpasswordadminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -124,6 +125,17 @@ Route::get('/password/reset/{token}', [NewpassworduserController::class, 'showRe
 Route::post('/password/reset', [NewpassworduserController::class, 'resetPassword'])
 ->name('reset.password');
 
+//reset password route Admin
+
+Route::get('/admin/password/forgot', [NewpasswordadminController::class, 'showForgotForm'])
+->name('admin_forgot.password.form');
+Route::post('/admin/password/forgot', [NewpasswordadminController::class, 'SendResetLink'])
+->name('admin_forgot.password.link');
+Route::get('/admin/password/reset/{token}', [NewpasswordadminController::class, 'showResetForm'])
+->name('admin_reset.password.form');
+Route::post('/admin/password/reset', [NewpasswordadminController::class, 'resetPassword'])
+->name('admin_reset.password');
+
 // Cart page routes
 Route::get('/my-cart',[CartPageController::class,'myCartView'])->name('myCartView');
 Route::get('/my-cart/list',[CartPageController::class,'showmyCartList'])->name('showmyCartList');
@@ -151,7 +163,7 @@ Route::post('/checkout-store',[CheckoutController::class, 'checkoutStore'])->nam
 
 // Admin Login routes
 Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
-	Route::get('/se-connecter/login',[AdminController::class, 'loginForm']);
+	Route::get('/se-connecter/login',[AdminController::class, 'loginForm'])->name('admin.connexion');
 	Route::post('/login',[AdminController::class, 'store'])->name('admin.login');
 });
 

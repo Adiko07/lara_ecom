@@ -49,19 +49,19 @@
         e.preventDefault();
         var link = $(this).attr("href");
                   Swal.fire({
-                    title: 'Are you sure?',
-                    text: "Delete This Data?",
+                    title: 'Confirmation de requête ?',
+                    text: "Voulez-vous vraiment effectuer une suppression ?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: 'OUI, proceder à la suppression!'
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
+                        'Supprimé !',
+                        'Suppression effectuer avec succès.',
                         'success'
                       )
                     }

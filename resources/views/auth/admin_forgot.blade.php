@@ -61,7 +61,7 @@
                     <label class="info-title" for="exampleInputEmail1">Email Address <span>*</span></label>
                     <input type="email" name="email" :value="old('email')" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
                 </div>
-                <button type="submit" class="btn-upper btn btn-primary checkout-page-button">{{ __('Email Password Reset Link') }}</button>
+                <button type="submit" class="btn-upper btn btn-primary checkout-page-button">{{ __('RECEVOIR LE LIEN') }}</button>
             </form>
         </div>
         <!-- Sign-in -->

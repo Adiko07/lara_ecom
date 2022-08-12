@@ -105,7 +105,7 @@ class FrontendPageController extends Controller
 
     public function tagwiseProduct($tag)
     {
-        $tag_products = Product::where('status',1)->where('product_tags_en', $tag)->orderBy('id', 'DESC')->paginate(3);
+        $tag_products = Product::where('status',1)->where('product_tags_en', $tag)->orderBy('id', 'DESC')->paginate(50);
         $categories = Category::with(['subcategory'])->orderBy('category_name_en', 'ASC')->get();
         return view('frontend.tags.tags_view', compact('tag_products', 'categories'));
     }
@@ -113,7 +113,7 @@ class FrontendPageController extends Controller
     public function subcategoryProducts($id, $slug)
     {
         $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
-        $subcategory_products = Product::where('status', 1)->where('subcategory_id', $id)->orderBy('id','DESC')->paginate(3);
+        $subcategory_products = Product::where('status', 1)->where('subcategory_id', $id)->orderBy('id','DESC')->paginate(50);
         //$categories = Category::with(['subcategory'])->orderBy('category_name_en', 'ASC')->get();
         return view('frontend.frontend_layout.subcategory_page.subcategory_product_page', compact('subcategory_products','categories'));
     }
@@ -121,7 +121,7 @@ class FrontendPageController extends Controller
     public function subsubcategoryProducts($id, $slug)
     {
         $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
-        $subsubcategory_products = Product::where('status', 1)->where('sub_subcategory_id', $id)->orderBy('id','DESC')->paginate(3);
+        $subsubcategory_products = Product::where('status', 1)->where('sub_subcategory_id', $id)->orderBy('id','DESC')->paginate(50);
         //$categories = Category::with(['subcategory'])->orderBy('category_name_en', 'ASC')->get();
         return view('frontend.frontend_layout.subcategory_page.subsubcategory_product_page', compact('subsubcategory_products','categories'));
     }

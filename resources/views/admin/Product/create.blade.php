@@ -13,7 +13,7 @@
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
                         <h3 class="box-title">Nouveau produit</h3>
-                        <a href="{{ route('subsubcategories.index') }}" class="btn btn-primary">Liste des produits</a>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary">Liste des produits</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -155,7 +155,7 @@
                                     <div class="form-group">
                                         <h5>Taille du produit <span class="text-danger"></span></h5>
                                         <div class="controls">
-                                            <input type="text" name="product_size_en" class="form-control" value="small,medium,large" data-role="tagsinput"> <div class="help-block"></div>
+                                            <input type="text" name="product_size_en" class="form-control" value="petit,moyen,large" data-role="tagsinput"> <div class="help-block"></div>
                                         </div>
                                         @error('product_size_en')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -178,7 +178,7 @@
                                     <div class="form-group">
                                         <h5>Couleur du produit <span class="text-danger"></span></h5>
                                         <div class="controls">
-                                            <input type="text" name="product_color_en" class="form-control" value="red,green,blue" data-role="tagsinput">
+                                            <input type="text" name="product_color_en" class="form-control" value="rouge,vert,bleu" data-role="tagsinput">
                                             <div class="help-block"></div>
                                         </div>
                                         @error('product_color_en')
@@ -432,7 +432,7 @@
                   type:"GET",
                   dataType:"json",
                   success:function(data) {
-                    $('select[name="sub_subcategory_id"]').html('');
+                    $('select[name="subcategory_id"]').html('');
                      var d =$('select[name="subcategory_id"]').empty();
                         $.each(data, function(key, value){
                             $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_en + '</option>');

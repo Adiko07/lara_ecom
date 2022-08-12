@@ -26,20 +26,6 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Nom de marque <span class="text-danger"></span></h5>
-                                        <select class="custom-select" aria-label="Default select example" name="brand_id">
-                                            <option selected>Choisissez une marque</option>
-                                            @foreach ($brands as $brand)
-                                            <option value="{{ $brand->id }}" {{ $brand->id == $product->brand_id ? 'selected': '' }} >{{ $brand->brand_name_en }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('brand_id')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
                                         <h5>Nom de la catégorie <span class="text-danger">*</span></h5>
                                         <select class="custom-select" aria-label="Default select example" name="category_id">
                                             <option selected>Choisissez une catégorie</option>
@@ -76,6 +62,20 @@
                                             @endforeach
                                         </select>
                                         @error('sub_subcategory_id')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <h5>Nom de marque <span class="text-danger"></span></h5>
+                                        <select class="custom-select" aria-label="Default select example" name="brand_id">
+                                            <option selected>Choisissez une marque</option>
+                                            @foreach ($brands as $brand)
+                                            <option value="{{ $brand->id }}" {{ $brand->id == $product->brand_id ? 'selected': '' }} >{{ $brand->brand_name_en }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('brand_id')
                                             <span class="alert text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>

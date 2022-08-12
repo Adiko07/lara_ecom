@@ -71,8 +71,14 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
                     <!--  LOGO  -->
-                    <div class="logo"> <a href="{{ route('home') }}"> <img
-                                src="{{ asset('frontend') }}/assets/images/logo.png" alt="logo"> </a> </div>
+                    <div class="logo">
+                        <a href="{{ route('home') }}">
+                            <img src="{{ asset('frontend') }}/assets/images/logo.png" alt="logo">
+                        </a>
+                        <h6 style="font-weight: 600; font-size: 1em;">
+                            société de distribution de bois
+                        </h6>
+                    </div>
                     <!-- /.logo -->
                     <!--  LOGO : END  -->
                 </div>

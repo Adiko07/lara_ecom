@@ -213,7 +213,7 @@
                                                 <div class="yamm-content ">
                                                     <div class="row d-flex justify-content-between align-items-center">
                                                         @foreach ($category->subcategory as $subcategory)
-                                                            <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
+                                                            <div class="col-xs-12 col-sm-6 col-md-2 col-menu bg-light" style="border-left: #000">
                                                                 <h2 class="title">
                                                                     <a
                                                                         href="{{ route('subcategory.products', ['id' => $subcategory->id, 'slug' => $subcategory->subcategory_slug_en]) }}">

@@ -2703,7 +2703,7 @@ age-container #owl-main .owl-next {
   background: rgba(0, 0, 0, 0);
 }
 
-.tab-content {padding-left:20px}
+.tab-content {padding:1em}
 
 .product {
   position: relative;

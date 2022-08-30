@@ -72,12 +72,12 @@
                 <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
                     <!--  LOGO  -->
                     <div class="logo">
-                        <a href="{{ route('home') }}">
-                            <img src="{{ asset('frontend') }}/assets/images/logo.png" alt="logo">
+                        <a href="{{ route('home') }}" class="">
+                            <img src="{{ asset('frontend') }}/assets/images/logo.png" alt="logo" class="img-fluid">
+                            {{--<h6 style="font-weight: 700; font-size: 0.65em; color: #000;">
+                                SOCIETE DE DISTRIBUTION DE BOIS
+                            </h6>--}}
                         </a>
-                        <h6 style="font-weight: 600; font-size: 1em;">
-                            société de distribution de bois
-                        </h6>
                     </div>
                     <!-- /.logo -->
                     <!--  LOGO : END  -->
@@ -88,6 +88,28 @@
                     <!-- /.contact-row -->
                     <!--  SEARCH AREA  -->
                     <div class="search-area">
+                        {{--<form>
+                            <div class="control-group">
+                                <ul class="categories-filter animate-dropdown">
+                                    <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown"
+                                            href="category.html">Categories <b class="caret"></b></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li class="menu-header">Computer</li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                    href="category.html">- Clothing</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                    href="category.html">- Electronics</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                    href="category.html">- Shoes</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                    href="category.html">- Watches</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <input class="search-field" placeholder="Search here..." />
+                                <a class="search-button" href="#"></a>
+                            </div>
+                        </form>--}}
                         <form action="{{ route('product-search') }}" method="GET" role="search">
                             <div class="control-group">
                                 {{--<ul class="categories-filter animate-dropdown">
@@ -106,7 +128,7 @@
                                         </ul>
                                     </li>
                                 </ul>--}}
-                                <input class="search-field" placeholder="Search here..." type="text" name="name" id="name" />
+                                <input class="search-field" placeholder="Rechercher un produit..." type="text" name="name" id="name" />
                                 <button class="search-button"></button>
                                 <div id="product_list"></div>
                                 <div class="col-lg-3"></div>
@@ -191,6 +213,10 @@
                                         Accueil
                                     </a>
                                 </li>
+                                <li class="yamm-fw"> <a href="{{ route('shopping') }}">
+                                    Boutique
+                                    </a>
+                                </li>
                                 @php
                                     $categories = \App\Models\Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
                                 @endphp
@@ -213,7 +239,7 @@
                                                 <div class="yamm-content ">
                                                     <div class="row d-flex justify-content-between align-items-center">
                                                         @foreach ($category->subcategory as $subcategory)
-                                                            <div class="col-xs-12 col-sm-6 col-md-2 col-menu bg-light" style="border-left: #000">
+                                                            <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
                                                                 <h2 class="title">
                                                                     <a
                                                                         href="{{ route('subcategory.products', ['id' => $subcategory->id, 'slug' => $subcategory->subcategory_slug_en]) }}">
@@ -239,11 +265,11 @@
                                                             </div>
                                                             <!-- /.col -->
                                                         @endforeach
-                                                        <div class="col-xs-12 col-sm-6 col-md-4 col-menu banner-image">
+                                                        {{--<div class="col-xs-12 col-sm-6 col-md-4 col-menu banner-image">
                                                             <img class="img-responsive"
                                                                 src="{{ asset($category->category_image) }}"
-                                                                {{-- src="{{ asset('frontend') }}/assets/images/banners/top-menu-banner.jpg" --}} alt="">
-                                                        </div>
+                                                                {{-- src="{{ asset('frontend') }}/assets/images/banners/top-menu-banner.jpg" --} alt="">
+                                                        </div>--}}
                                                         <!-- /.yamm-content -->
                                                     </div>
                                                 </div>
@@ -251,7 +277,11 @@
                                         </ul>
                                     </li>
                                 @endforeach
-                                {{--<li class="dropdown  navbar-right special-menu"> <a href="#">Todays offer</a> </li>--}}
+                                {{--<li class="dropdown  navbar-right special-menu"> <a href="#">Todays offer</a> </li>
+                                <li class="yamm-fw"> <a href="{{ route('shopping') }}">
+                                        Boutique
+                                    </a>
+                                </li>--}}
                             </ul>
                             <!-- /.navbar-nav -->
                             <div class="clearfix"></div>

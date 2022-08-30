@@ -20,7 +20,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
                 <div class="product" style="padding: 0.5em">
                     <div class="product-image">
                         <div class="image"> <a
@@ -83,7 +83,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -145,7 +145,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -207,7 +207,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -269,7 +269,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -331,7 +331,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -393,7 +393,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -455,7 +455,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -517,7 +517,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a

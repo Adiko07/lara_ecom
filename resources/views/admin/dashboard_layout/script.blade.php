@@ -15,6 +15,8 @@
 <script src="{{ asset('backend') }}/js/pages/data-table.js"></script>
 @yield('dashboard_script')
 
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <!-- Sunny Admin App -->
 <script src="{{ asset('backend') }}/js/template.js"></script>
 {{-- <script src="{{ asset('backend') }}/js/pages/dashboard.js"></script> --}}
@@ -46,7 +48,7 @@
 
   $(function(){
     $(document).on('click','#delete',function(e){
-        e.preventDefault();
+        event.preventDefault();
         var link = $(this).attr("href");
                   Swal.fire({
                     title: 'Confirmation de requête ?',

@@ -1,0 +1,30 @@
+[28-Jul-2022 09:39:20 UTC] PHP Warning:  require(/home/sodiicmc/public_html/../ecom/vendor/autoload.php): Failed to open stream: No such file or directory in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:39:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/sodiicmc/public_html/../ecom/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/sodiicmc/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:39:24 UTC] PHP Warning:  require(/home/sodiicmc/public_html/../ecom/vendor/autoload.php): Failed to open stream: No such file or directory in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:39:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/sodiicmc/public_html/../ecom/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/sodiicmc/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:40:58 UTC] PHP Warning:  require(/home/sodiicmc/public_html/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:40:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/sodiicmc/public_html/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/sodiicmc/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:41:01 UTC] PHP Warning:  require(/home/sodiicmc/public_html/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:41:01 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/sodiicmc/public_html/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/sodiicmc/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:41:03 UTC] PHP Warning:  require(/home/sodiicmc/public_html/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:41:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/sodiicmc/public_html/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/sodiicmc/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:41:15 UTC] PHP Warning:  require(/home/sodiicmc/public_html/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/sodiicmc/public_html/index.php on line 34
+[28-Jul-2022 09:41:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/sodiicmc/public_html/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/sodiicmc/public_html/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/sodiicmc/public_html/index.php on line 34

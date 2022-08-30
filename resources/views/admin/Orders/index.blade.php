@@ -14,8 +14,22 @@
                         <h3 class="box-title">
                             @if (Request::is('admin/orders'))
                                 Liste de toutes les commandes
-                            @else
-                            Liste des commandes de SODIB-CI
+                            @elseif(Request::is('admin/orders/pending/index'))
+                                Liste des commandes en attente
+                            @elseif(Request::is('admin/orders/confirmed/index'))
+                                Liste des commandes confirmées
+                            @elseif(Request::is('admin/orders/processing/index'))
+                                Liste des commandes en traitement
+                            @elseif(Request::is('admin/orders/picked/index'))
+                                Liste des commandes en sélectionnées
+                            @elseif(Request::is('admin/orders/shipped/index'))
+                                Liste des commandes en expéditions
+                            @elseif(Request::is('admin/orders/delivered/index'))
+                                Liste des commandes livrées
+                            @elseif(Request::is('admin/orders/cancel/index'))
+                                Liste des commandes annulées
+                            @elseif(Request::is('admin/orders/return/index'))
+                                Liste des commandes retournées
                             @endif
                         </h3>
                     </div>

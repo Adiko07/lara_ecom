@@ -202,6 +202,39 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h5>Longueur <span class="text-danger"></span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="longueur" class="form-control" value="{{ old('longueur', $product->longueur) }}" data-role="tagsinput"> <div class="help-block"></div>
+                                        </div>
+                                        @error('longueur')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h5>Largeur <span class="text-danger"></span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="largeur" class="form-control" value="{{ old('largeur', $product->largeur) }}" data-role="tagsinput"> <div class="help-block"></div>
+                                        </div>
+                                        @error('largeur')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h5>Epaisseur <span class="text-danger"></span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="epaisseur" class="form-control" value="{{ old('epaisseur', $product->epaisseur) }}" data-role="tagsinput"> <div class="help-block"></div>
+                                        </div>
+                                        @error('epaisseur')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
                                 {{--<div class="col-md-2">
                                     <div class="form-group">
                                         <h5>Product Color BN <span class="text-danger"></span></h5>
@@ -422,7 +455,7 @@
                                     <img src="{{ asset($img->photo_name) }}" class="card-img-top" style="height: 100px; width: 100px;">
                                     <div class="card-body">
                                         <h5 class="card-title">
-                                        <a href="" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i> </a>
+                                        {{--<a href="" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i> </a>--}}
                                         </h5>
                                     <p class="card-text">
                                         <div class="form-group">

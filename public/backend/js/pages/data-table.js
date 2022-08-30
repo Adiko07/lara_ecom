@@ -8,10 +8,8 @@ $(function () {
 
     $('#example1').DataTable();
     $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
       'searching'   : false,
-      'ordering'    : true,
+      
       'info'        : true,
       'autoWidth'   : false
     });
@@ -25,7 +23,7 @@ $(function () {
 	} );
 	
 	$('#tickets').DataTable({
-	  'paging'      : true,
+	  
 	  'lengthChange': true,
 	  'searching'   : true,
 	  'ordering'    : true,
@@ -34,7 +32,7 @@ $(function () {
 	});
 	
 	$('#productorder').DataTable({
-	  'paging'      : true,
+	  
 	  'lengthChange': true,
 	  'searching'   : true,
 	  'ordering'    : true,

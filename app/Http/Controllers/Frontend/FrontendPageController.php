@@ -16,10 +16,10 @@ class FrontendPageController extends Controller
     public function home()
     {
         $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
-        $sliders = Slider::where('slider_name', '=', 'Main-Slider')->where('slider_status', '=', 1)->limit(3)->get();
+        $sliders = Slider::/*where('slider_name', '=', 'Main-Slider')->*/where('slider_status', '=', 1)->limit(3)->get();
         $new_products = Product::with(['images'])
         ->where('new_arrival' ,'=', 1)
-        ->where('status', 1)->limit(20)->get();
+        ->where('status', 1)->limit(8)->get();
 
         $skip_category_0 = Category::skip(0)->first();
         $skip_category_products_0 = Product::where('category_id', $skip_category_0->id)
@@ -143,4 +143,31 @@ class FrontendPageController extends Controller
             'epaisseur' => $epaisseur,
         ],200);
     }
+
+    public function shop()
+    {
+        $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
+        $products = Product::where('status', 1)->orderBy('id','DESC')->paginate(48);
+
+        //return response()->json($categories);
+        return view('frontend.shop', compact(
+            'products',
+            'categories'
+        ));
+    }
+
+    public function newProduct()
+    {
+        $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
+        $products = Product::with(['images'])
+        ->where('new_arrival' ,'=', 1)
+        ->where('status', 1)->orderBy('id','DESC')->paginate(48);
+
+        //return response()->json($categories);
+        return view('frontend.allnewproduct', compact(
+            'products',
+            'categories'
+        ));
+    }
+
 }

@@ -64,6 +64,8 @@ Route::get('find-my-product/', [SearchProductController::class,'search'])->name(
 Route::get('/search', [FrontendPageController::class,'autosearch'])->name('search');
 Route::get('/category', [FrontendPageController::class,'category'])->name('category');
 //Route::get('/search', \App\Http\Livewire\SearchProducts::class );
+Route::get('/boutique', [FrontendPageController::class,'shop'])->name('shopping');
+Route::get('/tous-les-nouveaux-produits', [FrontendPageController::class,'newProduct'])->name('allNewProduct');
 
 Route::get('/product/detail/{id}/{slug}', [FrontendPageController::class,'productDeatil'])->name('frontend-product-details');
 Route::get('/english/language', [LanguageController::class, 'englishLoad'])->name('english.language');

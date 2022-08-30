@@ -23,15 +23,15 @@
                     {{--<div id="category" class="category-carousel hidden-xs">
                         <div class="item">
                             <div class="image"> <img src="{{ asset('frontend') }}/assets/images/banners/banner.jpg"
-                                    alt="" class="img-responsive"> </div>
-                            <div class="container-fluid">
-                                <div class="caption vertical-top text-left">
-                                    <div class="big-text"> SODIB-CI </div>
-                                    <div class="excerpt hidden-sm hidden-md"> Tous ce qu'il vous faut pour le Batiment </div>
-                                    <div class="excerpt-normal hidden-sm hidden-md"> Découvrez des milliers d'articles pour vos travaux de construction. </div>
-                                </div>
-                                <!-- /.caption -->
+                                alt="" class="img-responsive"> </div>
+                        <div class="container-fluid">
+                            <div class="caption vertical-top text-left">
+                                <div class="big-text"> SODIB-CI </div>
+                                <div class="excerpt hidden-sm hidden-md"> Tous ce qu'il vous faut pour le Batiment </div>
+                                <div class="excerpt-normal hidden-sm hidden-md"> Découvrez des milliers d'articles pour vos travaux de construction. </div>
                             </div>
+                            <!-- /.caption -->
+                        </div>
                             <!-- /.container-fluid -->
                         </div>
                     </div>--}}
@@ -69,9 +69,9 @@
                                         <!-- /.fld -->
                                     </div>
                                     <!-- /.lbl-cnt -->
-                                </div>--}}
+                                </div>
                                 <!-- /.col -->
-                                {{--<div class="col col-sm-3 col-md-6 no-padding">
+                                <div class="col col-sm-3 col-md-6 no-padding">
                                     <div class="lbl-cnt"> <span class="lbl">Show</span>
                                         <div class="fld inline">
                                             <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
@@ -121,7 +121,7 @@
                             <div class="tab-pane active" id="grid-container">
                                 <div class="category-product">
                                     <div class="row">
-                                        @foreach ($subcategory_products as $product)
+                                        @foreach ($subsubcategory_products as $product)
                                         <div class="col-sm-6 col-md-4 wow fadeInUp animated"
                                             style="visibility: visible; animation-name: fadeInUp;">
                                             <div class="products">
@@ -217,7 +217,7 @@
 
                             <div class="tab-pane" id="list-container">
                                 <div class="category-product">
-                                    @foreach ($subcategory_products as $product)
+                                    @foreach ($subsubcategory_products as $product)
                                     <div class="category-product-inner wow fadeInUp animated"
                                         style="visibility: visible; animation-name: fadeInUp;">
                                         <div class="products">
@@ -320,9 +320,9 @@
                         <!-- /.tab-content -->
                         <div class="clearfix filters-container">
                             <div class="text-right">
-                                <div class="pagination-container">
+                                <div class="pagination-">
                                     <ul class="list-inline list-unstyled">
-                                        {{ $subcategory_products->links() }}
+                                        {{ $subsubcategory_products->links() }}
                                     </ul>
                                     <!-- /.list-inline -->
                                 </div>

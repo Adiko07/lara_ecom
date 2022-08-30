@@ -20,7 +20,7 @@
                 <div class="col-md-9">
                     <!-- ========================================== SECTION – HERO ========================================= -->
 
-                    <div id="category" class="category-carousel hidden-xs">
+                    {{--<div id="category" class="category-carousel hidden-xs">
                         <div class="item">
                             <div class="image"> <img src="{{ asset('frontend') }}/assets/images/banners/banner.jpg"
                                     alt="" class="img-responsive"> </div>
@@ -34,7 +34,7 @@
                             </div>
                             <!-- /.container-fluid -->
                         </div>
-                    </div>
+                    </div>--}}
 
 
                     <div class="clearfix filters-container m-t-10">
@@ -268,28 +268,22 @@
                                                             <!-- /.product-price -->
                                                             <div class="description m-t-10">
                                                                 @if (session()->get('language') == 'bangla')
-                                                                {{ $product->short_description_bn }}
+                                                                {!! $product->short_description_bn !!}
                                                                 @else
-                                                                {{ $product->short_description_en }}
+                                                                {!! $product->short_description_en !!}
                                                                 @endif
                                                             </div>
                                                             <div class="cart clearfix animate-effect">
                                                                 <div class="action">
                                                                     <ul class="list-unstyled">
                                                                         <li class="add-cart-button btn-group">
-                                                                            <button class="btn btn-primary icon"
+                                                                            <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}" class="btn btn-primary icon"
                                                                                 data-toggle="dropdown" type="button"> <i
                                                                                     class="fa fa-shopping-cart"></i>
-                                                                            </button>
-                                                                            <button class="btn btn-primary cart-btn"
-                                                                                type="button">Add to cart</button>
+                                                                            </a>
+                                                                            <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}" class="btn btn-primary cart-btn"
+                                                                                >Acheter</a>
                                                                         </li>
-                                                                        <li class="lnk wishlist"> <a class="add-to-cart"
-                                                                                href="detail.html" title="Wishlist"> <i
-                                                                                    class="icon fa fa-heart"></i> </a> </li>
-                                                                        <li class="lnk"> <a class="add-to-cart"
-                                                                                href="detail.html" title="Compare"> <i
-                                                                                    class="fa fa-signal"></i> </a> </li>
                                                                     </ul>
                                                                 </div>
                                                                 <!-- /.action -->
@@ -326,7 +320,7 @@
                         <!-- /.tab-content -->
                         <div class="clearfix filters-container">
                             <div class="text-right">
-                                <div class="pagination-container">
+                                <div class="pagina">
                                     <ul class="list-inline list-unstyled">
                                         {{ $subcategory_products->links() }}
                                     </ul>

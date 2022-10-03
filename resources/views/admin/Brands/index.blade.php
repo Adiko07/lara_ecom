@@ -4,7 +4,7 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'Marque',
     'url' => "brands.index",
-    'section_name' => 'All Brands'
+    'section_name' => 'Toutes les marques'
     ])
     <section class="content">
         <div class="row">

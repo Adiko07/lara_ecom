@@ -13,7 +13,7 @@ use App\Models\SubSubCategory;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Image;
+use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -122,7 +122,7 @@ class ProductController extends Controller
             }
 
         $notification = [
-            'message' => 'Product Created Successfully!!!',
+            'message' => 'produit crée avec succès!!!',
             'alert-type' => 'success'
         ];
 
@@ -238,7 +238,7 @@ class ProductController extends Controller
             // }
 
         $notification = [
-            'message' => 'Product Updated Successfully!!!',
+            'message' => 'produit modifié avec succès!!!',
             'alert-type' => 'success'
         ];
 
@@ -265,7 +265,7 @@ class ProductController extends Controller
         $product->delete();
 
         $notification = [
-            'message' => 'Product Deleted Successfully!!!',
+            'message' => 'produit supprimé avec succès!!!',
             'alert-type' => 'success'
         ];
 
@@ -294,7 +294,7 @@ class ProductController extends Controller
 	 } // end foreach
 
     $notification = array(
-			'message' => 'Product Image Updated Successfully',
+			'message' => 'image produit modifié avec succès',
 			'alert-type' => 'info'
 		);
 
@@ -308,6 +308,6 @@ class ProductController extends Controller
         $product->status = $request->status;
         $product->save();
 
-        return response()->json(['success'=>'Product status change successfully.']);
+        return response()->json(['success'=>'statut du produit modifié avec succès.']);
     }
 }

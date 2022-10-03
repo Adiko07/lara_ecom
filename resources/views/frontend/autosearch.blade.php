@@ -41,12 +41,12 @@
                         <div class="row">
                             <div class="col col-sm-6 col-md-2">
                                 <div class="filter-tabs">
-                                    <ul id="filter-tabs" class="nav nav-tabs nav-tab-box nav-tab-fa-icon">
+                                    {{--<ul id="filter-tabs" class="nav nav-tabs nav-tab-box nav-tab-fa-icon">
                                         <li class="active"> <a data-toggle="tab" href="#grid-container"><i
                                                     class="icon fa fa-th-large"></i>Grid</a> </li>
                                         <li><a data-toggle="tab" href="#list-container"><i
                                                     class="icon fa fa-th-list"></i>List</a></li>
-                                    </ul>
+                                    </ul>--}}
                                 </div>
                                 <!-- /.filter-tabs -->
                             </div>
@@ -123,7 +123,7 @@
                                     <div class="row">
                                     @if($products->isNotEmpty())
                                         @foreach ($products as $product)
-                                        <div class="col-sm-6 col-md-4 wow fadeInUp animated"
+                                        <div class="col-sm-6 col-md-4 col-lg-3 wow fadeInUp animated"
                                             style="visibility: visible; animation-name: fadeInUp;">
                                             <div class="products">
                                                 <div class="product">

@@ -19,7 +19,7 @@ class SubSubCategoryController extends Controller
      */
     public function index()
     {
-        $subsubCategories = SubSubCategory::with(['category','subcategory'])->latest()->get();
+        $subsubCategories = SubSubCategory::with(['category','subcategory'])->latest()->paginate(20);
         return view('admin.SubSubCategory.index', compact('subsubCategories'));
     }
 
@@ -54,7 +54,7 @@ class SubSubCategoryController extends Controller
         ]);
 
         $notification = [
-            'message' => 'Sub Sub Category Created Successfully!!!',
+            'message' => 'sous sous-catégorie créée avec succès!!!',
             'alert-type' => 'success'
         ];
 
@@ -106,7 +106,7 @@ class SubSubCategoryController extends Controller
         ]);
 
         $notification = [
-            'message' => 'Sub Sub Category Updated Successfully!!!',
+            'message' => 'sous sous-catégorie modifiée avec succès!!!!!!',
             'alert-type' => 'success'
         ];
 
@@ -125,7 +125,7 @@ class SubSubCategoryController extends Controller
         $subsubCategory->delete();
 
         $notification = [
-            'message' => 'Sub Sub Category Deleted Successfully!!!',
+            'message' => 'sous sous-catégorie supprimée avec succès!!!!!!',
             'alert-type' => 'success'
         ];
 

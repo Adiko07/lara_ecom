@@ -8,7 +8,7 @@
     </h3>
     <div class="row">
             <div class="col-12">
-                <div class="bg-light" style="padding: 0.5em 3em;">
+                <div class="" style="padding: 0.5em 3em;">
                     <span class="badge badge-pill badge-secondary">Bois rouge</span>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="product" style="padding: 0.5em">
                     <div class="product-image">
                         <div class="image"> <a
@@ -71,7 +71,7 @@
     <div class="row">
         <!-- /.item -->
         <div class="col-12">
-            <div class="bg-light" style="padding: 0.5em 3em;">
+            <div class="" style="padding: 0.5em 3em;">
                 <span class="badge badge-pill badge-secondary">Bois blanc</span>
             </div>
         </div>
@@ -83,7 +83,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -133,19 +133,19 @@
     <div class="row">
         <!-- /.item -->
         <div class="col-12">
-            <div class="bg-light" style="padding: 0.5em 3em;">
+            <div class="" style="padding: 0.5em 3em;">
                 <span class="badge badge-pill badge-secondary">Bois assan</span>
             </div>
         </div>
         @php
             $featured_products = App\Models\Product::where('featured', 1)
-                ->where('subcategory_id', 29)
+                ->where('subcategory_id', 34)
                 ->latest()
                 ->limit(8)
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -195,7 +195,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="bg-light" style="padding: 0.5em 3em;">
+            <div class="" style="padding: 0.5em 3em;">
                 <span class="badge badge-pill badge-secondary">Bois Fromager</span>
             </div>
         </div>
@@ -207,7 +207,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -257,7 +257,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="bg-light" style="padding: 0.5em 3em;">
+            <div class="" style="padding: 0.5em 3em;">
                 <span class="badge badge-pill badge-secondary">Bois dabema</span>
             </div>
         </div>
@@ -269,7 +269,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -319,7 +319,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="bg-light" style="padding: 0.5em 3em;">
+            <div class="" style="padding: 0.5em 3em;">
                 <span class="badge badge-pill badge-secondary">Bois koroma</span>
             </div>
         </div>
@@ -331,7 +331,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -381,7 +381,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="bg-light" style="padding: 0.5em 3em;">
+            <div class="" style="padding: 0.5em 3em;">
                 <span class="badge badge-pill badge-secondary">Contreplaqués standards</span>
             </div>
         </div>
@@ -393,7 +393,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -443,7 +443,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="bg-light" style="padding: 0.5em 3em;">
+            <div class="" style="padding: 0.5em 3em;">
                 <span class="badge badge-pill badge-secondary">Contreplaqués bakélisés</span>
             </div>
         </div>
@@ -455,7 +455,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a
@@ -505,7 +505,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="bg-light" style="padding: 0.5em 3em;">
+            <div class="" style="padding: 0.5em 3em;">
                 <span class="badge badge-pill badge-secondary">Contreplaqués marines</span>
             </div>
         </div>
@@ -517,7 +517,7 @@
                 ->get();
         @endphp
         @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="product" style="padding: 0.5em">
                 <div class="product-image">
                     <div class="image"> <a

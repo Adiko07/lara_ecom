@@ -7,19 +7,19 @@
                 <div class="col-md-3 sidebar">
                     <div class="sidebar-module-container">
                         <div class="home-banner outer-top-n">
-                            <img src="{{ asset('frontend') }}/assets/images/banners/LHS-banner.jpg" alt="Image">
+                            <img src="{{ asset('frontend') }}/assets/images/icon.png" alt="logo" class="img-fluid">
                         </div>
                         <!--  HOT DEALS  -->
-                        @include('frontend.frontend_layout.widgets.hot-deals-widget')
+                        {{--@include('frontend.frontend_layout.widgets.special-offer-widget')--}}
                         <!--  HOT DEALS: END  -->
 
                         <!--  NEWSLETTER  -->
-                        @include('frontend.frontend_layout.widgets.newsletter-widget')
+                        {{--@include('frontend.frontend_layout.widgets.newsletter-widget')
                         <!--  NEWSLETTER: END  -->
 
                         <!--  Testimonials -->
                         @include('frontend.frontend_layout.widgets.testimonial-widget')
-                        <!--  Testimonials: END  -->
+                        <!--  Testimonials: END  -->--}}
 
                     </div>
                 </div><!-- /.sidebar -->
@@ -309,7 +309,7 @@
                                             <div class="col-sm-7">
                                                 <input type="hidden" name="" id="product_id" value="{{ $product->id }}" min="1">
                                                 <button type="submit" class="btn btn-primary" onclick="addToCart()">
-                                                    <i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</button>
+                                                    <i class="fa fa-shopping-cart inner-right-vs"></i> AJOUTER AU PANIER</button>
                                             </div>
 
 

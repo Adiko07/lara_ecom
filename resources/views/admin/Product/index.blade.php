@@ -2,9 +2,9 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Product',
+    'name' => 'Produit',
     'url' => "products.index",
-    'section_name' => 'All Product'
+    'section_name' => 'Tous les produits'
     ])
     <section class="content">
         <div class="row">
@@ -35,10 +35,9 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @php($no = 1)
                                                 @foreach ($products as $item)
                                                 <tr role="row" class="odd">
-                                                    <td>{{ $no++  }}</td>
+                                                    <td>{{ $loop->index+1 }}</td>
                                                     <td>
                                                         <img src="{{ asset($item->product_thumbnail) }}" alt=""  style="width: 70px; height:70px;">
                                                     </td>
@@ -83,6 +82,9 @@
         </div>
         <!-- /.row -->
     </section>
+    @section('dashboard_script')
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script>
         $(function() {
             $('.toggle-class').change(function() {
@@ -101,6 +103,5 @@
             })
         })
     </script>
-    @section('dashboard_script')
     @endsection
 @endsection

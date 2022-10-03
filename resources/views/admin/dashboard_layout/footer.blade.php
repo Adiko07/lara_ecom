@@ -9,10 +9,5 @@
         </li>--}}
     </ul>
 </div>
-    Développée par l'<a href="eid-ci.com">Entreprise Informatique de Développement (E.I.D)</a>. Tous droits réservés || SODIB-CI &copy; <span id="copy-year">2022</span> .
-    <script>
-        var d = new Date();
-        var year = d.getFullYear();
-        document.getElementById("copy-year").innerHTML = year;
-    </script>
+    
 </footer>

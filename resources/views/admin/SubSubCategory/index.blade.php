@@ -42,7 +42,7 @@
 
                                     <div class="col-sm-12">
 
-                                        <table id="example1" class="table table-bordered table-striped dataTable"
+                                        <table id="" class="table table-bordered table-striped dataTable"
 
                                             role="grid" aria-describedby="example1_info">
 
@@ -109,7 +109,7 @@
                                         </table>
 
                                     </div>
-
+                                    {{ $subsubCategories->links() }}
                                 </div>
 
                             </div>

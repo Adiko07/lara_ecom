@@ -247,3 +247,11 @@ Route::middleware(['auth:admin'])->group(function(){
 		return view('frontend.index')->withMessage("No Results Found!");
 	}
 });*/
+
+Route::get('/a-propos-de-nous', function(){
+    return view('frontend.about');
+})->name('about');
+
+Route::get('/nos-conditions-de-ventes', function(){
+    return view('frontend.terms-trade');
+})->name('trade');

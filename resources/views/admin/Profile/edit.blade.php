@@ -46,7 +46,7 @@
                                                 <input type="password" name="confirm_password" data-validation-match-match="password" class="form-control" required=""> <div class="help-block"></div>
                                             </div>
                                         </div> --}}
-                                        <div class="form-group">
+                                        {{--<div class="form-group">
                                             <h5>photo <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="file" name="image" id="image" class="form-control" required=""> <div class="help-block"></div>
@@ -54,7 +54,7 @@
                                         </div>
                                         <div class="col-md-12 widget-user-image">
                                             <img  id="show-image" class="rounded-circle" src="{{ !empty($editData->profile_photo_path) ? url('upload/admin_images/'.$editData->profile_photo_path) : url('upload/admin_images/blank_profile_photo.jpg') }}" alt="User Avatar" style="float: right" width="100px" height="100px">
-                                        </div>
+                                        </div>--}}
                                         <div class="text-xs-right">
                                             <button type="submit" class="btn btn-rounded btn-primary mb-5">Modifier</button>
                                         </div>

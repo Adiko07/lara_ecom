@@ -17,7 +17,7 @@ class AdminSliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::latest()->get();
+        $sliders = Slider::latest()->paginate(10);
         return view('admin.Slider.index', compact('sliders'));
     }
 
@@ -64,7 +64,7 @@ class AdminSliderController extends Controller
         }
 
         $notification = [
-            'message' => 'Slider Created Successfully!!!',
+            'message' => 'Slide crée avec succès!!!',
             'alert-type' => 'success'
         ];
 
@@ -132,7 +132,7 @@ class AdminSliderController extends Controller
         }
 
         $notification = [
-            'message' => 'Slider Updated Successfully!!!',
+            'message' => 'Slide modifié avec succès!!!',
             'alert-type' => 'success'
         ];
 
@@ -155,7 +155,7 @@ class AdminSliderController extends Controller
         $slider->delete();
 
         $notification = [
-            'message' => 'Slider Updated Successfully!!!',
+            'message' => 'Slide supprimé avec succès!!!',
             'alert-type' => 'success'
         ];
 
@@ -169,7 +169,7 @@ class AdminSliderController extends Controller
         $slider->save();
 
          $notification = [
-            'message' => 'Slider Status Updated Successfully!!!',
+            'message' => 'statut du slide modifié avec succès!!!',
             'alert-type' => 'success'
         ];
         return response()->json($notification, 200);

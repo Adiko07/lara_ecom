@@ -13,9 +13,9 @@
             <h3 class="widget-user-username">Nom de l'administrateur: {{ $adminData->name }}</h3>
             <h6 class="widget-user-desc">Email: {{ $adminData->email }}</h6>
         </div>
-        <div class="widget-user-image">
-            <img class="rounded-circle" src="{{ !empty($adminData->profile_photo_path) ? url('upload/admin_images/'.$adminData->profile_photo_path) : url('upload/admin_images/blank_profile_photo.jpg') }}" alt="User Avatar">
-        </div>
+        {{--<div class="widget-user-image">
+            <img class="rounded-circle" src="{{ asset('frontend') }}/assets/images/logo.png" alt="User Avatar">
+        </div>--}}
         <div class="box-footer">
             <div class="row">
                 {{--<div class="col-sm-4">

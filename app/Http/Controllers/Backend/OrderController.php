@@ -17,7 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::latest('id')->get();
+        $orders = Order::latest('id')->paginate(20);
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -101,7 +101,7 @@ class OrderController extends Controller
 
     public function pendingOrderIndex()
     {
-        $orders = Order::where('status', 'En attente')->latest('id')->get();
+        $orders = Order::where('status', 'En attente')->latest('id')->paginate(20);
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -109,7 +109,7 @@ class OrderController extends Controller
 
     public function confirmedOrderIndex()
     {
-        $orders = Order::where('status', 'confirmée')->latest('id')->get();
+        $orders = Order::where('status', 'confirmée')->latest('id')->paginate(20);
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -117,7 +117,7 @@ class OrderController extends Controller
 
     public function processingOrderIndex()
     {
-        $orders = Order::where('status', 'En traitement')->latest('id')->get();
+        $orders = Order::where('status', 'En traitement')->latest('id')->paginate(20);
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -125,7 +125,7 @@ class OrderController extends Controller
 
     public function pickedOrderIndex()
     {
-        $orders = Order::where('status', 'Sélectionnée')->latest('id')->get();
+        $orders = Order::where('status', 'Sélectionnée')->latest('id')->paginate(20);
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -133,7 +133,7 @@ class OrderController extends Controller
 
     public function shippedOrderIndex()
     {
-        $orders = Order::where('status', 'Expédiée')->latest('id')->get();
+        $orders = Order::where('status', 'Expédiée')->latest('id')->paginate(20);
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -141,7 +141,7 @@ class OrderController extends Controller
 
     public function deliveredOrderIndex()
     {
-        $orders = Order::where('status', 'livrée')->latest('id')->get();
+        $orders = Order::where('status', 'livrée')->latest('id')->paginate(20);
         return view('admin.Orders.index', compact(
             'orders'
         ));
@@ -149,14 +149,14 @@ class OrderController extends Controller
 
     public function cancelOrderIndex()
     {
-        $orders = Order::where('status', 'annulée')->latest('id')->get();
+        $orders = Order::where('status', 'annulée')->latest('id')->paginate(20);
         return view('admin.Orders.index', compact(
             'orders'
         ));
     }
     public function returnOrderIndex()
     {
-        $orders = Order::where('status', 'retournée')->latest('id')->get();
+        $orders = Order::where('status', 'retournée')->latest('id')->paginate(20);
         return view('admin.Orders.index', compact(
             'orders'
         ));

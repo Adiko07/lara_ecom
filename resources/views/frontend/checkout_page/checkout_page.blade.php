@@ -5,7 +5,7 @@
 @endsection
 
 @section('frontend_content')
-    <div class="checkout-box ">
+    <div class="checkout-box mb-4">
         <div class="row">
             <div class="col-md-8">
                 <div class="panel-group checkout-steps" id="accordion">
@@ -26,7 +26,7 @@
                                             <div class="form-group">
                                                 <label class="info-title" for="shippingName">Nom pour la livraison<span>*</span></label>
                                                 <input type="text" class="form-control unicase-form-control text-input"
-                                                    id="shippingName" placeholder="Enter your name here"
+                                                    id="shippingName" placeholder="votre nom et prénoms"
                                                     name="shipping_name" value="{{ Auth::user()->name }}">
                                                     @error('shipping_name')
                                                         <span class="alert text-danger">{{ $message }}</span>
@@ -36,7 +36,7 @@
                                                 <label class="info-title" for="shippingEmail">Email d'expédition
                                                     <span>*</span></label>
                                                 <input type="email" class="form-control unicase-form-control text-input"
-                                                    id="shippingEmail" placeholder="Enter your email here"
+                                                    id="shippingEmail" placeholder="votre email"
                                                     name="shipping_email" value="{{ Auth::user()->email }}">
                                                     @error('shipping_email')
                                                         <span class="alert text-danger">{{ $message }}</span>
@@ -45,7 +45,7 @@
                                             <div class="form-group">
                                                 <label class="info-title" for="shippingPhone">Téléphone :<span>*</span></label>
                                                 <input type="phone" class="form-control unicase-form-control text-input"
-                                                    id="shippingPhone" placeholder="Enter your phone number"
+                                                    id="shippingPhone" placeholder="votre numéro de téléphone"
                                                     name="shipping_phone" value="{{ Auth::user()->phone_number }}">
                                                     @error('shipping_phone')
                                                         <span class="alert text-danger">{{ $message }}</span>
@@ -56,7 +56,7 @@
                                                 <label class="info-title" for="shippingPhone2">Téléphone 2
                                                     <span></span></label>
                                                 <input type="tel" class="form-control unicase-form-control text-input"
-                                                    id="shippingPhone2" placeholder="Enter your name here"
+                                                    id="shippingPhone2" placeholder="autre numéro de téléphone"
                                                     name="shipping_phone2">
                                                     @error('shipping_phone2')
                                                         <span class="alert text-danger">{{ $message }}</span>
@@ -203,15 +203,15 @@
                                 <h4 class="unicase-checkout-title">Sélectionnez le mode de paiement</h4>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
-                                    <label for="">Cash à la livraison</label>
+                                <div class="col-md-6">
                                     <input type="radio" name="payment_method" id="" value="cod">
+                                    <label for="">Cash à la livraison</label>
                                     <img src="{{ asset('frontend/assets/images/payments/6.png') }}" alt="">
                                 </div>
                                 @error('payment_method')
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     {{--<label for="">Stripe</label>
                                     <input type="radio" name="payment_method" id="" value="stripe">
                                     <img src="{{ asset('frontend/assets/images/payments/4.png') }}" alt="">--}}
@@ -228,8 +228,11 @@
                 </div>
             </div>
             <hr>
-            <button type="submit" class="btn btn-primary checkout-page-button">Order
-                Confirm</button>
+            <div class="col-12">
+                <div class="text-center p-2">
+                    <button type="submit" class="btn btn-primary checkout-page-button">CONFIRMER VOTRE COMMANDE</button>
+                </div>
+            </div>
             </form>
         </div><!-- /.row -->
     </div>

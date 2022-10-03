@@ -11,7 +11,7 @@
 
     <div class="user-profile">
         <div class="ulogo">
-                <a href="index.html">
+                <a href="{{ route('home') }}">
                 <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
                         <img src="{{ asset('frontend') }}/assets/images/logo.png" alt="">
@@ -32,7 +32,7 @@
     </li>
     <li class="treeview {{ Request::is('admin/orders*') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>Vos Commandes</span>
+        <i data-feather="file"></i> <span>Nos Commandes</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
@@ -71,7 +71,7 @@
     <li class="treeview {{ ($route == 'brands.index') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="message-circle"></i>
-        <span>Vos Marques</span>
+        <span>Nos Marques</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
@@ -92,13 +92,13 @@
         </a>
         <ul class="treeview-menu">
             <li class=" {{ ($route == 'categories.index') ? 'active' : '' }}">
-                <a href="{{ route('categories.index') }}"><i class="ti-more"></i>Vos catégories</a>
+                <a href="{{ route('categories.index') }}"><i class="ti-more"></i>Nos catégories</a>
             </li>
             <li class=" {{ ($route == 'subcategories.index') ? 'active' : '' }}">
-                <a href="{{ route('subcategories.index') }}"><i class="ti-more"></i>Vos sous-catégories</a>
+                <a href="{{ route('subcategories.index') }}"><i class="ti-more"></i>Nos sous-catégories</a>
             </li>
             <li class=" {{ ($route == 'subsubcategories.index') ? 'active' : '' }}">
-                <a href="{{ route('subsubcategories.index') }}"><i class="ti-more"></i>Vos sous sous-carégories</a>
+                <a href="{{ route('subsubcategories.index') }}"><i class="ti-more"></i>Nos sous sous-carégories</a>
             </li>
         </ul>
     </li>
@@ -122,7 +122,7 @@
 
     <li class="treeview {{ ($prefix == '/slider') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>Vos Caroussels</span>
+        <i data-feather="file"></i> <span>Nos Caroussels</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
@@ -134,7 +134,7 @@
         </ul>
     </li>
 
-    <li class="treeview {{ ($prefix == '/coupons') ? 'active' : '' }}">
+    {{--<li class="treeview {{ ($prefix == '/coupons') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="file"></i> <span>Bon de réduction</span>
         <span class="pull-right-container">
@@ -147,7 +147,7 @@
             </li>
         </ul>
     </li>
-    {{--<li class="treeview {{ ($prefix == '/division') ? 'active' : '' }}">
+    <li class="treeview {{ ($prefix == '/division') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="file"></i> <span>Shipping Area</span>
         <span class="pull-right-container">

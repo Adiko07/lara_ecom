@@ -105,7 +105,7 @@
                                     <td>
                                         <div class="form-group">
                                             <input type="text" class="form-control unicase-form-control text-input"
-                                                placeholder="You Coupon.." id="coupon_name">
+                                                placeholder="entrer le bon de reduction" id="coupon_name">
                                         </div>
                                         <div class="clearfix pull-right">
                                             <button type="submit" class="btn-upper btn btn-primary"
@@ -356,10 +356,10 @@
                             `<tr>
                                     <th>
                                         <div class="cart-sub-total">
-                                            Subtotal<span class="inner-left-md">${data.total} FCFA</span>
+                                            Sous-total<span class="inner-left-md">${data.total} FCFA</span>
                                         </div>
                                         <div class="cart-grand-total">
-                                            Grand Total<span class="inner-left-md">${data.total} FCFA</span>
+                                            Total<span class="inner-left-md">${data.total} FCFA</span>
                                         </div>
                                     </th>
                             </tr>`
@@ -368,7 +368,7 @@
                         $('#couponCalField').html(
                             `<tr>
                                     <th>
-                                        <div class="cart-sub-total">Subtotal Amount<span class="inner-left-md">$ ${data.subtotal}</span>
+                                        <div class="cart-sub-total">Sous-total Amount<span class="inner-left-md">${data.subtotal} FCFA</span>
                                         </div>
                                         <div class="cart-sub-total">Coupon Name<span class="inner-left-md">${data.coupon_name}</span>
                                             <button type="submit" onclick="couponRemove()"><i class="fa fa-times"></i></button>

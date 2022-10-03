@@ -55,7 +55,7 @@
                                 <div class="form-group">
                                     <h5>Description du Caroussel<span class="text-danger"></span></h5>
                                     <div class="controls">
-                                        <textarea name="slider_description" id="editor5" cols="30" rows="5" class="form-control">value="{{ old('slider_description', $slider->slider_description) }}</textarea>
+                                        <textarea name="slider_description" id="editor5" cols="30" rows="5" class="form-control">{{ $slider->slider_description }}</textarea>
                                         <div class="help-block"></div>
                                     </div>
                                     @error('slider_description')
@@ -68,7 +68,7 @@
                             <div class="form-group">
                                 <h5>Image du caroussel <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="file" name="slider_image" class="form-control" required="" data-validation-required-message="This field is required"
+                                    <input type="file" name="slider_image" class="form-control" data-validation-required-message="This field is required"
                                     onchange="sliderShow(this)"> <div class="help-block"></div>
                                 </div>
                                 @error('slider_image')

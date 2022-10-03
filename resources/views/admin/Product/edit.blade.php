@@ -2,9 +2,9 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Product',
+    'name' => 'Produit',
     'url' => "products.index",
-    'section_name' => 'Edit Product'
+    'section_name' => 'Modification de produit'
     ])
     <section class="content">
         <div class="row">
@@ -136,22 +136,10 @@
                                 </div>
                             </div>
                             {{-- Second row end --}}
-                            <h5 class="text-warning mt-4">Product Tag, Size, Color Information Area</h5>
+                            <h5 class="text-warning mt-4">Étiquette de produit, taille, zone d'information sur la couleur</h5>
                             <hr>
                             {{-- Third row start --}}
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <h5>Étiquette de produit, taille, zone d'information sur la couleur<span class="text-danger"></span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="product_tags_en" value="{{ old('product_tags_en', $product->product_tags_en) }}"
-                                            class="form-control" data-role="tagsinput"> <div class="help-block"></div>
-                                        </div>
-                                        @error('product_tags_en')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
                                 {{--<div class="col-md-2">
                                     <div class="form-group">
                                         <h5>Product Tag BN <span class="text-danger"></span></h5>
@@ -383,36 +371,36 @@
                             <h5 class="text-warning mt-4">Zone d'informations supplémentaires sur le produit</h5>
                             <hr>
                             <div class="row mb-3">
-                                <div class="col-md-4">
+                                {{--<div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="hot_deals" name="hot_deals" value="1" {{ $product->hot_deals == 1 ? 'checked': '' }}>
                                         <label class="form-check-label" for="hot_deals">Bonne affaire</label>
                                     </div>
-                                </div>
+                                </div>--}}
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="featured" name="featured" value="1" {{ $product->featured == 1 ? 'checked': '' }}>
-                                        <label class="form-check-label" for="featured">Mis en avant</label>
+                                        <label class="form-check-label" for="featured">Produit populaire</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="new_arrival" name="new_arrival" {{ $product->new_arrival == 1 ? 'checked': '' }} value="1">
-                                        <label class="form-check-label" for="new_arrival">Nouvelle arrivée</label>
+                                        <label class="form-check-label" for="new_arrival">Nouveaux produits</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <div class="col-md-4">
+                                {{--<div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="special_offer" name="special_offer" value="1" {{ $product->special_offer == 1 ? 'checked': '' }}>
                                         <label class="form-check-label" for="special_offer">Offre spéciale</label>
                                     </div>
-                                </div>
+                                </div>--}}
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
@@ -490,16 +478,17 @@
                   type:"GET",
                   dataType:"json",
                   success:function(data) {
-                    $('select[name="sub_subcategory_id"]').html('');
-                     var d =$('select[name="subcategory_id"]').empty();
+                    $('select[name="subcategory_id"]').html('');
+                     var d =$('select[name="subcategory_id"]').empty().append("<option value='' selected>Choisissez une sous-catégorie</option>");
                         $.each(data, function(key, value){
                             $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_en + '</option>');
                         });
                   },
               });
-          } else {
-              alert('danger');
-          }
+          } else{
+                $('select[name="subcategory_id"]').empty().append("<option value='' selected>Choisissez une sous-catégorie</option>");
+            }
+          
       });
       $('select[name="subcategory_id"]').on('change', function(){
           var subcategory_id = $(this).val();
@@ -509,15 +498,15 @@
                   type:"GET",
                   dataType:"json",
                   success:function(data) {
-                     var d =$('select[name="sub_subcategory_id"]').empty();
+                     var d =$('select[name="sub_subcategory_id"]').empty().append("<option value='' selected>Choisissez une sous sous-catégorie</option>");
                         $.each(data, function(key, value){
                             $('select[name="sub_subcategory_id"]').append('<option value="'+ value.id +'">' + value.subsubcategory_name_en + '</option>');
                         });
                   },
               });
-          } else {
-              alert('danger');
-          }
+          } else{
+                $('select[name="sub_subcategory_id"]').empty().append("<option value='' selected>Choisissez une sous sous-catégorie</option>");
+            }
       });
       $(document).ready(function(){
     $('#multiImg').on('change', function(){ //on file input change

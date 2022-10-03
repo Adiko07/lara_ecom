@@ -130,7 +130,7 @@
                                 </ul>--}}
                                 <input class="search-field" placeholder="Rechercher un produit..." type="text" name="name" id="name" />
                                 <button class="search-button"></button>
-                                <div id="product_list"></div>
+                                {{--<div id="product_list"></div>--}}
                                 <div class="col-lg-3"></div>
                             </div>
                         </form>
@@ -215,6 +215,10 @@
                                 </li>
                                 <li class="yamm-fw"> <a href="{{ route('shopping') }}">
                                     Boutique
+                                    </a>
+                                </li>
+                                <li class="yamm-fw"> <a href="{{ route('about') }}">
+                                    à propos de nous
                                     </a>
                                 </li>
                                 @php

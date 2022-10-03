@@ -3,74 +3,55 @@
         @if (session()->get('language') == 'bangla')
         উষ্ণ চুক্তি
         @else
-        Bonnes affaires
+        Offres spéciales
         @endif
     </h3>
     <div class="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-ss">
         @php
-            $hot_deals_products = App\Models\Product::where('hot_deals', 1)
-                ->where('discount_price','!=',NULL)->latest()->limit(6)->get();
-        @endphp
-        @foreach ($hot_deals_products as $product)
-        <div class="item">
-            <div class="products">
-                <div class="hot-deal-wrapper">
-                    <div class="image"> <img src="{{ asset($product->product_thumbnail) }}" alt="">
-                    </div>
-                    @php
-                        $discount_amount = (($product->selling_price-$product->discount_price)/($product->selling_price))*100
+                    $special_offer_products = App\Models\Product::where('special_offer', 1)->latest()->limit(3)->get();
                     @endphp
-                    <div class="sale-offer-tag"><span>{{ round($discount_amount) }}%<br>
-                            off</span></div>
-                    <div class="timing-wrapper">
-                        <div class="box-wrapper">
-                            <div class="date box"> <span class="key">120</span> <span class="value">DAYS</span> </div>
-                        </div>
-                        <div class="box-wrapper">
-                            <div class="hour box"> <span class="key">20</span> <span class="value">HRS</span> </div>
-                        </div>
-                        <div class="box-wrapper">
-                            <div class="minutes box"> <span class="key">36</span> <span class="value">MINS</span> </div>
-                        </div>
-                        <div class="box-wrapper hidden-md">
-                            <div class="seconds box"> <span class="key">60</span> <span class="value">SEC</span> </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.hot-deal-wrapper -->
+                    @foreach ($special_offer_products as $product)
+                    <div class="product">
+                        <div class="product-micro">
+                            <div class="row product-micro-row">
+                                <div class="col col-xs-5">
+                                    <div class="product-image">
+                                        <div class="image"> <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}"> <img src="{{ asset($product->product_thumbnail) }}" alt=""> </a> </div>
+                                        <!-- /.image -->
 
-                <div class="product-info text-left m-t-20">
-                    <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}">  @if (session()->get('language') == 'bangla')
-                        {{ $product->product_name_bn }}
-                        @else
-                        {{ $product->product_name_en }}
-                        @endif</a></h3>
-                    <div class="rating rateit-small"></div>
-                    @if ($product->discount_price == NULL)
-                            <div class="product-price"><span class="price">{{ $product->selling_price }} FCFA</span>
+                                    </div>
+                                    <!-- /.product-image -->
+                                </div>
+                                <!-- /.col -->
+                                <div class="col col-xs-7">
+                                    <div class="product-info">
+                                        <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}">
+                                            @if (session()->get('language') == 'bangla')
+                                            {{ $product->product_name_bn }}
+                                            @else
+                                            {{ $product->product_name_en }}
+                                            @endif
+                                        </a></h3>
+                                        <div class="rating rateit-small"></div>
+                                        <div class="product-price">
+                                            @if ($product->discount_price == NULL)
+                                            <span class="price">{{ $product->selling_price }} FCFA </span>
+                                            @else
+                                            <span class="price">{{ $product->discount_price }} FCFA </span>
+                                            <span class="price">{{ $product->selling_price }} FCFA </span>
+                                            @endif
+                                        </div>
+                                        <!-- /.product-price -->
+
+                                    </div>
+                                </div>
+                                <!-- /.col -->
                             </div>
-                        @else
-                            <div class="product-price"> <span class="price"> {{ $product->discount_price }} FCFA</span> <span class="price-before-discount">{{ $product->selling_price }} FCFA </span> </div>
-                        @endif
-                    <!-- /.product-price -->
-
-                </div>
-                <!-- /.product-info -->
-
-                {{--<div class="cart clearfix animate-effect">
-                    <div class="action">
-                        <div class="add-cart-button btn-group">
-                            <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i
-                                    class="fa fa-shopping-cart"></i> </button>
-                            <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                            <!-- /.product-micro-row -->
                         </div>
+                        <!-- /.product-micro -->
                     </div>
-                    <!-- /.action -->
-                </div>--}}
-                <!-- /.cart -->
-            </div>
-        </div>
-        @endforeach
+                    @endforeach
     </div>
     <!-- /.sidebar-widget -->
 </div>

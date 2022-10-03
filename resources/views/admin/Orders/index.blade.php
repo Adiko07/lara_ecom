@@ -4,7 +4,7 @@
     @include('admin.dashboard_layout.breadcrumb', [
     'name' => 'Commandes',
     'url' => "orders.index",
-    'section_name' => 'All Orders'
+    'section_name' => 'Toutes les commandes'
     ])
     <section class="content">
         <div class="row">
@@ -39,7 +39,7 @@
                             <div id="example1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <table id="example1" class="table table-bordered table-striped dataTable"
+                                        <table id="" class="table table-bordered table-striped dataTable"
                                             role="grid" aria-describedby="example1_info">
                                             <thead>
                                                 <tr role="row">
@@ -104,6 +104,7 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    {{ $orders->links() }}
                                 </div>
                                 </div>
                         </div>

@@ -3,7 +3,7 @@
         @if (session()->get('language') == 'bangla')
         নতুন আগমন
         @else
-        Nouvelles Arrivages
+        nouveaux arrivages
         @endif
     </h3>
     <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">

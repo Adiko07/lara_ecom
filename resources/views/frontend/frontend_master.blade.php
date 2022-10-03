@@ -34,7 +34,7 @@
 @include('frontend.frontend_layout.body.script')
 
 <!-- Add to Cart Product Modal -->
-<div class="modal fade" id="productViewModal" tabindex="-1" aria-labelledby="productViewModalLabel" aria-hidden="true">
+{{--<div class="modal fade" id="productViewModal" tabindex="-1" aria-labelledby="productViewModalLabel" aria-hidden="true">
     <div class="modal-dialog">
     <div class="modal-content" style="width: 800px; height:300px;">
         <div class="modal-header">
@@ -107,13 +107,13 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="modal-footer">
+        <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
-        </div> --}}
+        </div> 
     </div>
     </div>
-</div>
+</div>--}}
 <!-- Add to Cart Product Modal END-->
 
 <script type="text/javascript">
@@ -395,7 +395,6 @@
     }
     // End remove from wishlist
 </script>
-
 <script type="text/javascript">
     $(document).ready(function(){
         $('#name').on('keyup',function () {
